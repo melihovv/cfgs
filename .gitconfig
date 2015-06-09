@@ -9,3 +9,5 @@
 	hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
 [core]
 	autocrlf = input
+[push]
+	default = current
