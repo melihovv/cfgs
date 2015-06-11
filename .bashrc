@@ -7,5 +7,5 @@ alias v='vim '
 alias ls='ls --color=auto'
 
 function cs() {
-    cd "$@" && ls "-alF"
+    cd "$@" && ls "-AlF"
 }
