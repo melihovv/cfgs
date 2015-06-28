@@ -3,14 +3,13 @@ set nocompatible
 
 " Загрузить плагины.
 execute pathogen#infect()
-call pathogen#helptags()
+"call pathogen#helptags()
 
 " Устанавливать размер отступа и загрузать плагины в зависимости от типа файла.
 filetype indent plugin on
 
 " Подсвечивать синтаксис файла.
 syntax enable
-"color monokai
 
 " Как хранить символы внутри Vim.
 set encoding=utf-8
