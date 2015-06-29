@@ -5,7 +5,7 @@ alias gc='git commit'
 alias go='git checkout'
 alias v='vim'
 alias c='clear'
-alias ls='ls --color=auto --group-directories-first'
+alias ls='ls --color=auto'
 alias ll='ls -AlF'
 
 function cs() {
