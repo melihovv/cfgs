@@ -3,7 +3,6 @@ set nocompatible
 
 " Загрузить плагины.
 execute pathogen#infect()
-"call pathogen#helptags()
 
 " Устанавливать размер отступа и загрузать плагины в зависимости от типа файла.
 filetype indent plugin on
@@ -123,3 +122,4 @@ imap jj <Esc>
 " По нажатию пробела выключить подсветку найденных шаблонов и очистить все
 " выведенные сообщения.
 nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>
+

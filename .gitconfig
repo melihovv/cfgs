@@ -8,6 +8,8 @@
 	br = branch
 	hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
 [core]
-	autocrlf = input ; Забирать файлы как есть, а коммитить с юниксовыми концами строк.
+    ; Забирать файлы как есть, а коммитить с юниксовыми концами строк.
+	autocrlf = input
 [push]
 	default = current
+
