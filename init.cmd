@@ -16,5 +16,3 @@ mklink /D "%HOME%vimfiles" "%cd%\.vim\"
 
 git submodule init && git submodule update
 
-mklink /D "%HOME%vimfiles\autoload" "%cd%\.vim\bundle\vim-pathogen\autoload"
-

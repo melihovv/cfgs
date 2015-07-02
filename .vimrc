@@ -2,7 +2,8 @@
 set nocompatible
 
 " Загрузить плагины.
-execute pathogen#infect()
+runtime bundle/vim-pathogen/autoload/pathogen.vim
+silent! execute pathogen#infect()
 
 " Устанавливать размер отступа и загрузать плагины в зависимости от типа файла.
 filetype indent plugin on
