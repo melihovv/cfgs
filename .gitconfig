@@ -10,6 +10,7 @@
 [core]
     ; Забирать файлы как есть, а коммитить с юниксовыми концами строк.
 	autocrlf = input
+	excludesfile = /home/melihovv/.gitignore_global
 [push]
 	default = current
 
