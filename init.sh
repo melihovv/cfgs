@@ -6,6 +6,7 @@ SCRIPT_DIR="`dirname "${SCRIPT_PATH}"`"
 ln -s "$SCRIPT_DIR/.vimrc" "$HOME/.vimrc"
 
 ln -s "$SCRIPT_DIR/.bash_aliases" "$HOME/.bash_aliases"
+ln -s "$SCRIPT_DIR/.bash_functions" "$HOME/.bash_functions"
 
 ln -s "$SCRIPT_DIR/.gitconfig" "$HOME/.gitconfig"
 ln -s "$SCRIPT_DIR/.gitignore_global" "$HOME/.gitignore_global"

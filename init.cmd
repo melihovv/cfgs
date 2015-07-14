@@ -9,6 +9,7 @@ mklink "%HOME%.vimrc" "%wd%\.vimrc"
 
 mklink "%HOME%.bashrc" "%wd%\.bashrc"
 mklink "%HOME%.bash_aliases" "%wd%\.bash_aliases"
+mklink "%HOME%.bash_functions" "%wd%\.bash_functions"
 
 mklink "%HOME%.gitconfig" "%wd%\.gitconfig"
 mklink "%HOME%.gitignore_global" "%wd%\.gitignore_global"
