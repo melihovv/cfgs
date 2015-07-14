@@ -8,6 +8,9 @@ ln -s "$SCRIPT_DIR/.vimrc" "$HOME/.vimrc"
 ln -s "$SCRIPT_DIR/.bash_aliases" "$HOME/.bash_aliases"
 ln -s "$SCRIPT_DIR/.bash_functions" "$HOME/.bash_functions"
 
+ln -s "$SCRIPT_DIR/.bash_profile" "$HOME/.bash_profile"
+ln -s "$SCRIPT_DIR/.profile" "$HOME/.profile"
+
 ln -s "$SCRIPT_DIR/.gitconfig" "$HOME/.gitconfig"
 ln -s "$SCRIPT_DIR/.gitignore_global" "$HOME/.gitignore_global"
 git config --global core.excludesfile $HOME/.gitignore_global

@@ -16,6 +16,9 @@ mklink "%HOME%.gitconfig" "%wd%\.gitconfig"
 mklink "%HOME%.gitignore_global" "%wd%\.gitignore_global"
 git config --global core.excludesfile "%HOME%.gitignore_global"
 
+mklink "%HOME%.bash_profile" "%wd%\.bash_profile"
+mklink "%HOME%.profile" "%wd%\.profile"
+
 mklink /D "%HOME%vimfiles" "%wd%.vim\"
 
 cd "%wd%"
