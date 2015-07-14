@@ -11,13 +11,13 @@ mklink "%HOME%.vimrc" "%wd%\.vimrc"
 mklink "%HOME%.bashrc" "%wd%\.bashrc"
 mklink "%HOME%.bash_aliases" "%wd%\.bash_aliases"
 mklink "%HOME%.bash_functions" "%wd%\.bash_functions"
+mklink "%HOME%.bash_profile" "%wd%\.bash_profile"
+
+mklink "%HOME%.profile" "%wd%\.profile"
 
 mklink "%HOME%.gitconfig" "%wd%\.gitconfig"
 mklink "%HOME%.gitignore_global" "%wd%\.gitignore_global"
 git config --global core.excludesfile "%HOME%.gitignore_global"
-
-mklink "%HOME%.bash_profile" "%wd%\.bash_profile"
-mklink "%HOME%.profile" "%wd%\.profile"
 
 mklink "%HOME%.inputrc" "%wd%\.inputrc"
 
