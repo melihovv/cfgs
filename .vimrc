@@ -1,126 +1,130 @@
-" Отключить совместимость с vi.
+" No compatible with vi.
 set nocompatible
 
-" Загрузить плагины.
+" Load plugins.
 runtime bundle/vim-pathogen/autoload/pathogen.vim
 silent! execute pathogen#infect()
 
-" Устанавливать размер отступа и загрузать плагины в зависимости от типа файла.
+" Set size of indentation and load plugins, depending on the file type. 
 filetype indent plugin on
 
-" Подсвечивать синтаксис файла.
+" Highlight file syntax.
 syntax enable
 
-" Как хранить символы внутри Vim.
+" Don't close NERDTree bar on file open.
+let NERDTreeQuitOnOpen = 0
+nnoremap <Leader>d :let NERDTreeQuitOnOpen = 1<bar>NERDTreeToggle<CR>
+nnoremap <Leader>D :let NERDTreeQuitOnOpen = 0<bar>NERDTreeToggle<CR>
+
+" How to store symbols into Vim.
 set encoding=utf-8
-" Список кодировок файлов для автоопределения.
+" List of file encodings for auto detect.
 set fileencodings=utf-8,cp1251,koi8-r,cp866
-" Список форматов файлов.
+" List of file formats.
 set fileformats=unix,dos,mac
-" Не делать бекапы.
+" Don't make backups.
 set nobackup
-" Не делать бекап перед перезаписыванием файла.
+" Don't make backup before file overriding.
 set nowb
-" Не делать swap файлы.
+" Don't make swap files.
 set noswapfile
 
-" Для нормального удаления символов перевода строк, отступов и места, где
-" произошел переход в режим вставки, в нормальном режиме.
+" For normal white space removing.
 set backspace=indent,eol,start
 
-" При использовании авто-дополнения в командной строке показывать доступные
-" варианты над командной строкой.
+" Show availible variants above command line when use auto complete.
 set wildmenu
 
-" Размер табуляции в пробелах.
+" Tab size in spaces.
 set tabstop=4
-" Количество пробелов при добавлении табуляции.
+" Number of space with the addition of tab.
 set softtabstop=4
-" Заменять табуляцию на пробелы.
+" Replace tabs to spaces.
 set expandtab
 " Количество пробелов, добавляемых командами >> и <<.
+" Number of spaces with the addition of commands >> and <<.
 set shiftwidth=4
 
-" Копировать отступ предыдущей строки.
+" Copy indentation of previous line.
 set autoindent
-" Вставить дополнительный уровень идентации в некоторых случаях.
+" Insert additional level of indentation in some cases.
 set smartindent
 
-" Не заворачивать длинные строки.
+" Don't wrap long line.
 set nowrap
 
-" Показывать номера строк.
+" Show lines number.
 set number
-" Подсвечивать текущую строку.
+" Highlight current line.
 set cursorline
-" Отключить мигание экрана и бипа при отображении ошибок.
+" Turn of screen blinking and beep when displaying errors.
 set noerrorbells visualbell t_vb=
 autocmd GUIEnter * set visualbell t_vb=
 
-" Включить отображение дополнительной информации в статусной строке.
+" Enable additional info in the status bar.
 set laststatus=2
 set statusline=%f%h\ %y\ %m\ %r\ %{&encoding}\
 set statusline+=%=Line:%l/%L[%p%%]\ Col:%c\ [%b][0x%B]
 set statusline+=\ Buf:%n\
 
-" Изменять заголовок окна. 
+" Change window title.
 set title
-" Задать заголовок вида: vim /path/to/file.
+" Set title as: vim /path/to/file.
 set titlestring=VIM:\ %-25.55F\ %a%r%m titlelen=70
-" Показывать информацию о текущей строке, колонке, виртуальной колонке и
-" относительной позиции курсора в файле.
+" Show info about current line, column, virtual column and relative cursor
+" position in file.
 set ruler
-" Показывать информацию о набрнанной команде на последней строке экрана.
+" Show info about current typing command on the last line of screen.
 set showcmd
-" Показывать текущий режим работы Vim.
+" Show current mode of Vim.
 set showmode
-" Формат показываемой информации в правом нижнем углу.
+" Format showed info in the right bottom corner.
 set rulerformat=%30(%=\:b%n%y%m%r%w\ %l,%c%V\ %P%)
 
-" Сохраняет обновление экрана в буфер вместо прямого вывода на экран. Полезно
-" для быстрого перемещения по файлу.
+" Save screen update in buffer instead direct output to screen. Usefull with
+" fast moving on file.
 set lazyredraw
 
-" Подсвечивать результаты поиска в процессе набора.
+" Highlight search result while typing.
 set incsearch
-" Подсвечивать результаты поиска.
+" Hightlight search result.
 set hlsearch
-" Глобальный флаг замены по умолчанию.
+" Global flag of replacemnt by default.
 set gdefault
-" Игнорировать регистр символов при поиске командами / и ?.
+" Ignore symbols register when search by / and ?.
 set ignorecase
-" Если шаблон содержит заглавный символ, то он будет учтен.
+" If pattern contains uppercase symbol it will be considered.
 set smartcase
 
-" Обновлять файл изменный извне.
+" Update file changed outside of Vim.
 set autoread
 
-" Для улучшения сглаживания при перерисовки.
+" In order to improve anti-aliasing when redrawing.
 set ttyfast
 
-" Количество команд, хранимых в истории.
+" Number of commands stored in history.
 set history=1000
-" Количество состояний для возможной отмены.
+" Number of states for undo/redo.
 set undolevels=1000
 
-" Для того, чтобы курсор всегда находился посередине.
+" In order the cursor always be in the middle.
 set scrolljump=7
 set scrolloff=10
 set sidescrolloff=10
 set sidescroll=1
 
-" Прятать несохраненный файл при открытии другого файла.
+" Hide unsaved file when opening another file.
 set hidden
 
-" Заминать позицию перед выходом из файла. 
+" Save position before exit.
 autocmd BufReadPost *
   \ if line("'\"") > 0 && line("'\"") <= line("$") |
   \   exe "normal g`\"" |
   \ endif
 
-" Нормальный режим по jj.
+" Normal mode by jj.
 imap jj <Esc>
-" По нажатию пробела выключить подсветку найденных шаблонов и очистить все
-" выведенные сообщения.
+" By space pressing turn off highlight of found patterns and clear all printed
+" messages.
 nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>
 
