@@ -5,6 +5,11 @@ alias q="exit"
 alias ls="ls --color=auto"
 alias ll="ls -AlF"
 
+# Misc :)
+alias grep='grep --color'
+alias egrep='egrep --color=auto'
+alias fgrep='fgrep --color=auto'
+
 alias gits="git status"
 alias gita="git add"
 alias gitc="git commit"
