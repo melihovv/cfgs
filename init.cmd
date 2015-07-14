@@ -3,6 +3,7 @@
 @if not exist "%HOME%" @set HOME=%HOMEDRIVE%%HOMEPATH%
 @if not exist "%HOME%" @set HOME=%USERPROFILE%
 
+REM Working directory
 set wd=%~dp0
 
 mklink "%HOME%.vimrc" "%wd%\.vimrc"
