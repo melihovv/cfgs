@@ -1,6 +1,7 @@
 alias v="vim"
 alias c="clear"
 alias q="exit"
+alias g="git"
 
 alias ls="ls --color=auto"
 alias ll="ls -AlF"

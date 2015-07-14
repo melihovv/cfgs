@@ -87,6 +87,7 @@ export EDITOR='vim'
 alias v=vim
 alias c=clear
 alias q=exit
+alias g=git
 
 unsetopt promptcr
 
