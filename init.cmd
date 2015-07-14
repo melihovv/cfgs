@@ -21,6 +21,8 @@ mklink "%HOME%.profile" "%wd%\.profile"
 
 mklink "%HOME%.inputrc" "%wd%\.inputrc"
 
+mklink "%HOME%.zshrc" "%wd%\.zshrc (babun)"
+
 mklink /D "%HOME%vimfiles" "%wd%.vim\"
 
 cd "%wd%"
