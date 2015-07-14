@@ -11,10 +11,20 @@ filetype indent plugin on
 " Highlight file syntax.
 syntax enable
 
-" Don't close NERDTree bar on file open.
+" Close NERDTree bar on file open.
 let NERDTreeQuitOnOpen = 0
 nnoremap <Leader>d :let NERDTreeQuitOnOpen = 1<bar>NERDTreeToggle<CR>
 nnoremap <Leader>D :let NERDTreeQuitOnOpen = 0<bar>NERDTreeToggle<CR>
+
+" Show hidden files.
+let NERDTreeShowHidden=1
+
+" Open a NERDTree automatically when vim starts up if no files were specified.
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+
+" Close vim if the only window left open is a NERDTree.
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 
 " How to store symbols into Vim.
 set encoding=utf-8
@@ -127,4 +137,7 @@ imap jj <Esc>
 " By space pressing turn off highlight of found patterns and clear all printed
 " messages.
 nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>
+
+" Add vertical line after textwidth
+set colorcolumn=+1
 
