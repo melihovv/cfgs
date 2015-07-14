@@ -7,10 +7,29 @@
 	st = status
 	br = branch
 	hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
+	last = log -1 --stat
+	cp = cherry-pick
+	cl = clone
+	unstage = reset HEAD --
+	dc = diff --cached
+	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %Cblue<%an>%Creset' --abbrev-commit --date=relative --all
 [core]
-    ; Забирать файлы как есть, а коммитить с юниксовыми концами строк.
+    ; Pull files as is, but commit with Unix-like line endings.
 	autocrlf = input
-	excludesfile = /home/melihovv/.gitignore_global
+	trustctime = false
+	editor = vim
+	filemode = false
 [push]
 	default = current
+[color]
+	ui = true
+[credential]
+	helper = cache --timeout=3600
+[merge]
+	tool = vimdiff
+[mergetool]
+	keeptemporaries = false
+	keepbackups = false
+	prompt = false
+	trustexitcode = false
 
