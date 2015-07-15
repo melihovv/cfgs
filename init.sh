@@ -3,26 +3,43 @@
 SCRIPT_PATH=$(cd `dirname "${BASH_SOURCE[0]}"` && pwd)/`basename "${BASH_SOURCE[0]}"`
 SCRIPT_DIR="`dirname "${SCRIPT_PATH}"`"
 
-ln -s "$SCRIPT_DIR/.bashrc" "$HOME/.bashrc"
-ln -s "$SCRIPT_DIR/.bash_aliases" "$HOME/.bash_aliases"
-ln -s "$SCRIPT_DIR/.bash_functions" "$HOME/.bash_functions"
-ln -s "$SCRIPT_DIR/.bash_profile" "$HOME/.bash_profile"
+BACKUP=$SCRIPT_DIR/backup
+mkdir -p $BACKUP
 
-ln -s "$SCRIPT_DIR/.zshrc" "$HOME/.zshrc"
+backupAndLink() {
+    if [ -f "$HOME/$1" ];
+    then
+        mv -f "$HOME/$1" "$BACKUP/"
+    fi
+    ln -s "$SCRIPT_DIR/$1" "$HOME/$1"
+}
 
-ln -s "$SCRIPT_DIR/.profile" "$HOME/.profile"
+backupAndLinkDir() {
+    if [ -d "$HOME/$1" ];
+    then
+        mv -f "$HOME/$1" "$BACKUP/"
+    fi
+    ln -s "$SCRIPT_DIR/$1" "$HOME/$1"
+}
 
-ln -s "$SCRIPT_DIR/.inputrc" "$HOME/.inputrc"
+backupAndLink .bashrc
+backupAndLink .bash_aliases
+backupAndLink .bash_functions
+backupAndLink .bash_profile
 
-ln -s "$SCRIPT_DIR/.gitconfig" "$HOME/.gitconfig"
-ln -s "$SCRIPT_DIR/.gitignore_global" "$HOME/.gitignore_global"
+backupAndLink .zshrc
 
-if [ -h "$HOME/.vim" ];
-then
-    rm -rf "$HOME/.vim"
-fi
-ln -s "$SCRIPT_DIR/.vimrc" "$HOME/.vimrc"
-ln -s "$SCRIPT_DIR/.vim" "$HOME/.vim"
+backupAndLink .profile
+
+backupAndLink .inputrc
+
+backupAndLink .gitconfig
+backupAndLink .gitignore_global
+
+backupAndLinkDir .vim
+
+backupAndLink .vimrc
 
 cd "${SCRIPT_DIR}"
 git submodule init && git submodule update
+
