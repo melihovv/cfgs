@@ -4,25 +4,44 @@
 @if not exist "%HOME%" @set HOME=%USERPROFILE%
 
 REM Working directory
-set wd=%~dp0
+set WD=%~dp0
 
-mklink "%HOME%.bashrc" "%wd%\.bashrc"
-mklink "%HOME%.bash_aliases" "%wd%\.bash_aliases"
-mklink "%HOME%.bash_functions" "%wd%\.bash_functions"
-mklink "%HOME%.bash_profile" "%wd%\.bash_profile"
+set BACKUP="%WD%backup\"
+if not exist "%BACKUP%" (
+    mkdir %BACKUP%
+)
 
-mklink "%HOME%.zshrc" "%wd%\.zshrc"
+call:backupAndLink .bashrc
+call:backupAndLink .bash_aliases
+call:backupAndLink .bash_functions
+call:backupAndLink .bash_profile
 
-mklink "%HOME%.inputrc" "%wd%\.inputrc"
+call:backupAndLink .zshrc
 
-mklink "%HOME%.profile" "%wd%\.profile"
+call:backupAndLink .inputrc
 
-mklink "%HOME%.gitconfig" "%wd%\.gitconfig"
-mklink "%HOME%.gitignore_global" "%wd%\.gitignore_global"
+call:backupAndLink .profile
 
-mklink "%HOME%.vimrc" "%wd%\.vimrc"
-mklink /D "%HOME%vimfiles" "%wd%.vim\"
+call:backupAndLink .gitconfig
+call:backupAndLink .gitignore_global
 
-cd "%wd%"
+call:backupAndLink .vimrc
+
+if exist "%HOME%\vimfiles" (
+    xcopy "%HOME%\vimfiles" "%BACKUP%\vimfiles" /E /H /R /X /Y /I /K /b
+    rm -r "%HOME%\vimfiles"
+)
+mklink /D "%HOME%\vimfiles" "%WD%.vim\"
+
+cd "%WD%"
 git submodule init && git submodule update
+
+goto:eof
+
+:backupAndLink
+    if exist "%HOME%\%~1" (
+        move /Y "%HOME%\%~1" "%BACKUP%"
+    )
+    mklink "%HOME%\%~1" "%WD%%~1"
+goto:eof
 
