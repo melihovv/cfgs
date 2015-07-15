@@ -19,6 +19,7 @@
 	trustctime = false
 	editor = vim
 	filemode = false
+	excludesfile = ~/.gitignore_global
 [push]
 	default = current
 [color]
