@@ -60,3 +60,4 @@ alias cd=cd_func
 function cs() {
     cd "$@" && ls "-AlF"
 }
+
