@@ -29,8 +29,6 @@ backupAndLink .bash_profile
 
 backupAndLink .zshrc
 
-backupAndLink .profile
-
 backupAndLink .inputrc
 
 backupAndLink .gitconfig

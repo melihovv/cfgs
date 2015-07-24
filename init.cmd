@@ -20,8 +20,6 @@ call:backupAndLink .zshrc
 
 call:backupAndLink .inputrc
 
-call:backupAndLink .profile
-
 call:backupAndLink .gitconfig
 call:backupAndLink .gitignore_global
 
