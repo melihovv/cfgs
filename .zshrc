@@ -14,6 +14,7 @@ ZSH_THEME="babun"
 plugins=(git z)
 
 export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games"
+export LANG=en_US.UTF-8
 
 source $ZSH/oh-my-zsh.sh
 
