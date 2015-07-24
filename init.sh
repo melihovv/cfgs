@@ -29,6 +29,12 @@ backupAndLink .bash_profile
 
 backupAndLink .zshrc
 
+BABUN_THEME="$HOME/.oh-my-zsh/custom/babun.zsh-theme"
+if [ ! -f $BABUN_THEME ]
+then
+    curl https://raw.githubusercontent.com/babun/babun/master/babun-core/plugins/oh-my-zsh/src/babun.zsh-theme > $BABUN_THEME
+fi
+
 backupAndLink .inputrc
 
 backupAndLink .gitconfig
