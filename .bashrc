@@ -42,3 +42,8 @@ if [ -f ~/.bash_functions ]; then
     . ~/.bash_functions
 fi
 
+if [ `uname | grep mingw32 -i` ];
+then
+    export TERM=cygwin
+fi
+
