@@ -6,10 +6,13 @@
 REM Working directory
 set WD=%~dp0
 
-set BACKUP="%WD%backup\"
+set BACKUP="%WD%backup"
 if not exist "%BACKUP%" (
     mkdir %BACKUP%
 )
+
+
+echo Linking dotfiles
 
 call:backupAndLink .bashrc
 call:backupAndLink .bash_aliases
@@ -23,23 +26,58 @@ call:backupAndLink .inputrc
 call:backupAndLink .gitconfig
 call:backupAndLink .gitignore_global
 
-call:backupAndLink .vimrc
 
-if exist "%HOME%\vimfiles" (
-    xcopy "%HOME%\vimfiles" "%BACKUP%\vimfiles" /E /H /R /X /Y /I /K /b
-    rm -r "%HOME%\vimfiles"
-)
-mklink /D "%HOME%\vimfiles" "%WD%.vim\"
+echo Linking vim
+call:backupAndLink .vimrc
+call:backupAndLinkDir "%HOME%\vimfiles" "%BACKUP%\vimfiles" "%WD%.vim"
 
 cd "%WD%"
 git submodule init && git submodule update
 
+
+echo Linking emacs
+set EMACS_DIR="%HOME%\.emacs.d"
+
+if not exist %EMACS_DIR% (
+	mkdir %EMACS_DIR%
+)
+
+call:backupAndLink init.el "%HOME%\.emacs.d" "%WD%emacs\"
+call:backupAndLink Cask "%HOME%\.emacs.d" "%WD%emacs\"
+call:backupAndLinkDir "%HOME%\.emacs.d\snippets" "%WD%backup\snippets" "%WD%emacs\snippets"
+
+echo Calling cask to install emacs packages
+cd /D "%HOME%\.emacs.d"
+cask
+
 goto:eof
+
+
+REM Helpers
 
 :backupAndLink
-    if exist "%HOME%\%~1" (
-        move /Y "%HOME%\%~1" "%BACKUP%"
+	set CUR_DIR="%~2"
+
+	if "%~2"=="" (
+		set CUR_DIR="%HOME%"
+	)
+
+    if exist "%CUR_DIR%\%~1" (
+        move /Y "%CUR_DIR%\%~1" "%BACKUP%"
     )
-    mklink "%HOME%\%~1" "%WD%%~1"
+
+	if "%~2"=="" (
+        mklink "%CUR_DIR%\%~1" "%WD%%~1"
+	) else (
+        mklink "%CUR_DIR%\%~1" "%~3%~1"
+    )
 goto:eof
 
+:backupAndLinkDir
+    if exist "%~1" (
+        xcopy "%~1" "%~2" /E /H /R /X /Y /I /K /b
+        rm -r "%~1"
+    )
+
+    mklink /D "%~1" "%~3"
+goto:eof
