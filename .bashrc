@@ -42,8 +42,11 @@ if [ -f ~/.bash_functions ]; then
     . ~/.bash_functions
 fi
 
-if [ `uname | grep mingw32 -i` ];
-then
+if [ `uname | grep mingw32 -i` ]; then
     export TERM=cygwin
+fi
+
+if [ `uname` == "Linux" ]; then
+    export PATH="$HOME/.cask/bin:$PATH"
 fi
 
