@@ -115,3 +115,4 @@ REM \param Destination path.
 
     mklink "%~2" "%~1"
 goto:eof
+
