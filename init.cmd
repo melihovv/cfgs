@@ -13,7 +13,7 @@ set SCRIPT_DIR=%SCRIPT_DIR:~0,-1%
 REM Make backup folder if it doesn't exist.
 set BACKUP_DIR=%SCRIPT_DIR%\backup
 if not exist "%BACKUP_DIR%" (
-    echo Making backup dir "%BACKUP_DIR%"
+    echo Making backup dir %BACKUP_DIR%
     mkdir "%BACKUP_DIR%"
 )
 
