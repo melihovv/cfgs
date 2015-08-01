@@ -6,4 +6,5 @@ Running `init.(sh|cmd)` will simlink `$HOME/{file}` to `path/to/.dotfiles/{file}
 Requirements:
 - `cask`
 - `org-mode` repo installed in `$HOME/src/`
+- `oh-my-zsh`
 
