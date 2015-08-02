@@ -1,12 +1,17 @@
 #SingleInstance force
 
 evernote = "c:\Users\tadatuta\AppData\Local\Apps\Evernote\Evernote\Evernote.exe"
-npPath = "c:\Program Files (x86)\Notepad++\notepad++.exe"
+tc = "c:\Program Files (x86)\totalcmd\TOTALCMD64.EXE"
 
 
 ; win + f1 - run hotkeys.txt.
 #F1::
     Run, %evernote%
+    return
+
+; win + f2 - run total commander.
+#F2::
+    Run, %tc%
     return
 
 
