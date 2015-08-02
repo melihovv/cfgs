@@ -1,9 +1,0 @@
-[submodule "editors/Vim/.vim/bundle/vim-pathogen"]
-	path = editors/Vim/.vim/bundle/vim-pathogen
-	url = https://github.com/tpope/vim-pathogen.git
-[submodule "editors/Vim/.vim/bundle/nerdtree"]
-	path = editors/Vim/.vim/bundle/nerdtree
-	url = https://github.com/scrooloose/nerdtree.git
-[submodule "editors/Vim/.vim/bundle/vim-plugin-ruscmd"]
-	path = editors/Vim/.vim/bundle/vim-plugin-ruscmd
-	url = https://github.com/powerman/vim-plugin-ruscmd.git
