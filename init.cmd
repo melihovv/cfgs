@@ -45,14 +45,14 @@ if not exist "%EMACS_DIR%" (
 	mkdir "%EMACS_DIR%"
 )
 
-call:backupAndLink "%SCRIPT_DIR%\emacs\init.el" "%HOME%\.emacs.d\init.el"
-call:backupAndLink "%SCRIPT_DIR%\emacs\Cask" "%HOME%\.emacs.d\Cask"
-call:backupAndLinkDir "%SCRIPT_DIR%\emacs\snippets" "%HOME%\.emacs.d\snippets"
+call:backupAndLink "%SCRIPT_DIR%\editors\Emacs\init.el" "%HOME%\.emacs.d\init.el"
+call:backupAndLink "%SCRIPT_DIR%\editors\Emacs\Cask" "%HOME%\.emacs.d\Cask"
+call:backupAndLinkDir "%SCRIPT_DIR%\editors\Emacs\snippets" "%HOME%\.emacs.d\snippets"
 
 
 echo Linking vim
-call:backupAndLink "%SCRIPT_DIR%\.vimrc" "%HOME%\.vimrc"
-call:backupAndLinkDir "%SCRIPT_DIR%\.vim" "%HOME%\vimfiles"
+call:backupAndLink "%SCRIPT_DIR%\editors\Vim\.vimrc" "%HOME%\.vimrc"
+call:backupAndLinkDir "%SCRIPT_DIR%\editors\Vim\.vim" "%HOME%\vimfiles"
 
 echo Installing vim plugins
 cd "%WD%"

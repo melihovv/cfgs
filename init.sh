@@ -56,14 +56,14 @@ if [ ! -d "$EMACS_DIR" ]; then
     mkdir "$EMACS_DIR"
 fi
 
-backupAndLink "$SCRIPT_DIR/emacs/init.el" "$HOME/.emacs.d/init.el"
-backupAndLink "$SCRIPT_DIR/emacs/Cask" "$HOME/.emacs.d/Cask"
-backupAndLink "$SCRIPT_DIR/emacs/snippets" "$HOME/.emacs.d/snippets"
+backupAndLink "$SCRIPT_DIR/editors/Emacs/init.el" "$HOME/.emacs.d/init.el"
+backupAndLink "$SCRIPT_DIR/editors/Emacs/Cask" "$HOME/.emacs.d/Cask"
+backupAndLink "$SCRIPT_DIR/editors/Emacs/snippets" "$HOME/.emacs.d/snippets"
 
 
 echo Linking vim
-backupAndLink "$SCRIPT_DIR/.vimrc" "$HOME/.vimrc"
-backupAndLink "$SCRIPT_DIR/.vim" "$HOME/.vim"
+backupAndLink "$SCRIPT_DIR/editors/Vim/.vimrc" "$HOME/.vimrc"
+backupAndLink "$SCRIPT_DIR/editors/Vim/.vim" "$HOME/.vim"
 
 echo Installing vim plugins
 cd "${SCRIPT_DIR}"
