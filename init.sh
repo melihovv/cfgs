@@ -14,7 +14,7 @@ fi
 # \param Source path.
 # \param Destination path.
 backupAndLink() {
-    if [ -f "$2" ] || [ -d "$2" ]; then
+    if [ -L "$2" ] || [ -f "$2" ] || [ -d "$2" ]; then
         mv -f "$2" "$BACKUP_DIR"
     fi
 
