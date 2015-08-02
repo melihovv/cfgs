@@ -1,0 +1,14 @@
+{
+	"ignored_packages": [],
+	"vintage_start_in_command_mode": true,
+    "translate_tabs_to_spaces": true,
+    "word_wrap": "true",
+    "draw_white_space": "all",
+    "trim_trailing_white_space_on_save": true,
+    "ensure_newline_at_eof_on_save": true,
+    "default_line_ending": "unix",
+    "shift_tab_unindent": true,
+    "highlight_modified_tabs": true,
+    "show_encoding": true,
+    "show_line_endings": true
+}

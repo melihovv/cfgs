@@ -1,0 +1,18 @@
+[
+    {
+        "keys": ["j", "j"],
+        "command": "exit_insert_mode",
+        "context": [
+            {"key": "setting.command_mode", "operand": false},
+            {"key": "setting.is_widget", "operand": false}
+        ]
+    },
+    {
+        "keys": "ctrl+v",
+        "command": "paste_and_indent"
+    },
+    {
+        "keys": "ctrl+shift+v",
+        "command": "paste"
+    }
+]
