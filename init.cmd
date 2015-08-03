@@ -54,8 +54,11 @@ echo Linking vim
 call:backupAndLink "%SCRIPT_DIR%\editors\Vim\.vimrc" "%HOME%\.vimrc"
 call:backupAndLinkDir "%SCRIPT_DIR%\editors\Vim\.vim" "%HOME%\vimfiles"
 
+echo Linking .tmux.conf
+call:backupAndLink "%SCRIPT_DIR%\.tmux.conf" "%HOME%\.tmux.conf"
+
 echo Installing vim plugins
-cd "%WD%"
+cd "%WD%" > NUL
 git submodule init && git submodule update
 
 
