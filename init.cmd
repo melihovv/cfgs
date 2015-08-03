@@ -94,14 +94,14 @@ REM \param Destination path.
         REM /I - if Source is a directory or contains wildcards and Destination does not exist, xcopy assumes destination specifies a directory name and creates a new directory. Then, xcopy copies all specified files into the new directory. By default, xcopy prompts you to specify whether Destination is a file or a directory.
         REM /K - copy files and retains the read-only attribute on destination files if present on the source files. By default, xcopy removes the read-only attribute.
         REM /B - copy symbolic link itself versus the target of the link.
-        xcopy "%~2" "%BACKUP_DIR%\!LAST_DIR!" /E /H /R /X /Y /I /K /B
+        xcopy "%~2" "%BACKUP_DIR%\!LAST_DIR!" /E /H /R /X /Y /I /K /B > NUL
         
         REM -r - delete directory and its content recursively.
-        rm -r "%~2"
+        rm -r "%~2" > NUL
     )
 
     REM /D - creates a directory symbolic link.
-    mklink /D "%~2" "%~1"
+    mklink /D "%~2" "%~1" > NUL
 goto:eof
 
 REM If destination exists backup it, then link destination to source.
@@ -110,9 +110,9 @@ REM \param Destination path.
 :backupAndLink
     if exist "%~2" (
         REM /Y - suppress prompting to confirm you want to overwrite an existing file.
-        move /Y "%~2" "%BACKUP_DIR%"
+        move /Y "%~2" "%BACKUP_DIR%" > NUL
     )
 
-    mklink "%~2" "%~1"
+    mklink "%~2" "%~1" > NUL
 goto:eof
 
