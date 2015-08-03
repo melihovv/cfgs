@@ -9,3 +9,5 @@ alias ll="ls -AlF"
 alias ..="cd .."
 alias ...="cd ../.."
 
+alias tmux="TERM=screen-256color tmux"
+
