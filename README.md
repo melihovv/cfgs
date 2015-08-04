@@ -14,6 +14,7 @@ Configs for:
 - tmux
 - git
 - total commander
+- midnight commander
 - little scripts for launching JetBrains IDE from command line
 - vim
 - emacs
