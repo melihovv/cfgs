@@ -145,6 +145,8 @@ autocmd BufReadPost *
 
 " Normal mode by jj.
 imap jj <Esc>
+imap оо <Esc>
+
 " By space pressing turn off highlight of found patterns and clear all printed
 " messages.
 nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>
