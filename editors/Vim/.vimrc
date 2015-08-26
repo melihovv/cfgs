@@ -5,7 +5,7 @@ set nocompatible
 runtime bundle/vim-pathogen/autoload/pathogen.vim
 silent! execute pathogen#infect()
 
-" Set size of indentation and load plugins, depending on the file type. 
+" Set size of indentation and load plugins, depending on the file type.
 filetype indent plugin on
 
 " Highlight file syntax.
@@ -26,6 +26,45 @@ autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 " Close vim if the only window left open is a NERDTree.
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 
+let g:airline_powerline_fonts = 1
+
+if !exists('g:airline_symbols')
+    let g:airline_symbols = {}
+endif
+
+" Unicode symbols.
+let g:airline_left_sep = ''
+let g:airline_left_sep = ''
+let g:airline_right_sep = ''
+let g:airline_right_sep = ''
+let g:airline_symbols.crypt = ''
+let g:airline_symbols.linenr = ''
+let g:airline_symbols.linenr = ''
+let g:airline_symbols.linenr = ''
+let g:airline_symbols.branch = ''
+let g:airline_symbols.paste = ''
+let g:airline_symbols.paste = ''
+let g:airline_symbols.paste = ''
+let g:airline_symbols.whitespace = ''
+
+" Powerline symbols.
+let g:airline_left_sep = ''
+let g:airline_left_alt_sep = ''
+let g:airline_right_sep = ''
+let g:airline_right_alt_sep = ''
+let g:airline_symbols.branch = ''
+let g:airline_symbols.readonly = ''
+let g:airline_symbols.linenr = ''
+
+" Old vim-powerline symbols
+let g:airline_left_sep = ''
+let g:airline_left_alt_sep = ''
+let g:airline_right_sep = ''
+let g:airline_right_alt_sep = ''
+let g:airline_symbols.branch = ''
+let g:airline_symbols.readonly = ''
+let g:airline_symbols.linenr = ''
+
 " Start gvim in fullscreen.
 if has("gui_running")
    au GUIEnter * simalt ~x
@@ -39,6 +78,8 @@ set guioptions-=L
 
 " How to store symbols into Vim.
 set encoding=utf-8
+" How to write files.
+set fileencoding=utf-8
 " List of file encodings for auto detect.
 set fileencodings=utf-8,cp1251,koi8-r,cp866
 " List of file formats.
