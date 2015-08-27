@@ -11,6 +11,12 @@ filetype indent plugin on
 " Highlight file syntax.
 syntax enable
 
+
+"
+" PLUGINS
+"
+
+" NerdTree
 " Close NERDTree bar on file open.
 let NERDTreeQuitOnOpen = 0
 nnoremap <Leader>d :let NERDTreeQuitOnOpen = 1<bar>NERDTreeToggle<CR>
@@ -26,6 +32,8 @@ autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 " Close vim if the only window left open is a NERDTree.
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 
+
+" vim-airline
 let g:airline_powerline_fonts = 1
 
 if !exists('g:airline_symbols')
@@ -65,6 +73,12 @@ let g:airline_symbols.branch = ''
 let g:airline_symbols.readonly = ''
 let g:airline_symbols.linenr = ''
 
+
+"
+" Misc.
+"
+
+" Gvim.
 " Start gvim in fullscreen.
 if has("gui_running")
    au GUIEnter * simalt ~x
@@ -75,6 +89,7 @@ set guioptions-=m
 set guioptions-=T
 set guioptions-=r
 set guioptions-=L
+
 
 " How to store symbols into Vim.
 set encoding=utf-8
@@ -184,6 +199,17 @@ autocmd BufReadPost *
   \   exe "normal g`\"" |
   \ endif
 
+" Add vertical line after textwidth
+set colorcolumn=+1
+
+" Theme.
+colorscheme monokai
+
+
+"
+" Mappings.
+"
+
 " Normal mode by jj.
 imap jj <Esc>
 imap оо <Esc>
@@ -191,10 +217,4 @@ imap оо <Esc>
 " By space pressing turn off highlight of found patterns and clear all printed
 " messages.
 nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>
-
-" Add vertical line after textwidth
-set colorcolumn=+1
-
-" Theme.
-colorscheme monokai
 
