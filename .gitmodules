@@ -16,3 +16,6 @@
 [submodule "editors/Vim/.vim/bundle/vim-monokai"]
 	path = editors/Vim/.vim/bundle/vim-monokai
 	url = https://github.com/crusoexia/vim-monokai.git
+[submodule "editors/Vim/.vim/bundle/nerdcommenter"]
+	path = editors/Vim/.vim/bundle/nerdcommenter
+	url = https://github.com/scrooloose/nerdcommenter
