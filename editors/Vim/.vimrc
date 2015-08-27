@@ -195,3 +195,6 @@ nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>
 " Add vertical line after textwidth
 set colorcolumn=+1
 
+" Theme.
+colorscheme monokai
+

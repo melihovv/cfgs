@@ -13,3 +13,6 @@
 [submodule "editors/Vim/.vim/bundle/vim-latex"]
 	path = editors/Vim/.vim/bundle/vim-latex
 	url = https://github.com/vim-latex/vim-latex.git
+[submodule "editors/Vim/.vim/bundle/vim-monokai"]
+	path = editors/Vim/.vim/bundle/vim-monokai
+	url = https://github.com/crusoexia/vim-monokai.git
