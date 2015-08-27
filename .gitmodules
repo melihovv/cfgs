@@ -10,3 +10,6 @@
 [submodule "editors/Vim/.vim/bundle/vim-airline"]
 	path = editors/Vim/.vim/bundle/vim-airline
 	url = https://github.com/bling/vim-airline.git
+[submodule "editors/Vim/.vim/bundle/vim-latex"]
+	path = editors/Vim/.vim/bundle/vim-latex
+	url = https://github.com/vim-latex/vim-latex.git
