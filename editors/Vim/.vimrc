@@ -133,8 +133,8 @@ set autoindent
 " Insert additional level of indentation in some cases.
 set smartindent
 
-" Don't wrap long line.
-set nowrap
+" Wrap long line.
+set wrap
 
 " Show lines number.
 set number
