@@ -19,3 +19,6 @@
 [submodule "editors/Vim/.vim/bundle/nerdcommenter"]
 	path = editors/Vim/.vim/bundle/nerdcommenter
 	url = https://github.com/scrooloose/nerdcommenter
+[submodule "editors/Vim/.vim/bundle/ctrlp.vim"]
+	path = editors/Vim/.vim/bundle/ctrlp.vim
+	url = https://github.com/kien/ctrlp.vim
