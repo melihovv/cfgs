@@ -206,7 +206,8 @@ autocmd BufReadPost *
   \ endif
 
 " Add vertical line after textwidth
-set colorcolumn=+1
+"set colorcolumn=+1
+set colorcolumn=80
 
 " Theme.
 colorscheme monokai
