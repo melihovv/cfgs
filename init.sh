@@ -5,7 +5,7 @@ SCRIPT_DIR="`dirname "${SCRIPT_PATH}"`"
 
 BACKUP_DIR=$SCRIPT_DIR/backup
 if [ ! -d "$BACKUP_DIR" ]; then
-    echo Making backup dir $BACKUP_DIR
+    echo "${RED} Making backup dir $BACKUP_DIR ${NC}"
     mkdir -p $BACKUP_DIR
 fi
 
@@ -21,38 +21,59 @@ backupAndLink() {
     ln -s "$1" "$2"
 }
 
+# Color output.
+GREEN='\033[0;32m'
+NC='\033[0m'
+myEcho() {
+    printf "${GREEN}$1${NC}\n"
+}
 
-echo Linking dotfiles
 
-echo Linking .bash*
-backupAndLink "$SCRIPT_DIR/.bashrc" "$HOME/.bashrc"
-backupAndLink "$SCRIPT_DIR/.bash_aliases" "$HOME/.bash_aliases"
-backupAndLink "$SCRIPT_DIR/.bash_functions" "$HOME/.bash_functions"
-backupAndLink "$SCRIPT_DIR/.bash_profile" "$HOME/.bash_profile"
+myEcho "Linking dotfiles"
 
-echo Linking .zshrc
-backupAndLink "$SCRIPT_DIR/.zshrc" "$HOME/.zshrc"
+myEcho "Linking .bash*"
+backupAndLink "$SCRIPT_DIR/shells/bash/.bashrc" "$HOME/.bashrc"
+backupAndLink "$SCRIPT_DIR/shells/bash/.bash_aliases" "$HOME/.bash_aliases"
+backupAndLink "$SCRIPT_DIR/shells/bash/.bash_functions" "$HOME/.bash_functions"
+backupAndLink "$SCRIPT_DIR/shells/bash/.bash_profile" "$HOME/.bash_profile"
+
+
+myEcho "Installing zsh"
+sudo apt-get install zsh
+
+if [ ! -d "$HOME/.oh-my-zsh" ];
+then
+    myEcho "Download oh-my-zsh"
+    sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+fi
+
+myEcho "Linking .zshrc"
+backupAndLink "$SCRIPT_DIR/shells/zsh/.zshrc" "$HOME/.zshrc"
 
 BABUN_THEME="$HOME/.oh-my-zsh/custom/babun.zsh-theme"
 if [ ! -f $BABUN_THEME ];
 then
-    echo Download babun oh-my-zsh theme
+    myEcho "Download babun oh-my-zsh theme"
     curl https://raw.githubusercontent.com/babun/babun/master/babun-core/plugins/oh-my-zsh/src/babun.zsh-theme > $BABUN_THEME
 fi
 
-echo Linking .inputrc
+
+myEcho "Linking .inputrc"
 backupAndLink "$SCRIPT_DIR/.inputrc" "$HOME/.inputrc"
 
-echo Linking .git*
-backupAndLink "$SCRIPT_DIR/.gitconfig" "$HOME/.gitconfig"
-backupAndLink "$SCRIPT_DIR/.gitignore_global" "$HOME/.gitignore_global"
+myEcho "Linking .tmux.conf"
+backupAndLink "$SCRIPT_DIR/.tmux.conf" "$HOME/.tmux.conf"
+
+myEcho "Linking .git*"
+backupAndLink "$SCRIPT_DIR/git/.gitconfig" "$HOME/.gitconfig"
+backupAndLink "$SCRIPT_DIR/git/.gitignore_global" "$HOME/.gitignore_global"
 
 
-echo Linking emacs
+myEcho "Linking emacs"
 EMACS_DIR=$HOME/.emacs.d
 
 if [ ! -d "$EMACS_DIR" ]; then
-    echo Making emacs dir %EMACS_DIR%
+    myEcho "Making emacs dir $EMACS_DIR"
     mkdir "$EMACS_DIR"
 fi
 
@@ -61,19 +82,15 @@ backupAndLink "$SCRIPT_DIR/editors/Emacs/Cask" "$HOME/.emacs.d/Cask"
 backupAndLink "$SCRIPT_DIR/editors/Emacs/snippets" "$HOME/.emacs.d/snippets"
 
 
-echo Linking vim
+myEcho "Linking vim"
 backupAndLink "$SCRIPT_DIR/editors/Vim/.vimrc" "$HOME/.vimrc"
 backupAndLink "$SCRIPT_DIR/editors/Vim/.vim" "$HOME/.vim"
 
-echo Linking .tmux.conf
-backupAndLink "$SCRIPT_DIR/.tmux.conf" "$HOME/.tmux.conf"
-
-echo Installing vim plugins
+myEcho "Installing vim plugins"
 cd "${SCRIPT_DIR}"
 git submodule init && git submodule update
 
-# Cask is calling last because it creates new process.
-echo Calling cask to install emacs packages
-cd "$HOME/.emacs.d"
-cask
+#myEcho "Calling cask to install emacs packages"
+#cd "$HOME/.emacs.d"
+#cask
 

@@ -21,20 +21,23 @@ if not exist "%BACKUP_DIR%" (
 echo Linking dotfiles
 
 echo Linking .bash*
-call:backupAndLink "%SCRIPT_DIR%\.bashrc" "%HOME%\.bashrc"
-call:backupAndLink "%SCRIPT_DIR%\.bash_aliases" "%HOME%\.bash_aliases"
-call:backupAndLink "%SCRIPT_DIR%\.bash_functions" "%HOME%\.bash_functions"
-call:backupAndLink "%SCRIPT_DIR%\.bash_profile" "%HOME%\.bash_profile"
+call:backupAndLink "%SCRIPT_DIR%\shells\bash\.bashrc" "%HOME%\.bashrc"
+call:backupAndLink "%SCRIPT_DIR%\shells\bash\.bash_aliases" "%HOME%\.bash_aliases"
+call:backupAndLink "%SCRIPT_DIR%\shells\bash\.bash_functions" "%HOME%\.bash_functions"
+call:backupAndLink "%SCRIPT_DIR%\shells\bash\.bash_profile" "%HOME%\.bash_profile"
 
 echo Linking .zshrc
-call:backupAndLink "%SCRIPT_DIR%\.zshrc" "%HOME%\.zshrc"
+call:backupAndLink "%SCRIPT_DIR%\shells\zsh\.zshrc" "%HOME%\.zshrc"
 
 echo Linking .inputrc
 call:backupAndLink "%SCRIPT_DIR%\.inputrc" "%HOME%\.inputrc"
 
+echo Linking .tmux.conf
+call:backupAndLink "%SCRIPT_DIR%\.tmux.conf" "%HOME%\.tmux.conf"
+
 echo Linking .git*
-call:backupAndLink "%SCRIPT_DIR%\.gitconfig" "%HOME%\.gitconfig"
-call:backupAndLink "%SCRIPT_DIR%\.gitignore_global" "%HOME%\.gitignore_global"
+call:backupAndLink "%SCRIPT_DIR%\git\.gitconfig" "%HOME%\.gitconfig"
+call:backupAndLink "%SCRIPT_DIR%\git\.gitignore_global" "%HOME%\.gitignore_global"
 
 
 echo Linking emacs
@@ -54,15 +57,11 @@ echo Linking vim
 call:backupAndLink "%SCRIPT_DIR%\editors\Vim\.vimrc" "%HOME%\.vimrc"
 call:backupAndLinkDir "%SCRIPT_DIR%\editors\Vim\.vim" "%HOME%\vimfiles"
 
-echo Linking .tmux.conf
-call:backupAndLink "%SCRIPT_DIR%\.tmux.conf" "%HOME%\.tmux.conf"
-
 echo Installing vim plugins
 cd "%WD%" > NUL
 git submodule init && git submodule update
 
 
-REM Cask is calling last because it creates new process.
 echo Calling cask to install emacs packages
 cd /D "%HOME%\.emacs.d"
 cask
