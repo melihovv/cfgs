@@ -31,11 +31,10 @@ myEcho() {
 
 myEcho "Linking dotfiles"
 
-myEcho "Linking .bash*"
-backupAndLink "$SCRIPT_DIR/shells/bash/.bashrc" "$HOME/.bashrc"
-backupAndLink "$SCRIPT_DIR/shells/bash/.bash_aliases" "$HOME/.bash_aliases"
-backupAndLink "$SCRIPT_DIR/shells/bash/.bash_functions" "$HOME/.bash_functions"
-backupAndLink "$SCRIPT_DIR/shells/bash/.bash_profile" "$HOME/.bash_profile"
+myEcho "Installing bash-it"
+git clone --depth=1 https://github.com/Bash-it/bash-it.git ~/.bash_it
+. ~/.bash-it/install.sh
+backupAndLink "$SCRIPT_DIR/shells/bash/.bash_aliases" "$HOME/.bash_it/aliases/custom.aliases.bash"
 
 
 myEcho "Installing zsh"
@@ -90,7 +89,7 @@ myEcho "Installing vim plugins"
 cd "${SCRIPT_DIR}"
 git submodule init && git submodule update
 
-#myEcho "Calling cask to install emacs packages"
-#cd "$HOME/.emacs.d"
-#cask
+myEcho "Calling cask to install emacs packages"
+cd "$HOME/.emacs.d"
+cask
 
