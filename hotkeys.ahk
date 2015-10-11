@@ -2,6 +2,7 @@
 
 evernote = "c:\Users\tadatuta\AppData\Local\Apps\Evernote\Evernote\Evernote.exe"
 tc = "c:\Program Files (x86)\totalcmd\TOTALCMD64.EXE"
+dpPath = %ProgramFiles%\Dexpot\dexpot.exe
 
 
 ; win + f1 - run hotkeys.txt.
@@ -15,17 +16,45 @@ tc = "c:\Program Files (x86)\totalcmd\TOTALCMD64.EXE"
     return
 
 
-<!Capslock::Capslock
+; Control instead of capslock.
 Capslock::Control
+
+;;;;;;; Dexpot ;;;;;;;
+
+; control + alt + 1 - switch desktop 1.
+if WinExist("ahk_exe dexpot.exe")
+    ^!1::Send #^!1
+    return
+
+if WinExist("ahk_exe dexpot.exe")
+    ^!2::Send #^!2
+    return
+
+if WinExist("ahk_exe dexpot.exe")
+    ^!3::Send #^!3
+    return
+
+; control + alt + shift + 1 - move window to desktop 1.
+if WinExist("ahk_exe dexpot.exe")
+    ^!+1::Send #^!+1
+    return
+
+if WinExist("ahk_exe dexpot.exe")
+    ^!+2::Send #^!+2
+    return
+
+if WinExist("ahk_exe dexpot.exe")
+    ^!+3::Send #^!+3
+    return
 
 
 ;;;;;;; PDF-X Viewer ;;;;;;;
 #IfWinActive ahk_class DSUI:PDFXCViewer
-    !j::Send {Down}
+    >!j::Send {Down}
     return
 
 #IfWinActive ahk_class DSUI:PDFXCViewer
-    !k::Send {Up}
+    >!k::Send {Up}
     return
 
 
@@ -84,3 +113,4 @@ Capslock::Control
 #IfWinActive, ahk_class TTOTAL_CMD
     !+^c::PostMessage, 0x433, 907,,, ahk_class TTOTAL_CMD
     return
+
