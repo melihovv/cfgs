@@ -69,6 +69,16 @@ if WinExist("ahk_exe dexpot.exe")
     <!k::Send, {Up}
     return
 
+; lalt + l - enter.
+#IfWinActive, ahk_class TTOTAL_CMD
+    <!l::Send, {Enter}
+    return
+
+; lalt + h - backspace.
+#IfWinActive, ahk_class TTOTAL_CMD
+    <!h::Send, {Backspace}
+    return
+
 ; alt + shift + j - pgdown.
 #IfWinActive, ahk_class TTOTAL_CMD
     !+j::Send, {PGDN}
