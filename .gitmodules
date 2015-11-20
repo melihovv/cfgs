@@ -31,3 +31,6 @@
 [submodule "editors/Vim/.vim/bundle/vim-repeat"]
 	path = editors/Vim/.vim/bundle/vim-repeat
 	url = https://github.com/tpope/vim-repeat
+[submodule "editors/Vim/.vim/bundle/vim-fugitive"]
+	path = editors/Vim/.vim/bundle/vim-fugitive
+	url = https://github.com/tpope/vim-fugitive
