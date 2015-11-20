@@ -28,3 +28,6 @@
 [submodule "editors/Vim/.vim/bundle/vim-surround"]
 	path = editors/Vim/.vim/bundle/vim-surround
 	url = https://github.com/tpope/vim-surround.git
+[submodule "editors/Vim/.vim/bundle/vim-repeat"]
+	path = editors/Vim/.vim/bundle/vim-repeat
+	url = https://github.com/tpope/vim-repeat
