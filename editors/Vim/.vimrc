@@ -265,6 +265,9 @@ set colorcolumn=80
 " Theme.
 colorscheme monokai
 
+" Put a '$' at the end of the changed text.
+set cpoptions+=$
+
 
 "
 " Mappings.
