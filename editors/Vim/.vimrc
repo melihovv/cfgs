@@ -86,6 +86,41 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#fnamemod = ':t'
 
 
+" CtrlP
+" Setup some default ignores.
+let g:ctrlp_custom_ignore = {
+  \ 'dir':  '\v[\/](\.(git|hg|svn)|\_site)$',
+  \ 'file': '\v\.(exe|so|dll|class|png|jpg|jpeg)$',
+\}
+
+" Use the nearest .git directory as the cwd.
+" This makes a lot of sense if you are working on a project that is in
+" version control. It also supports works with .svn, .hg, .bzr.
+let g:ctrlp_working_path_mode = 'r'
+
+" Easy bindings for its various modes.
+nmap <leader>bb :CtrlPBuffer<cr>
+nmap <leader>bm :CtrlPMixed<cr>
+nmap <leader>bs :CtrlPMRU<cr>
+
+
+"
+" Misc.
+"
+
+" Gvim.
+" Start gvim in fullscreen.
+if has("gui_running")
+   au GUIEnter * simalt ~x
+endif
+
+" Remove menu bar, toolbar, right-hand and left-hand scroll bar.
+set guioptions-=m
+set guioptions-=T
+set guioptions-=r
+set guioptions-=L
+
+
 "
 " Buffers.
 "
@@ -110,23 +145,6 @@ nmap <leader>bq :bp <BAR> bd #<CR>
 
 " Show all open buffers and their status.
 nmap <leader>bl :ls<CR>
-
-
-"
-" Misc.
-"
-
-" Gvim.
-" Start gvim in fullscreen.
-if has("gui_running")
-   au GUIEnter * simalt ~x
-endif
-
-" Remove menu bar, toolbar, right-hand and left-hand scroll bar.
-set guioptions-=m
-set guioptions-=T
-set guioptions-=r
-set guioptions-=L
 
 
 " How to store symbols into Vim.
