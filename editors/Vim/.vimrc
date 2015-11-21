@@ -81,6 +81,9 @@ let g:airline_symbols.linenr = ''
 
 " Enable the list of buffers
 let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#show_buffers = 1
+let g:airline#extensions#tabline#buffer_nr_show = 1
+let g:airline#extensions#tabline#show_close_button = 0
 
 " Show just the filename
 let g:airline#extensions#tabline#fnamemod = ':t'
