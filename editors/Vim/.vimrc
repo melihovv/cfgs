@@ -268,6 +268,9 @@ colorscheme monokai
 " Put a '$' at the end of the changed text.
 set cpoptions+=$
 
+" Allow virtual space.
+set virtualedit=all
+
 
 "
 " Mappings.
