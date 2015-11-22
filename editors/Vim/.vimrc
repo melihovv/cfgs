@@ -284,3 +284,9 @@ imap оо <Esc>
 " messages.
 nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>
 
+" Source $MYVIMRC when it is changed.
+augroup vimscript
+    autocmd!
+    autocmd BufWritePost $MYVIMRC source $MYVIMRC
+augroup END
+
