@@ -191,6 +191,8 @@ set wrap
 
 " Show lines number.
 set number
+" Show relative lines numbers.
+set relativenumber
 " Highlight current line.
 set cursorline
 " Turn of screen blinking and beep when displaying errors.
