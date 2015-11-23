@@ -244,9 +244,8 @@ set history=1000
 set undolevels=1000
 
 " In order the cursor always be in the middle.
-set scrolljump=7
-set scrolloff=10
-set sidescrolloff=10
+set scrolloff=5
+set sidescrolloff=5
 set sidescroll=1
 
 " Hide unsaved file when opening another file.
