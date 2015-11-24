@@ -188,6 +188,9 @@ set smartindent
 
 " Wrap long line.
 set wrap
+" Break long line at a character in 'breakat' rather than at the last
+" character that fits on the screen.
+set linebreak
 
 " Show lines number.
 set number
