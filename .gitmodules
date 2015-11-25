@@ -34,3 +34,6 @@
 [submodule "editors/Vim/.vim/bundle/vim-fugitive"]
 	path = editors/Vim/.vim/bundle/vim-fugitive
 	url = https://github.com/tpope/vim-fugitive
+[submodule "editors/Vim/.vim/bundle/vim-easymotion"]
+	path = editors/Vim/.vim/bundle/vim-easymotion
+	url = https://github.com/easymotion/vim-easymotion

@@ -107,6 +107,13 @@ nmap <leader>bm :CtrlPMixed<cr>
 nmap <leader>bs :CtrlPMRU<cr>
 
 
+" EasyMotion
+" Smart case matching.
+let g:EasyMotion_smartcase = 1
+" Bidirectional searching.
+nmap <leader><leader>f <Plug>(easymotion-s)
+
+
 "
 " Misc.
 "
