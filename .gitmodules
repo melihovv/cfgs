@@ -46,3 +46,6 @@
 [submodule "editors/Vim/.vim/bundle/vim-speeddating"]
 	path = editors/Vim/.vim/bundle/vim-speeddating
 	url = https://github.com/tpope/vim-speeddating
+[submodule "editors/Vim/.vim/bundle/utl"]
+	path = editors/Vim/.vim/bundle/utl
+	url = https://github.com/vim-scripts/utl.vim
