@@ -279,3 +279,9 @@ let g:EasyMotion_smartcase = 1
 "                                                     Bidirectional searching.
 nmap <leader><leader>f <Plug>(easymotion-s)
 
+" EasyAlign ------------------------------------------------------------------
+"                                  Start interactive EasyAlign in visual mode.
+xmap ga <Plug>(EasyAlign)
+"                        Start interactive EasyAlign for a motion/text object.
+nmap ga <Plug>(EasyAlign)
+
