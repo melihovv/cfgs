@@ -149,10 +149,8 @@ if has("gui_running")
    autocmd GUIEnter * simalt ~x
 endif
 "                                                   Save position before exit.
-autocmd BufReadPost *
-  \if line("'\"") > 0 && line("'\"") <= line("$") |
-  \  exe "normal g`\"" |
-  \endif
+autocmd BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")
+    \| exe "normal g`\"" | endif
 "                                          Source $MYVIMRC when it is changed.
 augroup vimscript
     autocmd!
@@ -177,6 +175,13 @@ imap jj <Esc>
 imap оо <Esc>
 "         Turn off highlight of found patterns and clear all printed messages.
 nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>
+"                                                                  Fullscreen.
+if has('win32')
+    if filereadable($ProgramFiles . '/Vim/vim74/gvimfullscreen.dll')
+        map <F11> <Esc>:call 
+                    \libcallnr("gvimfullscreen.dll", "ToggleFullScreen", 0)<CR>
+    endif
+endif
 
 
 " plugins --------------------------------------------------------------------
