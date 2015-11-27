@@ -156,6 +156,14 @@ augroup vimscript
     autocmd!
     autocmd BufWritePost .vimrc source $MYVIMRC
 augroup END
+"                                                 Remove trailing whitespaces.
+function! TrimWhiteSpace()
+    %s/\s\+$//e
+endfunction
+autocmd FileWritePre    * :call TrimWhiteSpace()
+autocmd FileAppendPre   * :call TrimWhiteSpace()
+autocmd FilterWritePre  * :call TrimWhiteSpace()
+autocmd BufWritePre     * :call TrimWhiteSpace()
 
 
 " mappings -------------------------------------------------------------------
@@ -180,8 +188,8 @@ nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>
 "                                                                  Fullscreen.
 if has('win32')
     if filereadable($ProgramFiles . '/Vim/vim74/gvimfullscreen.dll')
-        noremap <F11> <Esc>:call 
-                    \libcallnr("gvimfullscreen.dll", "ToggleFullScreen", 0)<CR>
+        noremap <F11> <Esc>:call libcallnr("gvimfullscreen.dll",
+                    \"ToggleFullScreen", 0)<CR>
     endif
 endif
 
