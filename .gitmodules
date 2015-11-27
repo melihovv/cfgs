@@ -49,3 +49,15 @@
 [submodule "editors/Vim/.vim/bundle/utl"]
 	path = editors/Vim/.vim/bundle/utl
 	url = https://github.com/vim-scripts/utl.vim
+[submodule "editors/Vim/.vim/bundle/tlib_vim"]
+	path = editors/Vim/.vim/bundle/tlib_vim
+	url = https://github.com/tomtom/tlib_vim.git
+[submodule "editors/Vim/.vim/bundle/vim-addon-mw-utils"]
+	path = editors/Vim/.vim/bundle/vim-addon-mw-utils
+	url = https://github.com/MarcWeber/vim-addon-mw-utils.git
+[submodule "editors/Vim/.vim/bundle/vim-snipmate"]
+	path = editors/Vim/.vim/bundle/vim-snipmate
+	url = https://github.com/garbas/vim-snipmate.git
+[submodule "editors/Vim/.vim/bundle/vim-snippets"]
+	path = editors/Vim/.vim/bundle/vim-snippets
+	url = https://github.com/honza/vim-snippets.git
