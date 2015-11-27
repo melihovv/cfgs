@@ -173,6 +173,8 @@ noremap <leader>bl :ls<CR>
 inoremap jj <Esc>
 "                                                 Normal mode by оо (Russian).
 inoremap оо <Esc>
+"                                                            Turn off Ex mode.
+nnoremap Q <nop>
 "         Turn off highlight of found patterns and clear all printed messages.
 nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>
 "                                                                  Fullscreen.
