@@ -160,25 +160,25 @@ augroup END
 
 " mappings -------------------------------------------------------------------
 "                                                  To open a new empty buffer.
-nmap <leader>T :enew<cr>
+nnoremap <leader>T :enew<cr>
 "                                                     Move to the next buffer.
-nmap <leader>l :bnext<CR>
+noremap <leader>l :bnext<CR>
 "                                                 Move to the previous buffer.
-nmap <leader>h :bprevious<CR>
+noremap <leader>h :bprevious<CR>
 "                       Close the current buffer and move to the previous one.
-nmap <leader>bq :bp <BAR> bd #<CR>
+noremap <leader>bq :bp <BAR> bd #<CR>
 "                                      Show all open buffers and their status.
-nmap <leader>bl :ls<CR>
+noremap <leader>bl :ls<CR>
 "                                                           Normal mode by jj.
-imap jj <Esc>
+inoremap jj <Esc>
 "                                                 Normal mode by оо (Russian).
-imap оо <Esc>
+inoremap оо <Esc>
 "         Turn off highlight of found patterns and clear all printed messages.
 nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>
 "                                                                  Fullscreen.
 if has('win32')
     if filereadable($ProgramFiles . '/Vim/vim74/gvimfullscreen.dll')
-        map <F11> <Esc>:call 
+        noremap <F11> <Esc>:call 
                     \libcallnr("gvimfullscreen.dll", "ToggleFullScreen", 0)<CR>
     endif
 endif
@@ -273,20 +273,20 @@ let g:ctrlp_custom_ignore = {
 "                                   Use the nearest .git directory as the cwd.
 let g:ctrlp_working_path_mode = 'r'
 "                                         Easy bindings for its various modes.
-nmap <leader>bb :CtrlPBuffer<cr>
-nmap <leader>bm :CtrlPMixed<cr>
-nmap <leader>bs :CtrlPMRU<cr>
+noremap <leader>bb :CtrlPBuffer<cr>
+noremap <leader>bm :CtrlPMixed<cr>
+noremap <leader>bs :CtrlPMRU<cr>
 
 
 " EasyMotion -----------------------------------------------------------------
 "                                                         Smart case matching.
 let g:EasyMotion_smartcase = 1
 "                                                     Bidirectional searching.
-nmap <leader><leader>f <Plug>(easymotion-s)
+noremap <leader><leader>f <Plug>(easymotion-s)
 
 " EasyAlign ------------------------------------------------------------------
 "                                  Start interactive EasyAlign in visual mode.
-xmap ga <Plug>(EasyAlign)
+xnoremap ga <Plug>(EasyAlign)
 "                        Start interactive EasyAlign for a motion/text object.
-nmap ga <Plug>(EasyAlign)
+noremap ga <Plug>(EasyAlign)
 
