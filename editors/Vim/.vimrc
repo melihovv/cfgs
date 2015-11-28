@@ -144,26 +144,29 @@ filetype indent plugin on
 syntax enable
 "                                                                       Theme.
 colorscheme monokai
-"                                                    Start gvim in fullscreen.
-if has("gui_running")
-   autocmd GUIEnter * simalt ~x
-endif
-"                                                   Save position before exit.
-autocmd BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")
-    \| exe "normal g`\"" | endif
-"                                          Source $MYVIMRC when it is changed.
-augroup vimscript
+augroup misc
     autocmd!
-    autocmd BufWritePost .vimrc source $MYVIMRC
-augroup END
+"                                                    Start gvim in fullscreen.
+    if has("gui_running")
+       autocmd GUIEnter * simalt ~x
+    endif
+"                                                   Save position before exit.
+    autocmd BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")
+        \| exe "normal g`\"" | endif
+"                                          Source $MYVIMRC when it is changed.
+    augroup vimscript
+        autocmd!
+        autocmd BufWritePost .vimrc source $MYVIMRC
+    augroup END
 "                                                 Remove trailing whitespaces.
-function! TrimWhiteSpace()
-    %s/\s\+$//e
-endfunction
-autocmd FileWritePre    * :call TrimWhiteSpace()
-autocmd FileAppendPre   * :call TrimWhiteSpace()
-autocmd FilterWritePre  * :call TrimWhiteSpace()
-autocmd BufWritePre     * :call TrimWhiteSpace()
+    function! TrimWhiteSpace()
+        %s/\s\+$//e
+    endfunction
+    autocmd FileWritePre    * :call TrimWhiteSpace()
+    autocmd FileAppendPre   * :call TrimWhiteSpace()
+    autocmd FilterWritePre  * :call TrimWhiteSpace()
+    autocmd BufWritePre     * :call TrimWhiteSpace()
+augroup END
 
 
 " mappings -------------------------------------------------------------------
@@ -205,23 +208,29 @@ let NERDTreeShowHidden=1
 "                                                         Toggle NerdTree bar.
 nnoremap <Leader>d :let NERDTreeQuitOnOpen = 1<bar>NERDTreeToggle<CR>
 nnoremap <Leader>D :let NERDTreeQuitOnOpen = 0<bar>NERDTreeToggle<CR>
+augroup NerdTree
+    autocmd!
 "    Open a NERDTree automatically when vim starts if no files were specified.
-autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+    autocmd StdinReadPre * let s:std_in=1
+    autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 "                      Close vim if the only window left opened is a NerdTree.
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType")
-    \&& b:NERDTreeType == "primary") | q | endif
+    autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType")
+        \&& b:NERDTreeType == "primary") | q | endif
+augroup END
 
 
 " vim-latex ------------------------------------------------------------------
 "                                                           Default file type.
 let g:tex_flavor='latex'
+augroup latex
+    autocmd!
 "                                                          Compile latex file.
-autocmd FileType tex call Tex_MakeMap("<Leader>ll",
-            \":w <CR> <Plug>Tex_Compile", 'n', '<buffer>')
+    autocmd FileType tex call Tex_MakeMap("<Leader>ll",
+                \":w <CR> <Plug>Tex_Compile", 'n', '<buffer>')
 "                                                                    View pdf.
-autocmd FileType tex call Tex_MakeMap("<Leader>ll",
-            \"<ESC> :w <CR> <Plug>Tex_Compile", 'v', '<buffer>')
+    autocmd FileType tex call Tex_MakeMap("<Leader>ll",
+                \"<ESC> :w <CR> <Plug>Tex_Compile", 'v', '<buffer>')
+augroup END
 
 
 " vim-airline ----------------------------------------------------------------
