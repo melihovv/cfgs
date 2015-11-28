@@ -192,6 +192,8 @@ if has('win32')
                     \"ToggleFullScreen", 0)<CR>
     endif
 endif
+"                                                                 Edit .vimrc.
+nnoremap <leader>ev :vsplit $MYVIMRC<cr>
 
 
 " plugins --------------------------------------------------------------------
