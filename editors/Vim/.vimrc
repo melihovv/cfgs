@@ -170,13 +170,13 @@ autocmd BufWritePre     * :call TrimWhiteSpace()
 "                                                  To open a new empty buffer.
 nnoremap <leader>T :enew<cr>
 "                                                     Move to the next buffer.
-noremap <leader>l :bnext<CR>
+nnoremap <leader>l :bnext<CR>
 "                                                 Move to the previous buffer.
-noremap <leader>h :bprevious<CR>
+nnoremap <leader>h :bprevious<CR>
 "                       Close the current buffer and move to the previous one.
-noremap <leader>bq :bp <BAR> bd #<CR>
+nnoremap <leader>bq :bp <BAR> bd #<CR>
 "                                      Show all open buffers and their status.
-noremap <leader>bl :ls<CR>
+nnoremap <leader>bl :ls<CR>
 "                                                           Normal mode by jj.
 inoremap jj <Esc>
 "                                                 Normal mode by оо (Russian).
@@ -188,7 +188,7 @@ nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>
 "                                                                  Fullscreen.
 if has('win32')
     if filereadable($ProgramFiles . '/Vim/vim74/gvimfullscreen.dll')
-        noremap <F11> <Esc>:call libcallnr("gvimfullscreen.dll",
+        nnoremap <F11> <Esc>:call libcallnr("gvimfullscreen.dll",
                     \"ToggleFullScreen", 0)<CR>
     endif
 endif
@@ -285,20 +285,20 @@ let g:ctrlp_custom_ignore = {
 "                                   Use the nearest .git directory as the cwd.
 let g:ctrlp_working_path_mode = 'r'
 "                                         Easy bindings for its various modes.
-noremap <leader>bb :CtrlPBuffer<cr>
-noremap <leader>bm :CtrlPMixed<cr>
-noremap <leader>bs :CtrlPMRU<cr>
+nnoremap <leader>bb :CtrlPBuffer<cr>
+nnoremap <leader>bm :CtrlPMixed<cr>
+nnoremap <leader>bs :CtrlPMRU<cr>
 
 
 " EasyMotion -----------------------------------------------------------------
 "                                                         Smart case matching.
 let g:EasyMotion_smartcase = 1
 "                                                     Bidirectional searching.
-noremap <leader><leader>f <Plug>(easymotion-s)
+nnoremap <leader><leader>f <Plug>(easymotion-s)
 
 " EasyAlign ------------------------------------------------------------------
 "                                  Start interactive EasyAlign in visual mode.
 xnoremap ga <Plug>(EasyAlign)
 "                        Start interactive EasyAlign for a motion/text object.
-noremap ga <Plug>(EasyAlign)
+nnoremap ga <Plug>(EasyAlign)
 
