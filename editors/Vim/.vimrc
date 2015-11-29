@@ -304,7 +304,7 @@ nnoremap <leader>bs :CtrlPMRU<cr>
 "                                                         Smart case matching.
 let g:EasyMotion_smartcase = 1
 "                                                     Bidirectional searching.
-nnoremap <leader><leader>f <Plug>(easymotion-s)
+map <leader><leader>f <Plug>(easymotion-s)
 
 " EasyAlign ------------------------------------------------------------------
 "                                  Start interactive EasyAlign in visual mode.
