@@ -152,7 +152,7 @@ augroup misc
     endif
 "                                                   Save position before exit.
     autocmd BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")
-        \| exe "normal g`\"" | endif
+        \| exe "normal! g`\"" | endif
 "                                          Source $MYVIMRC when it is changed.
     augroup vimscript
         autocmd!
