@@ -188,6 +188,7 @@ inoremap оо <Esc>
 nnoremap Q <nop>
 "         Turn off highlight of found patterns and clear all printed messages.
 nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>
+nnoremap / /\v
 "                                                                  Fullscreen.
 if has('win32')
     if filereadable($ProgramFiles . '/Vim/vim74/gvimfullscreen.dll')
