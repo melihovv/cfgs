@@ -48,6 +48,10 @@ set statusline+=%=Line:%l/%L[%p%%]\ Col:%c\ [%b][0x%B]
 set statusline+=\ Buf:%n\
 "                      Don't unload a buffer when no longer shown in a window.
 set hidden
+"                                   A new window is put below the current one.
+set splitbelow
+"                                A new window is put right of the current one.
+set splitright
 " multiple tab pages ---------------------------------------------------------
 " terminal -------------------------------------------------------------------
 "                                                     Use custom window title.
