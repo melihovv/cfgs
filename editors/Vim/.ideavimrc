@@ -1,4 +1,5 @@
-imap jj <Esc>
+imap jk <Esc>
+set scrolloff=5
 
 let mapleader = " "
 map <leader>a :action $SelectAll<CR>
