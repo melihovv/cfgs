@@ -185,13 +185,14 @@ nnoremap <leader>bq :bp <BAR> bd #<CR>
 "                                      Show all open buffers and their status.
 nnoremap <leader>bl :ls<CR>
 "                                                           Normal mode by jj.
-inoremap jj <Esc>
+inoremap jk <Esc>
 "                                                 Normal mode by оо (Russian).
-inoremap оо <Esc>
+inoremap ол <Esc>
 "                                                            Turn off Ex mode.
 nnoremap Q <nop>
 "         Turn off highlight of found patterns and clear all printed messages.
 nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>
+"                                                     Magic search by default.
 nnoremap / /\v
 "                                                                  Fullscreen.
 if has('win32')
