@@ -61,3 +61,6 @@
 [submodule "editors/Vim/.vim/bundle/vim-snippets"]
 	path = editors/Vim/.vim/bundle/vim-snippets
 	url = https://github.com/honza/vim-snippets.git
+[submodule "editors/Vim/.vim/bundle/copy-cut-paste.vim"]
+	path = editors/Vim/.vim/bundle/copy-cut-paste.vim
+	url = https://github.com/NLKNguyen/copy-cut-paste.vim
