@@ -1,6 +1,7 @@
 #!/bin/bash
 
-SCRIPT_PATH=$(cd `dirname "${BASH_SOURCE[0]}"` && pwd)/`basename "${BASH_SOURCE[0]}"`
+SCRIPT_PATH=$(cd `dirname "${BASH_SOURCE[0]}"` && pwd)/`basename \
+	"${BASH_SOURCE[0]}"`
 SCRIPT_DIR="`dirname "${SCRIPT_PATH}"`"
 
 RED='\033[0;31m'
@@ -34,19 +35,27 @@ colorEcho() {
 
 colorEcho "Linking dotfiles"
 
-colorEcho "Installing bash-it"
-git clone --depth=1 https://github.com/Bash-it/bash-it.git ~/.bash_it
-. ~/.bash-it/install.sh
-backupAndLink "$SCRIPT_DIR/shells/bash/.bash_aliases" "$HOME/.bash_it/aliases/custom.aliases.bash"
+if [ ! -d "$HOME/.bash_it" ];
+then
+    colorEcho "Installing bash-it"
+    git clone --depth=1 https://github.com/Bash-it/bash-it.git ~/.bash_it
+    .  ~/.bash-it/install.sh
+    backupAndLink "$SCRIPT_DIR/shells/bash/.bash_aliases" \
+        "$HOME/.bash_it/aliases/custom.aliases.bash"
+fi
 
 
-colorEcho "Installing zsh"
-sudo apt-get install zsh
+if [ `which zsh` == "" ];
+then
+    colorEcho "Installing zsh"
+    sudo apt-get install zsh
+fi
 
 if [ ! -d "$HOME/.oh-my-zsh" ];
 then
     colorEcho "Download oh-my-zsh"
-    sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+    sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/\
+        tools/install.sh)"
 fi
 
 colorEcho "Linking .zshrc"
@@ -56,7 +65,8 @@ BABUN_THEME="$HOME/.oh-my-zsh/custom/babun.zsh-theme"
 if [ ! -f $BABUN_THEME ];
 then
     colorEcho "Download babun oh-my-zsh theme"
-    curl https://raw.githubusercontent.com/babun/babun/master/babun-core/plugins/oh-my-zsh/src/babun.zsh-theme > $BABUN_THEME
+    curl "https://raw.githubusercontent.com/babun/babun/master/babun-core/\
+        plugins/oh-my-zsh/src/babun.zsh-theme" > $BABUN_THEME
 fi
 
 
