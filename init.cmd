@@ -22,9 +22,12 @@ echo Linking dotfiles
 
 echo Linking .bash*
 call:backupAndLink "%SCRIPT_DIR%\shells\bash\.bashrc" "%HOME%\.bashrc"
-call:backupAndLink "%SCRIPT_DIR%\shells\bash\.bash_aliases" "%HOME%\.bash_aliases"
-call:backupAndLink "%SCRIPT_DIR%\shells\bash\.bash_functions" "%HOME%\.bash_functions"
-call:backupAndLink "%SCRIPT_DIR%\shells\bash\.bash_profile" "%HOME%\.bash_profile"
+call:backupAndLink "%SCRIPT_DIR%\shells\bash\.bash_aliases"^
+    "%HOME%\.bash_aliases"
+call:backupAndLink "%SCRIPT_DIR%\shells\bash\.bash_functions"^
+    "%HOME%\.bash_functions"
+call:backupAndLink "%SCRIPT_DIR%\shells\bash\.bash_profile"^
+    "%HOME%\.bash_profile"
 
 echo Linking .zshrc
 call:backupAndLink "%SCRIPT_DIR%\shells\zsh\.zshrc" "%HOME%\.zshrc"
@@ -37,15 +40,16 @@ call:backupAndLink "%SCRIPT_DIR%\.tmux.conf" "%HOME%\.tmux.conf"
 
 echo Linking .git*
 call:backupAndLink "%SCRIPT_DIR%\git\.gitconfig" "%HOME%\.gitconfig"
-call:backupAndLink "%SCRIPT_DIR%\git\.gitignore_global" "%HOME%\.gitignore_global"
+call:backupAndLink "%SCRIPT_DIR%\git\.gitignore_global"^
+    "%HOME%\.gitignore_global"
 
 echo Linking vim
 call:backupAndLink "%SCRIPT_DIR%\editors\Vim\.vimrc" "%HOME%\.vimrc"
 call:backupAndLinkDir "%SCRIPT_DIR%\editors\Vim\.vim" "%HOME%\vimfiles"
 
-echo Installing vim plugins
-cd "%WD%" > NUL
-git submodule init && git submodule update
+REM echo Installing vim plugins
+REM cd "%WD%" > NUL
+REM git submodule init && git submodule update
 
 goto:eof
 
@@ -69,13 +73,23 @@ REM \param Destination path.
 :backupAndLinkDir
     if exist "%~2" (
         call:takeLastFolderName "%~2"
+
         REM /E - copy all subdirectories, even if they are empty.
-        REM /H - copy files with hidden and system file attributes. By default, xcopy does not copy hidden or system files.
+        REM /H - copy files with hidden and system file attributes. By default,
+        REM xcopy does not copy hidden or system files.
         REM /R - copy read-only files.
-        REM /X - copy file audit settings and system access control list (SACL) information (implies /o).
-        REM /Y - suppresses prompting to confirm that you want to overwrite an existing destination file.
-        REM /I - if Source is a directory or contains wildcards and Destination does not exist, xcopy assumes destination specifies a directory name and creates a new directory. Then, xcopy copies all specified files into the new directory. By default, xcopy prompts you to specify whether Destination is a file or a directory.
-        REM /K - copy files and retains the read-only attribute on destination files if present on the source files. By default, xcopy removes the read-only attribute.
+        REM /X - copy file audit settings and system access control list (SACL)
+        REM information (implies /o).
+        REM /Y - suppresses prompting to confirm that you want to overwrite an
+        REM existing destination file.
+        REM /I - if Source is a directory or contains wildcards and Destination
+        REM does not exist, xcopy assumes destination specifies a directory
+        REM name and creates a new directory. Then, xcopy copies all specified
+        REM files into the new directory. By default, xcopy prompts you to
+        REM specify whether Destination is a file or a directory.
+        REM /K - copy files and retains the read-only attribute on destination
+        REM files if present on the source files. By default, xcopy removes the
+        REM read-only attribute.
         REM /B - copy symbolic link itself versus the target of the link.
         xcopy "%~2" "%BACKUP_DIR%\!LAST_DIR!" /E /H /R /X /Y /I /K /B > NUL
 
@@ -92,7 +106,8 @@ REM \param Source path.
 REM \param Destination path.
 :backupAndLink
     if exist "%~2" (
-        REM /Y - suppress prompting to confirm you want to overwrite an existing file.
+        REM /Y - suppress prompting to confirm you want to overwrite an
+        REM existing file.
         move /Y "%~2" "%BACKUP_DIR%" > NUL
     )
 
