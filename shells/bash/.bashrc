@@ -18,8 +18,8 @@ export HISTIGNORE=$'[ \t]*:&:[fb]g:exit'
 export HISTIGNORE=$'[ \t]*:&:[fb]g:exit:ls' # Ignore the ls command as well
 
 # Some people use a different file for aliases
-if [ -f "${HOME}/.bash_aliases" ]; then
-  source "${HOME}/.bash_aliases"
+if [ -f "${HOME}/.my_aliases" ]; then
+  source "${HOME}/.my_aliases"
 fi
 
 # Some people use a different file for functions
@@ -51,5 +51,8 @@ if [ `uname` == "Linux" ]; then
     source /etc/bash_completion.d/git-prompt
 fi
 
-export PS1="\[\033]0;$MSYSTEM:${PWD//[^[:ascii:]]/?}\007\]\n\[\033[32m\]\u@\h \[\033[33m\]\w$(__git_ps1 "(%s)")\[\033[0m\]\n\\$ "
+export PS1="\[\033]0;$MSYSTEM:${PWD//[^[:ascii:]]/?}\007\]\n\[\033[32m\]\u@\h \
+    \[\033[33m\]\w$(__git_ps1 "(%s)")\[\033[0m\]\n\\$ "
+
+[[ $TMUX = "" ]] && export TERM="xterm-256color"
 

@@ -4,14 +4,14 @@ SCRIPT_PATH=$(cd `dirname "${BASH_SOURCE[0]}"` && pwd)/`basename \
 	"${BASH_SOURCE[0]}"`
 SCRIPT_DIR="`dirname "${SCRIPT_PATH}"`"
 
-RED='\033[0;31m'
-GREEN='\033[0;32m'
+RED="\033[0;31m"
+GREEN="\033[0;32m"
 # No color.
-NC='\033[0m'
+NC="\033[0m"
 
 BACKUP_DIR=$SCRIPT_DIR/backup
 if [ ! -d "$BACKUP_DIR" ]; then
-    echo "${RED} Making backup dir $BACKUP_DIR ${NC}"
+    echo -e "${RED} Making backup dir $BACKUP_DIR ${NC}"
     mkdir -p $BACKUP_DIR
 fi
 
@@ -35,12 +35,15 @@ colorEcho() {
 
 colorEcho "Linking dotfiles"
 
+colorEcho "Linking .my_aliases"
+backupAndLink "$SCRIPT_DIR/shells/.my_aliases" "$HOME/.my_aliases"
+
 if [ ! -d "$HOME/.bash_it" ];
 then
     colorEcho "Installing bash-it"
     git clone --depth=1 https://github.com/Bash-it/bash-it.git ~/.bash_it
     source  ~/.bash_it/install.sh
-    backupAndLink "$SCRIPT_DIR/shells/bash/.bash_aliases" \
+    backupAndLink "$SCRIPT_DIR/shells/.my_aliases" \
         "$HOME/.bash_it/aliases/custom.aliases.bash"
 fi
 

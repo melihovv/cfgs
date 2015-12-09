@@ -22,8 +22,8 @@ echo Linking dotfiles
 
 echo Linking .bash*
 call:backupAndLink "%SCRIPT_DIR%\shells\bash\.bashrc" "%HOME%\.bashrc"
-call:backupAndLink "%SCRIPT_DIR%\shells\bash\.bash_aliases"^
-    "%HOME%\.bash_aliases"
+call:backupAndLink "%SCRIPT_DIR%\shells\.my_aliases"^
+    "%HOME%\.my_aliases"
 call:backupAndLink "%SCRIPT_DIR%\shells\bash\.bash_functions"^
     "%HOME%\.bash_functions"
 call:backupAndLink "%SCRIPT_DIR%\shells\bash\.bash_profile"^

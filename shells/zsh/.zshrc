@@ -7,21 +7,22 @@ export ZSH=$HOME/.oh-my-zsh
 # time that oh-my-zsh is loaded.
 ZSH_THEME="babun"
 
-# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
+# Which plugins would you like to load? (plugins can be found in
+# ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git z)
 
-export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games"
+export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:\
+    /usr/games:/usr/local/games"
 export LANG=en_US.UTF-8
 
 source $ZSH/oh-my-zsh.sh
 
-alias q="exit"
-alias v="vim"
-alias g="git"
-alias c="clear"
+if [ -f "${HOME}/.my_aliases" ]; then
+  source "${HOME}/.my_aliases"
+fi
 
 # For arrows using when tab pressed for completion.
 setopt menucomplete
