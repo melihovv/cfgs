@@ -27,3 +27,4 @@ alias c="clear"
 setopt menucomplete
 zstyle ':completion:*' menu select=1 _complete _ignored _approximate
 
+[[ $TMUX = "" ]] && export TERM="xterm-256color"
