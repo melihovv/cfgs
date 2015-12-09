@@ -3,6 +3,11 @@
 SCRIPT_PATH=$(cd `dirname "${BASH_SOURCE[0]}"` && pwd)/`basename "${BASH_SOURCE[0]}"`
 SCRIPT_DIR="`dirname "${SCRIPT_PATH}"`"
 
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+# No color.
+NC='\033[0m'
+
 BACKUP_DIR=$SCRIPT_DIR/backup
 if [ ! -d "$BACKUP_DIR" ]; then
     echo "${RED} Making backup dir $BACKUP_DIR ${NC}"
@@ -22,74 +27,55 @@ backupAndLink() {
 }
 
 # Color output.
-GREEN='\033[0;32m'
-NC='\033[0m'
-myEcho() {
+colorEcho() {
     printf "${GREEN}$1${NC}\n"
 }
 
 
-myEcho "Linking dotfiles"
+colorEcho "Linking dotfiles"
 
-myEcho "Installing bash-it"
+colorEcho "Installing bash-it"
 git clone --depth=1 https://github.com/Bash-it/bash-it.git ~/.bash_it
 . ~/.bash-it/install.sh
 backupAndLink "$SCRIPT_DIR/shells/bash/.bash_aliases" "$HOME/.bash_it/aliases/custom.aliases.bash"
 
 
-myEcho "Installing zsh"
+colorEcho "Installing zsh"
 sudo apt-get install zsh
 
 if [ ! -d "$HOME/.oh-my-zsh" ];
 then
-    myEcho "Download oh-my-zsh"
+    colorEcho "Download oh-my-zsh"
     sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 fi
 
-myEcho "Linking .zshrc"
+colorEcho "Linking .zshrc"
 backupAndLink "$SCRIPT_DIR/shells/zsh/.zshrc" "$HOME/.zshrc"
 
 BABUN_THEME="$HOME/.oh-my-zsh/custom/babun.zsh-theme"
 if [ ! -f $BABUN_THEME ];
 then
-    myEcho "Download babun oh-my-zsh theme"
+    colorEcho "Download babun oh-my-zsh theme"
     curl https://raw.githubusercontent.com/babun/babun/master/babun-core/plugins/oh-my-zsh/src/babun.zsh-theme > $BABUN_THEME
 fi
 
 
-myEcho "Linking .inputrc"
+colorEcho "Linking .inputrc"
 backupAndLink "$SCRIPT_DIR/.inputrc" "$HOME/.inputrc"
 
-myEcho "Linking .tmux.conf"
+colorEcho "Linking .tmux.conf"
 backupAndLink "$SCRIPT_DIR/.tmux.conf" "$HOME/.tmux.conf"
 
-myEcho "Linking .git*"
+colorEcho "Linking .git*"
 backupAndLink "$SCRIPT_DIR/git/.gitconfig" "$HOME/.gitconfig"
 backupAndLink "$SCRIPT_DIR/git/.gitignore_global" "$HOME/.gitignore_global"
 
 
-myEcho "Linking emacs"
-EMACS_DIR=$HOME/.emacs.d
-
-if [ ! -d "$EMACS_DIR" ]; then
-    myEcho "Making emacs dir $EMACS_DIR"
-    mkdir "$EMACS_DIR"
-fi
-
-backupAndLink "$SCRIPT_DIR/editors/Emacs/init.el" "$HOME/.emacs.d/init.el"
-backupAndLink "$SCRIPT_DIR/editors/Emacs/Cask" "$HOME/.emacs.d/Cask"
-backupAndLink "$SCRIPT_DIR/editors/Emacs/snippets" "$HOME/.emacs.d/snippets"
-
-
-myEcho "Linking vim"
+colorEcho "Linking vim"
 backupAndLink "$SCRIPT_DIR/editors/Vim/.vimrc" "$HOME/.vimrc"
 backupAndLink "$SCRIPT_DIR/editors/Vim/.vim" "$HOME/.vim"
 
-myEcho "Installing vim plugins"
+colorEcho "Installing vim plugins"
 cd "${SCRIPT_DIR}"
 git submodule init && git submodule update
-
-myEcho "Calling cask to install emacs packages"
-cd "$HOME/.emacs.d"
-cask
 

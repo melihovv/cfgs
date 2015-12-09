@@ -39,20 +39,6 @@ echo Linking .git*
 call:backupAndLink "%SCRIPT_DIR%\git\.gitconfig" "%HOME%\.gitconfig"
 call:backupAndLink "%SCRIPT_DIR%\git\.gitignore_global" "%HOME%\.gitignore_global"
 
-
-echo Linking emacs
-set EMACS_DIR=%HOME%\.emacs.d
-
-if not exist "%EMACS_DIR%" (
-    echo Making emacs dir %EMACS_DIR%
-	mkdir "%EMACS_DIR%"
-)
-
-call:backupAndLink "%SCRIPT_DIR%\editors\Emacs\init.el" "%HOME%\.emacs.d\init.el"
-call:backupAndLink "%SCRIPT_DIR%\editors\Emacs\Cask" "%HOME%\.emacs.d\Cask"
-call:backupAndLinkDir "%SCRIPT_DIR%\editors\Emacs\snippets" "%HOME%\.emacs.d\snippets"
-
-
 echo Linking vim
 call:backupAndLink "%SCRIPT_DIR%\editors\Vim\.vimrc" "%HOME%\.vimrc"
 call:backupAndLinkDir "%SCRIPT_DIR%\editors\Vim\.vim" "%HOME%\vimfiles"
@@ -60,11 +46,6 @@ call:backupAndLinkDir "%SCRIPT_DIR%\editors\Vim\.vim" "%HOME%\vimfiles"
 echo Installing vim plugins
 cd "%WD%" > NUL
 git submodule init && git submodule update
-
-
-echo Calling cask to install emacs packages
-cd /D "%HOME%\.emacs.d"
-cask
 
 goto:eof
 
@@ -97,7 +78,7 @@ REM \param Destination path.
         REM /K - copy files and retains the read-only attribute on destination files if present on the source files. By default, xcopy removes the read-only attribute.
         REM /B - copy symbolic link itself versus the target of the link.
         xcopy "%~2" "%BACKUP_DIR%\!LAST_DIR!" /E /H /R /X /Y /I /K /B > NUL
-        
+
         REM -r - delete directory and its content recursively.
         rm -r "%~2" > NUL
     )
