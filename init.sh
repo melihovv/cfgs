@@ -39,7 +39,7 @@ if [ ! -d "$HOME/.bash_it" ];
 then
     colorEcho "Installing bash-it"
     git clone --depth=1 https://github.com/Bash-it/bash-it.git ~/.bash_it
-    .  ~/.bash-it/install.sh
+    source  ~/.bash_it/install.sh
     backupAndLink "$SCRIPT_DIR/shells/bash/.bash_aliases" \
         "$HOME/.bash_it/aliases/custom.aliases.bash"
 fi
