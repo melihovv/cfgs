@@ -10,7 +10,6 @@ then
 
     alias xclip="xclip -sel clip"
     alias open="gnome-open"
-fi
 else
     alias ls="ls --color=auto"
     alias ll="ls -AlF"
