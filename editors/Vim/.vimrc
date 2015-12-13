@@ -190,6 +190,12 @@ inoremap jk <Esc>
 inoremap ол <Esc>
 "                                                            Turn off Ex mode.
 nnoremap Q <nop>
+"                                                 Usefull when wrapping is on.
+nnoremap j gj
+nnoremap k gk
+nnoremap $ g$
+nnoremap 0 g0
+nnoremap ^ g^
 "         Turn off highlight of found patterns and clear all printed messages.
 nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>
 "                                                     Magic search by default.
