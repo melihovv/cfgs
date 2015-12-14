@@ -1,3 +1,5 @@
+" Text width.
+set textwidth=80
 " vim-latex ------------------------------------------------------------------
 "                                                             Default viewver.
 let g:Tex_ViewRule_pdf='sumatrapdf'
