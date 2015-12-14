@@ -197,7 +197,7 @@ nnoremap $ g$
 nnoremap 0 g0
 nnoremap ^ g^
 "                                                              Analog to <S-j>
-nnoremap <C-j> a<CR><ESC>k$
+nnoremap <M-j> a<CR><ESC>k$
 "         Turn off highlight of found patterns and clear all printed messages.
 nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>
 "                                                     Magic search by default.
