@@ -48,8 +48,8 @@ call:backupAndLink "%SCRIPT_DIR%\editors\Vim\.vimrc" "%HOME%\.vimrc"
 call:backupAndLinkDir "%SCRIPT_DIR%\editors\Vim\.vim" "%HOME%\vimfiles"
 
 REM echo Installing vim plugins
-REM cd "%WD%" > NUL
-REM git submodule init && git submodule update
+cd "%WD%" > NUL
+git submodule init && git submodule update
 
 goto:eof
 
