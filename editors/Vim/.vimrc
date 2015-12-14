@@ -199,6 +199,8 @@ nnoremap ^ g^
 "                                       Insert a new line in the command mode.
 nnoremap <S-Enter> O<Esc>
 nnoremap <CR> o<Esc>
+"                                                              Analog to <S-j>
+nnoremap <C-j> a<CR><ESC>k$
 "         Turn off highlight of found patterns and clear all printed messages.
 nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>
 "                                                     Magic search by default.
