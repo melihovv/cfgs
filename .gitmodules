@@ -64,3 +64,6 @@
 [submodule "editors/Vim/.vim/bundle/copy-cut-paste.vim"]
 	path = editors/Vim/.vim/bundle/copy-cut-paste.vim
 	url = https://github.com/NLKNguyen/copy-cut-paste.vim
+[submodule "editors/Vim/.vim/bundle/vim-unimpaired"]
+	path = editors/Vim/.vim/bundle/vim-unimpaired
+	url = https://github.com/tpope/vim-unimpaired
