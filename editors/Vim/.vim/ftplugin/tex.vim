@@ -1,4 +1,4 @@
-" Text width.
+"                                                                  Text width.
 set textwidth=80
 " vim-latex ------------------------------------------------------------------
 "                                                             Default viewver.
