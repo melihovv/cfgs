@@ -177,7 +177,7 @@ augroup END
 "                                                  To open a new empty buffer.
 nnoremap <leader>T :enew<cr>
 "                                                     Move to the next buffer.
-nnoremap <leader>l :bnext<CR>
+nnoremap <leader>j :bnext<CR>
 "                                                 Move to the previous buffer.
 nnoremap <leader>h :bprevious<CR>
 "                       Close the current buffer and move to the previous one.
