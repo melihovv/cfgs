@@ -187,7 +187,7 @@ nnoremap <leader>bl :ls<CR>
 "                                                           Normal mode by jj.
 inoremap jk <Esc>
 "                                                 Normal mode by оо (Russian).
-inoremap ол <Esc>
+inoremap лд <Esc>
 "                                                            Turn off Ex mode.
 nnoremap Q <nop>
 "                                                 Usefull when wrapping is on.
