@@ -325,3 +325,6 @@ xnoremap ga <Plug>(EasyAlign)
 "                        Start interactive EasyAlign for a motion/text object.
 nnoremap ga <Plug>(EasyAlign)
 
+"                                                                      BufOnly
+nnoremap <leader>ba :BufOnly<cr>
+

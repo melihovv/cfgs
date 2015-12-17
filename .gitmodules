@@ -67,3 +67,6 @@
 [submodule "editors/Vim/.vim/bundle/vim-unimpaired"]
 	path = editors/Vim/.vim/bundle/vim-unimpaired
 	url = https://github.com/tpope/vim-unimpaired
+[submodule "editors/Vim/.vim/bundle/BufOnly"]
+	path = editors/Vim/.vim/bundle/BufOnly
+	url = https://github.com/vim-scripts/BufOnly.vim
