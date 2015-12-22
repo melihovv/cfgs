@@ -1,0 +1,8 @@
+let mapleader=" "
+let g:mapleader=" "
+
+nnoremap <Leader>s :vsc File.SaveAll<CR>
+nnoremap <Leader>a :vsc Edit.SelectAll<CR>
+nnoremap <Leader>x :vsc Edit.Cut<CR>
+nnoremap <Leader>c :vsc Edit.Copy<CR>
+nnoremap <Leader>v :vsc Edit.Paste<CR>
