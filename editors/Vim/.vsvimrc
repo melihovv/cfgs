@@ -1,6 +1,7 @@
 let mapleader=" "
 let g:mapleader=" "
 
+inoremap jk <Esc>
 nnoremap <Leader>s :vsc File.SaveAll<CR>
 nnoremap <Leader>a :vsc Edit.SelectAll<CR>
 nnoremap <Leader>x :vsc Edit.Cut<CR>
