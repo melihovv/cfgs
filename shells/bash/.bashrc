@@ -42,8 +42,10 @@ if [ -f ~/.bash_functions ]; then
     . ~/.bash_functions
 fi
 
-if [ `uname | grep mingw32 -i` ]; then
+if [ `uname | grep mingw64 -i` ]; then
     export TERM=cygwin
+else
+    [[ $TMUX = "" ]] && export TERM="xterm-256color"
 fi
 
 if [ `uname` == "Linux" ]; then
@@ -53,6 +55,4 @@ fi
 
 export PS1="\[\033]0;$MSYSTEM:${PWD//[^[:ascii:]]/?}\007\]\n\[\033[32m\]\u@\h \
     \[\033[33m\]\w$(__git_ps1 "(%s)")\[\033[0m\]\n\\$ "
-
-[[ $TMUX = "" ]] && export TERM="xterm-256color"
 
