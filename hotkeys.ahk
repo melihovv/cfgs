@@ -5,7 +5,7 @@ tc = "c:\Program Files (x86)\totalcmd\TOTALCMD64.EXE"
 dpPath = %ProgramFiles%\Dexpot\dexpot.exe
 
 
-; win + f1 - run hotkeys.txt.
+; win + f1 - run evernote.txt.
 #F1::
     Run, %evernote%
     return
