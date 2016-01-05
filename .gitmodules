@@ -19,8 +19,8 @@
 [submodule "editors/vim/.vim/bundle/nerdcommenter"]
 	path = editors/vim/.vim/bundle/nerdcommenter
 	url = https://github.com/scrooloose/nerdcommenter
-[submodule "editors/vim/.vim/bundle/ctrlp.vim"]
-	path = editors/vim/.vim/bundle/ctrlp.vim
+[submodule "editors/vim/.vim/bundle/ctrlp"]
+	path = editors/vim/.vim/bundle/ctrlp
 	url = https://github.com/kien/ctrlp.vim
 [submodule "editors/vim/.vim/bundle/vim-easygrep"]
 	path = editors/vim/.vim/bundle/vim-easygrep
@@ -52,8 +52,8 @@
 [submodule "editors/vim/.vim/bundle/tlib_vim"]
 	path = editors/vim/.vim/bundle/tlib_vim
 	url = https://github.com/tomtom/tlib_vim.git
-[submodule "editors/vim/.vim/bundle/vim-addon-mw-utils"]
-	path = editors/vim/.vim/bundle/vim-addon-mw-utils
+[submodule "vim-addon-mw-utils"]
+	path = vim-addon-mw-utils
 	url = https://github.com/MarcWeber/vim-addon-mw-utils.git
 [submodule "editors/vim/.vim/bundle/vim-snipmate"]
 	path = editors/vim/.vim/bundle/vim-snipmate
@@ -61,12 +61,12 @@
 [submodule "editors/vim/.vim/bundle/vim-snippets"]
 	path = editors/vim/.vim/bundle/vim-snippets
 	url = https://github.com/honza/vim-snippets.git
-[submodule "editors/vim/.vim/bundle/copy-cut-paste.vim"]
-	path = editors/vim/.vim/bundle/copy-cut-paste.vim
+[submodule "editors/vim/.vim/bundle/copy-cut-paste"]
+	path = editors/vim/.vim/bundle/copy-cut-paste
 	url = https://github.com/NLKNguyen/copy-cut-paste.vim
 [submodule "editors/vim/.vim/bundle/vim-unimpaired"]
 	path = editors/vim/.vim/bundle/vim-unimpaired
 	url = https://github.com/tpope/vim-unimpaired
-[submodule "editors/vim/.vim/bundle/BufOnly"]
-	path = editors/vim/.vim/bundle/BufOnly
+[submodule "editors/vim/.vim/bundle/bufonly.vim"]
+	path = editors/vim/.vim/bundle/bufonly.vim
 	url = https://github.com/vim-scripts/BufOnly.vim
