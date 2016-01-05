@@ -3,17 +3,11 @@ alias c="clear"
 alias q="exit"
 alias g="git"
 
-if [ `uname`=='Linux' ];
-then
-    alias ls="ls --color=auto --group-directories-first"
-    alias ll="ls -AlF --group-directories-first"
+alias ls="ls --color=auto --group-directories-first"
+alias ll="ls -AlF --group-directories-first"
 
-    alias xclip="xclip -sel clip"
-    alias open="gnome-open"
-else
-    alias ls="ls --color=auto"
-    alias ll="ls -AlF"
-fi
+alias xclip="xclip -sel clip"
+alias open="gnome-open"
 
 alias ..="cd .."
 alias ...="cd ../.."

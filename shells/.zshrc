@@ -14,18 +14,20 @@ ZSH_THEME="babun"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git z)
 
-export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:\
-    /usr/games:/usr/local/games"
-export LANG=en_US.UTF-8
-
-source $ZSH/oh-my-zsh.sh
-
-if [ -f "${HOME}/.my_aliases" ]; then
-  source "${HOME}/.my_aliases"
-fi
-
 # For arrows using when tab pressed for completion.
 setopt menucomplete
 zstyle ':completion:*' menu select=1 _complete _ignored _approximate
 
-[[ $TMUX = "" ]] && export TERM="xterm-256color"
+export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:\
+/usr/games:/usr/local/games"
+export LANG=en_US.UTF-8
+
+source $ZSH/oh-my-zsh.sh
+
+if [ -f "${HOME}/.my_aliases" ];
+then
+  source "${HOME}/.my_aliases"
+fi
+
+[[ $TMUX != "" ]] && export TERM="xterm-256color"
+

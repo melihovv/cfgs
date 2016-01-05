@@ -18,41 +18,31 @@ export HISTIGNORE=$'[ \t]*:&:[fb]g:exit'
 export HISTIGNORE=$'[ \t]*:&:[fb]g:exit:ls' # Ignore the ls command as well
 
 # Some people use a different file for aliases
-if [ -f "${HOME}/.my_aliases" ]; then
+if [ -f "${HOME}/.my_aliases" ];
+then
   source "${HOME}/.my_aliases"
 fi
 
-# Some people use a different file for functions
-if [ -f "${HOME}/.bash_functions" ]; then
-  source "${HOME}/.bash_functions"
-fi
-
-# enable programmable completion features (you don't need to enable
+# Enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
 # sources /etc/bash.bashrc).
 if ! shopt -oq posix; then
-  if [ -f /usr/share/bash-completion/bash_completion ]; then
+  if [ -f /usr/share/bash-completion/bash_completion ];
+  then
     . /usr/share/bash-completion/bash_completion
-  elif [ -f /etc/bash_completion ]; then
+  elif [ -f /etc/bash_completion ];
+  then
     . /etc/bash_completion
   fi
 fi
 
-if [ -f ~/.bash_functions ]; then
-    . ~/.bash_functions
-fi
+[[ $TMUX != "" ]] && export TERM="xterm-256color"
 
-if [ `uname | grep mingw64 -i` ]; then
-    export TERM=cygwin
-else
-    [[ $TMUX = "" ]] && export TERM="xterm-256color"
-fi
-
-if [ `uname` == "Linux" ]; then
-    export PATH="$HOME/.cask/bin:$PATH"
+if [ `uname` == "Linux" ];
+then
     source /etc/bash_completion.d/git-prompt
 fi
 
 export PS1="\[\033]0;$MSYSTEM:${PWD//[^[:ascii:]]/?}\007\]\n\[\033[32m\]\u@\h \
-    \[\033[33m\]\w$(__git_ps1 "(%s)")\[\033[0m\]\n\\$ "
+\[\033[33m\]\w$(__git_ps1 "(%s)")\[\033[0m\]\n\\$ "
 

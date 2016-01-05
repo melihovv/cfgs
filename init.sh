@@ -10,7 +10,8 @@ GREEN="\033[0;32m"
 NC="\033[0m"
 
 BACKUP_DIR=$SCRIPT_DIR/backup
-if [ ! -d "$BACKUP_DIR" ]; then
+if [ ! -d "$BACKUP_DIR" ];
+then
     echo -e "${RED} Making backup dir $BACKUP_DIR ${NC}"
     mkdir -p $BACKUP_DIR
 fi
@@ -32,8 +33,6 @@ colorEcho() {
     printf "${GREEN}$1${NC}\n"
 }
 
-
-colorEcho "Linking dotfiles"
 
 colorEcho "Linking .my_aliases"
 backupAndLink "$SCRIPT_DIR/shells/.my_aliases" "$HOME/.my_aliases"

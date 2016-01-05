@@ -18,19 +18,15 @@ if not exist "%BACKUP_DIR%" (
 )
 
 
-echo Linking dotfiles
-
-echo Linking .bash*
-call:backupAndLink "%SCRIPT_DIR%\shells\bash\.bashrc" "%HOME%\.bashrc"
-call:backupAndLink "%SCRIPT_DIR%\shells\.my_aliases"^
-    "%HOME%\.my_aliases"
-call:backupAndLink "%SCRIPT_DIR%\shells\bash\.bash_functions"^
-    "%HOME%\.bash_functions"
-call:backupAndLink "%SCRIPT_DIR%\shells\bash\.bash_profile"^
-    "%HOME%\.bash_profile"
+echo Linking .bashrc
+call:backupAndLink "%SCRIPT_DIR%\shells\.bashrc" "%HOME%\.bashrc"
 
 echo Linking .zshrc
-call:backupAndLink "%SCRIPT_DIR%\shells\zsh\.zshrc" "%HOME%\.zshrc"
+call:backupAndLink "%SCRIPT_DIR%\shells\.zshrc" "%HOME%\.zshrc"
+
+echo Linking aliases
+call:backupAndLink "%SCRIPT_DIR%\shells\.my_aliases"^
+    "%HOME%\.my_aliases"
 
 echo Linking .tmux.conf
 call:backupAndLink "%SCRIPT_DIR%\.tmux.conf" "%HOME%\.tmux.conf"
@@ -45,7 +41,7 @@ call:backupAndLink "%SCRIPT_DIR%\editors\Vim\.vimrc" "%HOME%\.vimrc"
 call:backupAndLinkDir "%SCRIPT_DIR%\editors\Vim\.vim" "%HOME%\vimfiles"
 
 REM echo Installing vim plugins
-cd "%WD%" > NUL
+echo Installing vim plugins
 git submodule init && git submodule update
 
 goto:eof
