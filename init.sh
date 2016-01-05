@@ -61,7 +61,7 @@ then
 fi
 
 colorEcho "Linking .zshrc"
-backupAndLink "$SCRIPT_DIR/shells/zsh/.zshrc" "$HOME/.zshrc"
+backupAndLink "$SCRIPT_DIR/shells/.zshrc" "$HOME/.zshrc"
 
 BABUN_THEME="$HOME/.oh-my-zsh/custom/babun.zsh-theme"
 if [ ! -f $BABUN_THEME ];
@@ -81,8 +81,8 @@ backupAndLink "$SCRIPT_DIR/git/.gitignore_global" "$HOME/.gitignore_global"
 
 
 colorEcho "Linking vim"
-backupAndLink "$SCRIPT_DIR/editors/Vim/.vimrc" "$HOME/.vimrc"
-backupAndLink "$SCRIPT_DIR/editors/Vim/.vim" "$HOME/.vim"
+backupAndLink "$SCRIPT_DIR/editors/vim/.vimrc" "$HOME/.vimrc"
+backupAndLink "$SCRIPT_DIR/editors/vim/.vim" "$HOME/.vim"
 
 colorEcho "Installing vim plugins"
 cd "${SCRIPT_DIR}"
