@@ -1,72 +1,72 @@
-[submodule "editors/Vim/.vim/bundle/vim-pathogen"]
-	path = editors/Vim/.vim/bundle/vim-pathogen
+[submodule "editors/vim/.vim/bundle/vim-pathogen"]
+	path = editors/vim/.vim/bundle/vim-pathogen
 	url = https://github.com/tpope/vim-pathogen.git
-[submodule "editors/Vim/.vim/bundle/vim-plugin-ruscmd"]
-	path = editors/Vim/.vim/bundle/vim-plugin-ruscmd
+[submodule "editors/vim/.vim/bundle/vim-plugin-ruscmd"]
+	path = editors/vim/.vim/bundle/vim-plugin-ruscmd
 	url = https://github.com/powerman/vim-plugin-ruscmd.git
-[submodule "editors/Vim/.vim/bundle/nerdtree"]
-	path = editors/Vim/.vim/bundle/nerdtree
+[submodule "editors/vim/.vim/bundle/nerdtree"]
+	path = editors/vim/.vim/bundle/nerdtree
 	url = https://github.com/scrooloose/nerdtree.git
-[submodule "editors/Vim/.vim/bundle/vim-airline"]
-	path = editors/Vim/.vim/bundle/vim-airline
+[submodule "editors/vim/.vim/bundle/vim-airline"]
+	path = editors/vim/.vim/bundle/vim-airline
 	url = https://github.com/bling/vim-airline.git
-[submodule "editors/Vim/.vim/bundle/vim-latex"]
-	path = editors/Vim/.vim/bundle/vim-latex
+[submodule "editors/vim/.vim/bundle/vim-latex"]
+	path = editors/vim/.vim/bundle/vim-latex
 	url = https://github.com/vim-latex/vim-latex.git
-[submodule "editors/Vim/.vim/bundle/vim-monokai"]
-	path = editors/Vim/.vim/bundle/vim-monokai
+[submodule "editors/vim/.vim/bundle/vim-monokai"]
+	path = editors/vim/.vim/bundle/vim-monokai
 	url = https://github.com/crusoexia/vim-monokai.git
-[submodule "editors/Vim/.vim/bundle/nerdcommenter"]
-	path = editors/Vim/.vim/bundle/nerdcommenter
+[submodule "editors/vim/.vim/bundle/nerdcommenter"]
+	path = editors/vim/.vim/bundle/nerdcommenter
 	url = https://github.com/scrooloose/nerdcommenter
-[submodule "editors/Vim/.vim/bundle/ctrlp.vim"]
-	path = editors/Vim/.vim/bundle/ctrlp.vim
+[submodule "editors/vim/.vim/bundle/ctrlp.vim"]
+	path = editors/vim/.vim/bundle/ctrlp.vim
 	url = https://github.com/kien/ctrlp.vim
-[submodule "editors/Vim/.vim/bundle/vim-easygrep"]
-	path = editors/Vim/.vim/bundle/vim-easygrep
+[submodule "editors/vim/.vim/bundle/vim-easygrep"]
+	path = editors/vim/.vim/bundle/vim-easygrep
 	url = https://github.com/dkprice/vim-easygrep.git
-[submodule "editors/Vim/.vim/bundle/vim-surround"]
-	path = editors/Vim/.vim/bundle/vim-surround
+[submodule "editors/vim/.vim/bundle/vim-surround"]
+	path = editors/vim/.vim/bundle/vim-surround
 	url = https://github.com/tpope/vim-surround.git
-[submodule "editors/Vim/.vim/bundle/vim-repeat"]
-	path = editors/Vim/.vim/bundle/vim-repeat
+[submodule "editors/vim/.vim/bundle/vim-repeat"]
+	path = editors/vim/.vim/bundle/vim-repeat
 	url = https://github.com/tpope/vim-repeat
-[submodule "editors/Vim/.vim/bundle/vim-fugitive"]
-	path = editors/Vim/.vim/bundle/vim-fugitive
+[submodule "editors/vim/.vim/bundle/vim-fugitive"]
+	path = editors/vim/.vim/bundle/vim-fugitive
 	url = https://github.com/tpope/vim-fugitive
-[submodule "editors/Vim/.vim/bundle/vim-easymotion"]
-	path = editors/Vim/.vim/bundle/vim-easymotion
+[submodule "editors/vim/.vim/bundle/vim-easymotion"]
+	path = editors/vim/.vim/bundle/vim-easymotion
 	url = https://github.com/easymotion/vim-easymotion
-[submodule "editors/Vim/.vim/bundle/vim-easy-align"]
-	path = editors/Vim/.vim/bundle/vim-easy-align
+[submodule "editors/vim/.vim/bundle/vim-easy-align"]
+	path = editors/vim/.vim/bundle/vim-easy-align
 	url = https://github.com/junegunn/vim-easy-align
-[submodule "editors/Vim/.vim/bundle/vim-orgmode"]
-	path = editors/Vim/.vim/bundle/vim-orgmode
+[submodule "editors/vim/.vim/bundle/vim-orgmode"]
+	path = editors/vim/.vim/bundle/vim-orgmode
 	url = https://github.com/jceb/vim-orgmode
-[submodule "editors/Vim/.vim/bundle/vim-speeddating"]
-	path = editors/Vim/.vim/bundle/vim-speeddating
+[submodule "editors/vim/.vim/bundle/vim-speeddating"]
+	path = editors/vim/.vim/bundle/vim-speeddating
 	url = https://github.com/tpope/vim-speeddating
-[submodule "editors/Vim/.vim/bundle/utl"]
-	path = editors/Vim/.vim/bundle/utl
+[submodule "editors/vim/.vim/bundle/utl"]
+	path = editors/vim/.vim/bundle/utl
 	url = https://github.com/vim-scripts/utl.vim
-[submodule "editors/Vim/.vim/bundle/tlib_vim"]
-	path = editors/Vim/.vim/bundle/tlib_vim
+[submodule "editors/vim/.vim/bundle/tlib_vim"]
+	path = editors/vim/.vim/bundle/tlib_vim
 	url = https://github.com/tomtom/tlib_vim.git
-[submodule "editors/Vim/.vim/bundle/vim-addon-mw-utils"]
-	path = editors/Vim/.vim/bundle/vim-addon-mw-utils
+[submodule "editors/vim/.vim/bundle/vim-addon-mw-utils"]
+	path = editors/vim/.vim/bundle/vim-addon-mw-utils
 	url = https://github.com/MarcWeber/vim-addon-mw-utils.git
-[submodule "editors/Vim/.vim/bundle/vim-snipmate"]
-	path = editors/Vim/.vim/bundle/vim-snipmate
+[submodule "editors/vim/.vim/bundle/vim-snipmate"]
+	path = editors/vim/.vim/bundle/vim-snipmate
 	url = https://github.com/garbas/vim-snipmate.git
-[submodule "editors/Vim/.vim/bundle/vim-snippets"]
-	path = editors/Vim/.vim/bundle/vim-snippets
+[submodule "editors/vim/.vim/bundle/vim-snippets"]
+	path = editors/vim/.vim/bundle/vim-snippets
 	url = https://github.com/honza/vim-snippets.git
-[submodule "editors/Vim/.vim/bundle/copy-cut-paste.vim"]
-	path = editors/Vim/.vim/bundle/copy-cut-paste.vim
+[submodule "editors/vim/.vim/bundle/copy-cut-paste.vim"]
+	path = editors/vim/.vim/bundle/copy-cut-paste.vim
 	url = https://github.com/NLKNguyen/copy-cut-paste.vim
-[submodule "editors/Vim/.vim/bundle/vim-unimpaired"]
-	path = editors/Vim/.vim/bundle/vim-unimpaired
+[submodule "editors/vim/.vim/bundle/vim-unimpaired"]
+	path = editors/vim/.vim/bundle/vim-unimpaired
 	url = https://github.com/tpope/vim-unimpaired
-[submodule "editors/Vim/.vim/bundle/BufOnly"]
-	path = editors/Vim/.vim/bundle/BufOnly
+[submodule "editors/vim/.vim/bundle/BufOnly"]
+	path = editors/vim/.vim/bundle/BufOnly
 	url = https://github.com/vim-scripts/BufOnly.vim
