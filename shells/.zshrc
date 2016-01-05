@@ -18,8 +18,7 @@ plugins=(git z)
 setopt menucomplete
 zstyle ':completion:*' menu select=1 _complete _ignored _approximate
 
-export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:\
-/usr/games:/usr/local/games"
+export PATH="$HOME/bin:/usr/local/bin:$PATH"
 export LANG=en_US.UTF-8
 
 source $ZSH/oh-my-zsh.sh

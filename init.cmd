@@ -4,6 +4,15 @@ SetLocal EnableDelayedExpansion
 @if not exist "%HOME%" @set HOME=%HOMEDRIVE%%HOMEPATH%
 @if not exist "%HOME%" @set HOME=%USERPROFILE%
 
+if not "%1" == "" (
+    if exist %1\* (
+        set DEST="%1"
+    )
+) else (
+    set DEST="%HOME%"
+)
+echo Destination - %DEST%
+
 REM Directory, where script is located.
 REM path\to\this\script\
 set SCRIPT_DIR=%~dp0
@@ -19,26 +28,26 @@ if not exist "%BACKUP_DIR%" (
 
 
 echo Linking .bashrc
-call:backupAndLink "%SCRIPT_DIR%\shells\.bashrc" "%HOME%\.bashrc"
+call:backupAndLink "%SCRIPT_DIR%\shells\.bashrc" "%DEST%\.bashrc"
 
 echo Linking .zshrc
-call:backupAndLink "%SCRIPT_DIR%\shells\.zshrc" "%HOME%\.zshrc"
+call:backupAndLink "%SCRIPT_DIR%\shells\.zshrc" "%DEST%\.zshrc"
 
 echo Linking aliases
 call:backupAndLink "%SCRIPT_DIR%\shells\.my_aliases"^
-    "%HOME%\.my_aliases"
+    "%DEST%\.my_aliases"
 
 echo Linking .tmux.conf
-call:backupAndLink "%SCRIPT_DIR%\.tmux.conf" "%HOME%\.tmux.conf"
+call:backupAndLink "%SCRIPT_DIR%\.tmux.conf" "%DEST%\.tmux.conf"
 
 echo Linking .git*
-call:backupAndLink "%SCRIPT_DIR%\git\.gitconfig" "%HOME%\.gitconfig"
+call:backupAndLink "%SCRIPT_DIR%\git\.gitconfig" "%DEST%\.gitconfig"
 call:backupAndLink "%SCRIPT_DIR%\git\.gitignore_global"^
-    "%HOME%\.gitignore_global"
+    "%DEST%\.gitignore_global"
 
 echo Linking vim
-call:backupAndLink "%SCRIPT_DIR%\editors\Vim\.vimrc" "%HOME%\.vimrc"
-call:backupAndLinkDir "%SCRIPT_DIR%\editors\Vim\.vim" "%HOME%\vimfiles"
+call:backupAndLink "%SCRIPT_DIR%\editors\Vim\.vimrc" "%DEST%\.vimrc"
+call:backupAndLinkDir "%SCRIPT_DIR%\editors\Vim\.vim" "%DEST%\vimfiles"
 
 REM echo Installing vim plugins
 echo Installing vim plugins
