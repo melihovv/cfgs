@@ -52,9 +52,6 @@
 [submodule "editors/vim/.vim/bundle/tlib_vim"]
 	path = editors/vim/.vim/bundle/tlib_vim
 	url = https://github.com/tomtom/tlib_vim.git
-[submodule "vim-addon-mw-utils"]
-	path = vim-addon-mw-utils
-	url = https://github.com/MarcWeber/vim-addon-mw-utils.git
 [submodule "editors/vim/.vim/bundle/vim-snipmate"]
 	path = editors/vim/.vim/bundle/vim-snipmate
 	url = https://github.com/garbas/vim-snipmate.git
