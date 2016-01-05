@@ -33,9 +33,16 @@ colorEcho() {
     printf "${GREEN}$1${NC}\n"
 }
 
+if [ ! $1 == "" ] && [ -d $1 ];
+then
+    DEST=$1
+else
+    DEST=$HOME
+fi
+
 
 colorEcho "Linking .my_aliases"
-backupAndLink "$SCRIPT_DIR/shells/.my_aliases" "$HOME/.my_aliases"
+backupAndLink "$SCRIPT_DIR/shells/.my_aliases" "$DEST/.my_aliases"
 
 if [ ! -d "$HOME/.bash_it" ];
 then
@@ -43,7 +50,7 @@ then
     git clone --depth=1 https://github.com/Bash-it/bash-it.git ~/.bash_it
     source  ~/.bash_it/install.sh
     backupAndLink "$SCRIPT_DIR/shells/.my_aliases" \
-        "$HOME/.bash_it/aliases/custom.aliases.bash"
+"$DEST/.bash_it/aliases/custom.aliases.bash"
 fi
 
 
@@ -53,38 +60,37 @@ then
     sudo apt-get install zsh
 fi
 
-if [ ! -d "$HOME/.oh-my-zsh" ];
+if [ ! -d "$DEST/.oh-my-zsh" ];
 then
     colorEcho "Download oh-my-zsh"
     sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/\
-        tools/install.sh)"
+tools/install.sh)"
 fi
 
 colorEcho "Linking .zshrc"
-backupAndLink "$SCRIPT_DIR/shells/.zshrc" "$HOME/.zshrc"
+backupAndLink "$SCRIPT_DIR/shells/.zshrc" "$DEST/.zshrc"
 
-BABUN_THEME="$HOME/.oh-my-zsh/custom/babun.zsh-theme"
+BABUN_THEME="$DEST/.oh-my-zsh/custom/babun.zsh-theme"
 if [ ! -f $BABUN_THEME ];
 then
     colorEcho "Download babun oh-my-zsh theme"
     curl "https://raw.githubusercontent.com/babun/babun/master/babun-core/\
-        plugins/oh-my-zsh/src/babun.zsh-theme" > $BABUN_THEME
+plugins/oh-my-zsh/src/babun.zsh-theme" > $BABUN_THEME
 fi
 
 
 colorEcho "Linking .tmux.conf"
-backupAndLink "$SCRIPT_DIR/.tmux.conf" "$HOME/.tmux.conf"
+backupAndLink "$SCRIPT_DIR/.tmux.conf" "$DEST/.tmux.conf"
 
 colorEcho "Linking .git*"
-backupAndLink "$SCRIPT_DIR/git/.gitconfig" "$HOME/.gitconfig"
-backupAndLink "$SCRIPT_DIR/git/.gitignore_global" "$HOME/.gitignore_global"
+backupAndLink "$SCRIPT_DIR/git/.gitconfig" "$DEST/.gitconfig"
+backupAndLink "$SCRIPT_DIR/git/.gitignore_global" "$DEST/.gitignore_global"
 
 
 colorEcho "Linking vim"
-backupAndLink "$SCRIPT_DIR/editors/vim/.vimrc" "$HOME/.vimrc"
-backupAndLink "$SCRIPT_DIR/editors/vim/.vim" "$HOME/.vim"
+backupAndLink "$SCRIPT_DIR/editors/vim/.vimrc" "$DEST/.vimrc"
+backupAndLink "$SCRIPT_DIR/editors/vim/.vim" "$DEST/.vim"
 
 colorEcho "Installing vim plugins"
-cd "${SCRIPT_DIR}"
 git submodule init && git submodule update
 
