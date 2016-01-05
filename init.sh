@@ -73,9 +73,6 @@ then
 fi
 
 
-colorEcho "Linking .inputrc"
-backupAndLink "$SCRIPT_DIR/.inputrc" "$HOME/.inputrc"
-
 colorEcho "Linking .tmux.conf"
 backupAndLink "$SCRIPT_DIR/.tmux.conf" "$HOME/.tmux.conf"
 

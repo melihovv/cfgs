@@ -32,9 +32,6 @@ call:backupAndLink "%SCRIPT_DIR%\shells\bash\.bash_profile"^
 echo Linking .zshrc
 call:backupAndLink "%SCRIPT_DIR%\shells\zsh\.zshrc" "%HOME%\.zshrc"
 
-echo Linking .inputrc
-call:backupAndLink "%SCRIPT_DIR%\.inputrc" "%HOME%\.inputrc"
-
 echo Linking .tmux.conf
 call:backupAndLink "%SCRIPT_DIR%\.tmux.conf" "%HOME%\.tmux.conf"
 
