@@ -1,2 +1,3 @@
 * text eol=lf
 init.cmd text eol=crlf
+*.jar binary
