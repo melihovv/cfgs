@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Abort script on the first error.
+set -e
+
 SCRIPT_PATH=$(cd `dirname "${BASH_SOURCE[0]}"` && pwd)/`basename \
 	"${BASH_SOURCE[0]}"`
 SCRIPT_DIR="`dirname "${SCRIPT_PATH}"`"
