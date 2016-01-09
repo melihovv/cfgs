@@ -49,7 +49,6 @@ echo Linking vim
 call:backupAndLink "%SCRIPT_DIR%\editors\Vim\.vimrc" "%DEST%\.vimrc"
 call:backupAndLinkDir "%SCRIPT_DIR%\editors\Vim\.vim" "%DEST%\vimfiles"
 
-REM echo Installing vim plugins
 echo Installing vim plugins
 git submodule init && git submodule update
 
