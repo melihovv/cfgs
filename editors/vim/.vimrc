@@ -181,7 +181,7 @@ nnoremap <leader>j :bnext<CR>
 "                                                 Move to the previous buffer.
 nnoremap <leader>h :bprevious<CR>
 "                       Close the current buffer and move to the previous one.
-nnoremap <leader>bq :bp <BAR> bd #<CR>
+nnoremap <leader>bq :bd<CR>
 "                                      Show all open buffers and their status.
 nnoremap <leader>bl :ls<CR>
 "                                                           Normal mode by jj.
