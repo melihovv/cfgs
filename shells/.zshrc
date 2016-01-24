@@ -28,5 +28,10 @@ then
   source "${HOME}/.my_aliases"
 fi
 
+if [ -f "${HOME}/.my_extra" ];
+then
+  source "${HOME}/.my_extra"
+fi
+
 [[ $TMUX != "" ]] && export TERM="xterm-256color"
 

@@ -43,6 +43,11 @@ then
     source /etc/bash_completion.d/git-prompt
 fi
 
+if [ -f "${HOME}/.my_extra" ];
+then
+  source "${HOME}/.my_extra"
+fi
+
 export PS1="\[\033]0;$MSYSTEM:${PWD//[^[:ascii:]]/?}\007\]\n\[\033[32m\]\u@\h \
 \[\033[33m\]\w$(__git_ps1 "(%s)")\[\033[0m\]\n\\$ "
 
