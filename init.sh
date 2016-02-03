@@ -60,7 +60,7 @@ fi
 if [ `which zsh` == "" ];
 then
     colorEcho "Installing zsh"
-    sudo apt-get install zsh
+    sudo apt-get -y install zsh
 fi
 
 if [ ! -d "$DEST/.oh-my-zsh" ];
