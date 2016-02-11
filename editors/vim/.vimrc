@@ -323,9 +323,9 @@ map <leader><leader>f <Plug>(easymotion-s)
 
 " EasyAlign ------------------------------------------------------------------
 "                                  Start interactive EasyAlign in visual mode.
-xnoremap ga <Plug>(EasyAlign)
+xmap ga <Plug>(EasyAlign)
 "                        Start interactive EasyAlign for a motion/text object.
-nnoremap ga <Plug>(EasyAlign)
+nmap ga <Plug>(EasyAlign)
 
 "                                                                      BufOnly
 nnoremap <leader>ba :BufOnly<cr>
