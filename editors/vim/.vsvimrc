@@ -1,5 +1,6 @@
 let mapleader=" "
 let g:mapleader=" "
+set scrolloff=5
 
 inoremap jk <Esc>
 nnoremap <Leader>s :vsc File.SaveAll<CR>
