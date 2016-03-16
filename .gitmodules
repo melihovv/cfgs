@@ -73,3 +73,6 @@
 [submodule "editors/vim/.vim/bundle/vim-antlr"]
 	path = editors/vim/.vim/bundle/vim-antlr
 	url = https://github.com/jrozner/vim-antlr
+[submodule "editors/vim/.vim/bundle/Dockerfile.vim"]
+	path = editors/vim/.vim/bundle/Dockerfile.vim
+	url = https://github.com/ekalinin/Dockerfile.vim.git
