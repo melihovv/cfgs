@@ -1,53 +1,39 @@
-# If not running interactively, don't do anything
-[[ "$-" != *i* ]] && return
+#!/usr/bin/env bash
 
-# Use case-insensitive filename globbing
-shopt -s nocaseglob
+# Path to the bash it configuration
+export BASH_IT="/d/Files/Programs/OpenServer-5.2.2/bash-it"
 
-# When changing directory small typos can be ignored by bash
-# for example, cd /vr/lgo/apaache would find /var/log/apache
-shopt -s cdspell
+# Lock and Load a custom theme file
+# location /.bash_it/themes/
+export BASH_IT_THEME='bobby'
 
-# Don't put duplicate lines in the history.
-export HISTCONTROL=$HISTCONTROL${HISTCONTROL+,}ignoredups
+# (Advanced): Change this to the name of your remote repo if you
+# cloned bash-it with a remote other than origin such as `bash-it`.
+# export BASH_IT_REMOTE='bash-it'
 
-# Ignore some controlling instructions
-# HISTIGNORE is a colon-delimited list of patterns which should be excluded.
-# The '&' is a special pattern which suppresses duplicate entries.
-export HISTIGNORE=$'[ \t]*:&:[fb]g:exit'
-export HISTIGNORE=$'[ \t]*:&:[fb]g:exit:ls' # Ignore the ls command as well
+# Your place for hosting Git repos. I use this for private repos.
+export GIT_HOSTING='git@git.domain.com'
 
-# Some people use a different file for aliases
-if [ -f "${HOME}/.my_aliases" ];
-then
-  source "${HOME}/.my_aliases"
-fi
+# Don't check mail when opening terminal.
+unset MAILCHECK
 
-# Enable programmable completion features (you don't need to enable
-# this, if it's already enabled in /etc/bash.bashrc and /etc/profile
-# sources /etc/bash.bashrc).
-if ! shopt -oq posix; then
-  if [ -f /usr/share/bash-completion/bash_completion ];
-  then
-    . /usr/share/bash-completion/bash_completion
-  elif [ -f /etc/bash_completion ];
-  then
-    . /etc/bash_completion
-  fi
-fi
+# Change this to your console based IRC client of choice.
+export IRC_CLIENT='irssi'
 
-[[ $TMUX != "" ]] && export TERM="xterm-256color"
+# Set this to the command you use for todo.txt-cli
+export TODO="t"
 
-if [ `uname` == "Linux" ];
-then
-    source /etc/bash_completion.d/git-prompt
-fi
+# Set this to false to turn off version control status checking within the prompt for all themes
+export SCM_CHECK=true
 
-if [ -f "${HOME}/.my_extra" ];
-then
-  source "${HOME}/.my_extra"
-fi
+# Set vcprompt executable path for scm advance info in prompt (demula theme)
+# https://github.com/xvzf/vcprompt
+#export VCPROMPT_EXECUTABLE=~/.vcprompt/bin/vcprompt
 
-export PS1="\[\033]0;$MSYSTEM:${PWD//[^[:ascii:]]/?}\007\]\n\[\033[32m\]\u@\h \
-\[\033[33m\]\w$(__git_ps1 "(%s)")\[\033[0m\]\n\\$ "
+# Load Bash It
+source $BASH_IT/bash_it.sh
 
+export EDITOR=vim
+
+source ~/.my_aliases
+source ~/.my_extra
