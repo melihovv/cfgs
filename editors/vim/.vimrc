@@ -186,7 +186,7 @@ nnoremap <leader>bq :bd<CR>
 nnoremap <leader>bl :ls<CR>
 "                                                           Normal mode by jj.
 inoremap jk <Esc>
-"                                                 Normal mode by оо (Russian).
+"                                                 Normal mode by лд (Russian).
 inoremap лд <Esc>
 "                                                            Turn off Ex mode.
 nnoremap Q <nop>
