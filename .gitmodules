@@ -76,3 +76,6 @@
 [submodule "editors/vim/.vim/bundle/Dockerfile.vim"]
 	path = editors/vim/.vim/bundle/Dockerfile.vim
 	url = https://github.com/ekalinin/Dockerfile.vim.git
+[submodule "editors/vim/.vim/bundle/emmet-vim"]
+	path = editors/vim/.vim/bundle/emmet-vim
+	url = https://github.com/mattn/emmet-vim
