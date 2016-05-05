@@ -3,9 +3,10 @@
 evernote = "c:\Users\tadatuta\AppData\Local\Apps\Evernote\Evernote\Evernote.exe"
 tc = "c:\Program Files (x86)\totalcmd\TOTALCMD64.EXE"
 dpPath = %ProgramFiles%\Dexpot\dexpot.exe
+snippingTool = "c:\Windows\System32\SnippingTool.exe"
 
 
-; win + f1 - run evernote.txt.
+; win + f1 - run evernote.
 #F1::
     Run, %evernote%
     return
@@ -13,6 +14,11 @@ dpPath = %ProgramFiles%\Dexpot\dexpot.exe
 ; win + f2 - run total commander.
 #F2::
     Run, %tc%
+    return
+
+; win + f3 - run snipping tool.
+#F3::
+    Run, %snippingTool%
     return
 
 
