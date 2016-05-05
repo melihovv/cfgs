@@ -1,7 +1,7 @@
 #SingleInstance force
 
 evernote = "c:\Users\tadatuta\AppData\Local\Apps\Evernote\Evernote\Evernote.exe"
-tc = "c:\Program Files (x86)\totalcmd\TOTALCMD64.EXE"
+tc = "c:\Program Files\totalcmd\TOTALCMD64.EXE"
 dpPath = %ProgramFiles%\Dexpot\dexpot.exe
 snippingTool = "c:\Windows\System32\SnippingTool.exe"
 
