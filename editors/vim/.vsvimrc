@@ -9,5 +9,5 @@ nnoremap <Leader>x :vsc Edit.Cut<CR>
 nnoremap <Leader>c :vsc Edit.Copy<CR>
 nnoremap <Leader>v :vsc Edit.Paste<CR>
 
-let @f="0:s/(/(\\r"
+let @f="0:s/(/(\\r    "
 let @c="0:s/, /,\\r/g"
