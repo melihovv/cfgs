@@ -19,6 +19,8 @@ alias co="composer.phar"
 alias cdu="composer.phar dump-autoload"
 alias cri="composer.phar require --ignore-platform-reqs"
 
+alias phpd="php -dxdebug.remote_autostart"
+
 alias a="php artisan"
 alias a:mc="php artisan make:controller"
 alias a:mcr="php artisan make:controller --resource"
