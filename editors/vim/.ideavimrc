@@ -1,6 +1,11 @@
 imap jk <Esc>
 set scrolloff=5
 
+nnoremap [<space> O<esc>0C<esc>j
+nnoremap ]<space> o<esc>0C<esc>k
+nnoremap [m :action MethodUp<cr>
+nnoremap ]m :action MethodDown<cr>
+
 let mapleader = " "
 map <leader>a :action $SelectAll<CR>
 map <leader>b :action GotoDeclaration<CR>
