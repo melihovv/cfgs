@@ -1,6 +1,8 @@
 imap jk <Esc>
 set scrolloff=5
 
+set surround
+
 nnoremap [<space> O<esc>0C<esc>j
 nnoremap ]<space> o<esc>0C<esc>k
 nnoremap [m :action MethodUp<cr>
