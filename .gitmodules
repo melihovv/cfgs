@@ -79,3 +79,6 @@
 [submodule "editors/vim/.vim/bundle/emmet-vim"]
 	path = editors/vim/.vim/bundle/emmet-vim
 	url = https://github.com/mattn/emmet-vim
+[submodule "editors/vim/.vim/bundle/splitjoin.vim"]
+	path = editors/vim/.vim/bundle/splitjoin.vim
+	url = https://github.com/AndrewRadev/splitjoin.vim
