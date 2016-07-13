@@ -82,3 +82,6 @@
 [submodule "editors/vim/.vim/bundle/splitjoin.vim"]
 	path = editors/vim/.vim/bundle/splitjoin.vim
 	url = https://github.com/AndrewRadev/splitjoin.vim
+[submodule "editors/vim/.vim/bundle/nerdtree-git-plugin"]
+	path = editors/vim/.vim/bundle/nerdtree-git-plugin
+	url = https://github.com/Xuyuanp/nerdtree-git-plugin
