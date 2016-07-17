@@ -88,3 +88,6 @@
 [submodule "editors/vim/.vim/bundle/vim-multiple-cursors"]
 	path = editors/vim/.vim/bundle/vim-multiple-cursors
 	url = https://github.com/terryma/vim-multiple-cursors
+[submodule "editors/vim/.vim/bundle/vim-better-whitespace"]
+	path = editors/vim/.vim/bundle/vim-better-whitespace
+	url = https://github.com/ntpeters/vim-better-whitespace
