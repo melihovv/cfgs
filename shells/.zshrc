@@ -23,14 +23,14 @@ export LANG=en_US.UTF-8
 
 source $ZSH/oh-my-zsh.sh
 
-if [ -f "${HOME}/.my_aliases" ];
+if [ -f "$HOME/.my_aliases" ];
 then
-  source "${HOME}/.my_aliases"
+  source "$HOME/.my_aliases"
 fi
 
-if [ -f "${HOME}/.my_extra" ];
+if [ -f "$HOME/.my_extra" ];
 then
-  source "${HOME}/.my_extra"
+  source "$HOME/.my_extra"
 fi
 
 export EDITOR=vim
