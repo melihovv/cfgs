@@ -35,6 +35,11 @@ source $BASH_IT/bash_it.sh
 
 export EDITOR=vim
 
+if [ -f "$HOME/.my_aliases" ];
+then
+  source "$HOME/.my_aliases"
+fi
+
 if [ -f "$HOME/.my_extra" ];
 then
   source "$HOME/.my_extra"
