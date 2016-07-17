@@ -2,6 +2,9 @@ alias v="vim"
 alias c="clear"
 alias q="exit"
 alias g="git"
+
+alias tmux="TERM=xterm-256color tmux"
+
 alias d="docker"
 alias ds='docker stop $(docker ps -q)'
 alias dr='docker rm $(docker ps -aq)'
