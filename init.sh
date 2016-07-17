@@ -12,6 +12,13 @@ GREEN="\033[0;32m"
 # No color.
 NC="\033[0m"
 
+if [ ! $1 == "" ] && [ -d $1 ];
+then
+    DEST=$1
+else
+    DEST=$HOME
+fi
+
 BACKUP_DIR=$SCRIPT_DIR/backup
 if [ ! -d "$BACKUP_DIR" ];
 then
@@ -36,64 +43,76 @@ colorEcho() {
     printf "${GREEN}$1${NC}\n"
 }
 
-if [ ! $1 == "" ] && [ -d $1 ];
-then
-    DEST=$1
-else
-    DEST=$HOME
-fi
+provideBashIt() {
+	if [ -d "$HOME/.bash_it" ];
+	then
+	    backupAndLink "$SCRIPT_DIR/shells/.bashrc" "$DEST/.bashrc"
+	fi
+}
 
+provideZsh() {
+	if [ "$(which zsh)" == "" ];
+	then
+	    colorEcho "Installing zsh"
+	    sudo apt install -y zsh
+	fi
+}
 
-colorEcho "Linking .my_aliases"
-backupAndLink "$SCRIPT_DIR/shells/.my_aliases" "$DEST/.my_aliases"
+provideOhMyZsh() {
+    if [ ! -d "$DEST/.oh-my-zsh" ];
+    then
+        colorEcho "Download oh-my-zsh"
+        sh -c "$(curl -fsSL http://raw.github.com/robbyrussell/oh-my-zsh/\
+master/tools/install.sh)"
+    fi
 
-if [ ! -d "$HOME/.bash_it" ];
-then
-    colorEcho "Installing bash-it"
-    git clone --depth=1 https://github.com/Bash-it/bash-it.git ~/.bash_it
-    source  ~/.bash_it/install.sh
-    backupAndLink "$SCRIPT_DIR/shells/.my_aliases" \
-"$DEST/.bash_it/aliases/custom.aliases.bash"
-fi
+    if [ -d "$DEST/.oh-my-zsh" ];
+    then
+        colorEcho "Linking .zshrc"
+        backupAndLink "$SCRIPT_DIR/shells/.zshrc" "$DEST/.zshrc"
+    fi
 
-
-if [ `which zsh` == "" ];
-then
-    colorEcho "Installing zsh"
-    sudo apt-get -y install zsh
-fi
-
-if [ ! -d "$DEST/.oh-my-zsh" ];
-then
-    colorEcho "Download oh-my-zsh"
-    sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/\
-tools/install.sh)"
-fi
-
-colorEcho "Linking .zshrc"
-backupAndLink "$SCRIPT_DIR/shells/.zshrc" "$DEST/.zshrc"
-
-BABUN_THEME="$DEST/.oh-my-zsh/custom/babun.zsh-theme"
-if [ ! -f $BABUN_THEME ];
-then
-    colorEcho "Download babun oh-my-zsh theme"
-    curl "https://raw.githubusercontent.com/babun/babun/master/babun-core/\
+    BABUN_THEME="$DEST/.oh-my-zsh/custom/babun.zsh-theme"
+    if [ ! -f $BABUN_THEME ];
+    then
+        colorEcho "Download babun oh-my-zsh theme"
+        curl "https://raw.githubusercontent.com/babun/babun/master/babun-core/\
 plugins/oh-my-zsh/src/babun.zsh-theme" > $BABUN_THEME
-fi
+    fi
+}
+
+provideShells() {
+	provideBashIt
+	provideZsh
+	provideOhMyZsh
+	colorEcho "Linking .my_aliases"
+	backupAndLink "$SCRIPT_DIR/shells/.my_aliases" "$DEST/.my_aliases"
+}
+
+provideGit() {
+    cd $SCRIPT_DIR
+	colorEcho "Linking .git*"
+	backupAndLink "$SCRIPT_DIR/git/.gitconfig" "$DEST/.gitconfig"
+	backupAndLink "$SCRIPT_DIR/git/.gitignore_global" "$DEST/.gitignore_global"
+}
+
+provideVim() {
+	colorEcho "Linking vim"
+	backupAndLink "$SCRIPT_DIR/editors/vim/.vimrc" "$DEST/.vimrc"
+	backupAndLink "$SCRIPT_DIR/editors/vim/.vim" "$DEST/.vim"
+
+	colorEcho "Installing vim plugins"
+	git submodule init && git submodule update
+}
+
+provideOthers() {
+	colorEcho "Linking .tmux.conf"
+	backupAndLink "$SCRIPT_DIR/.tmux.conf" "$DEST/.tmux.conf"
+}
 
 
-colorEcho "Linking .tmux.conf"
-backupAndLink "$SCRIPT_DIR/.tmux.conf" "$DEST/.tmux.conf"
-
-colorEcho "Linking .git*"
-backupAndLink "$SCRIPT_DIR/git/.gitconfig" "$DEST/.gitconfig"
-backupAndLink "$SCRIPT_DIR/git/.gitignore_global" "$DEST/.gitignore_global"
-
-
-colorEcho "Linking vim"
-backupAndLink "$SCRIPT_DIR/editors/vim/.vimrc" "$DEST/.vimrc"
-backupAndLink "$SCRIPT_DIR/editors/vim/.vim" "$DEST/.vim"
-
-colorEcho "Installing vim plugins"
-git submodule init && git submodule update
+provideShells
+provideGit
+provideVim
+provideOthers
 

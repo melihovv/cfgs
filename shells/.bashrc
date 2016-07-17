@@ -1,12 +1,7 @@
 #!/usr/bin/env bash
 
 # Path to the bash it configuration
-if [ `uname` == "Linux" ];
-then
-    export BASH_IT="$HOME/.bash_it"
-else
-    export BASH_IT="$HOME/bash-it"
-fi
+export BASH_IT="$HOME/.bash_it"
 
 # Lock and Load a custom theme file
 # location /.bash_it/themes/
@@ -39,12 +34,6 @@ export SCM_CHECK=true
 source $BASH_IT/bash_it.sh
 
 export EDITOR=vim
-
-
-if [ -f "$HOME/.my_aliases" ];
-then
-  source "$HOME/.my_aliases"
-fi
 
 if [ -f "$HOME/.my_extra" ];
 then
