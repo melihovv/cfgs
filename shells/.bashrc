@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # Path to the bash it configuration
-export BASH_IT="/d/Files/Programs/OpenServer-5.2.2/bash-it"
+export BASH_IT="$HOME/bash-it"
 
 # Lock and Load a custom theme file
 # location /.bash_it/themes/
@@ -37,3 +37,4 @@ export EDITOR=vim
 
 source ~/.my_aliases
 source ~/.my_extra
+
