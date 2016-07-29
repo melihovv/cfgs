@@ -9,8 +9,7 @@ then
 fi
 
 alias d="docker"
-alias ds='docker stop $(docker ps -q)'
-alias dr='docker rm $(docker ps -aq)'
+alias dc="docker-compose"
 
 alias ls="ls --color=auto --group-directories-first"
 alias ll="ls -AlF --group-directories-first"
