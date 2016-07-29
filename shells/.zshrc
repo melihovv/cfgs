@@ -12,7 +12,9 @@ ZSH_THEME="babun"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git docker docker-compose)
+plugins=(git docker docker-compose extract)
+
+setopt HIST_IGNORE_ALL_DUPS
 
 # For arrows using when tab pressed for completion.
 setopt menucomplete
