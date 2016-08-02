@@ -13,7 +13,7 @@
 ; Highlight languages natively in org mod.
 (setq org-src-fontify-natively t)
 
-          
+
 ;; ==================================================
 ;;                    Cask
 ;; ==================================================
