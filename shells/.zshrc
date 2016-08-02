@@ -12,7 +12,7 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git docker docker-compose extract)
+plugins=(git docker docker-compose extract fasd)
 
 setopt HIST_IGNORE_ALL_DUPS
 
@@ -25,6 +25,8 @@ export LANG=en_US.UTF-8
 
 source $ZSH/oh-my-zsh.sh
 
+export EDITOR=vim
+
 if [ -f "$HOME/.aliases" ];
 then
   source "$HOME/.aliases"
@@ -34,6 +36,4 @@ if [ -f "$HOME/.extra" ];
 then
   source "$HOME/.extra"
 fi
-
-export EDITOR=vim
 

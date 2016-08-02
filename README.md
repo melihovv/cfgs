@@ -15,7 +15,7 @@ Install ansible:
 
 Install:
 - git clone https://github.com/melihovv/cfgs.git ~/cfgs
-- ~/cfgs/ansible/init.sh "user=your_user_name"
+- sudo ~/cfgs/ansible/init.sh "user=your_user_name"
 
 Running `ansible/init.sh` will
 - install:
@@ -25,6 +25,7 @@ Running `ansible/init.sh` will
     - git
     - tmux
     - tree
+    - fasd
 - make zsh default shell for user (use should change user variable in
 ansible/inventory)
 - simlink `$HOME/{file}` to `path/to/.dotfiles/{file}`. WARNING: it will
@@ -38,5 +39,6 @@ Configs for:
 - git
 - vim
 - emacs
+- fasd
 - and more...
 

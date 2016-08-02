@@ -45,3 +45,5 @@ then
   source "$HOME/.extra"
 fi
 
+eval "$(fasd --init auto)"
+

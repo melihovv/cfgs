@@ -11,6 +11,7 @@
         ohmyzsh_copy_zshrc: false
         ohmyzsh_users:
             - "{{ user }}"
+      - role: ngpestelos.fasd
 
   tasks:
       - name: Install bash-it
@@ -31,6 +32,7 @@
             - {path: 'git/.gitconfig', name: '.gitconfig'}
             - {path: 'git/.gitignore_global', name: '.gitignore_global'}
             - {path: 'other/.tmux.conf', name: '.tmux.conf'}
+            - {path: 'other/.fasdrc', name: '.fasdrc'}
             - {path: 'editors/vim/.vimrc', name: '.vimrc'}
             - {path: 'editors/vim/.vim', name: '.vim'}
 
