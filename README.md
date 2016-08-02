@@ -7,6 +7,12 @@ Requirements:
 - git
 - ansible
 
+Install ansible:
+- sudo apt-get install software-properties-common
+- sudo apt-add-repository ppa:ansible/ansible
+- sudo apt-get update
+- sudo apt-get install ansible -y
+
 Install:
 - git clone https://github.com/melihovv/cfgs.git ~/cfgs
 - ~/cfgs/ansible/init.sh "user=your_user_name"
