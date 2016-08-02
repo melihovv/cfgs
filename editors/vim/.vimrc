@@ -214,7 +214,7 @@ endif
 "                                                                 Edit .vimrc.
 nnoremap <leader>ev :vsplit $MYVIMRC<cr>
 "                                             When you open file without sudo.
-cmap w!! w sudo tee % > /dev/null
+cmap w!! w !sudo tee % > /dev/null
 
 
 " plugins --------------------------------------------------------------------
