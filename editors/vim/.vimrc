@@ -213,6 +213,8 @@ if has('win32')
 endif
 "                                                                 Edit .vimrc.
 nnoremap <leader>ev :vsplit $MYVIMRC<cr>
+"                                             When you open file without sudo.
+cmap w!! w sudo tee % > /dev/null
 
 
 " plugins --------------------------------------------------------------------
