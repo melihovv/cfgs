@@ -35,13 +35,13 @@ source $BASH_IT/bash_it.sh
 
 export EDITOR=vim
 
-if [ -f "$HOME/.my_aliases" ];
+if [ -f "$HOME/.aliases" ];
 then
-  source "$HOME/.my_aliases"
+  source "$HOME/.aliases"
 fi
 
-if [ -f "$HOME/.my_extra" ];
+if [ -f "$HOME/.extra" ];
 then
-  source "$HOME/.my_extra"
+  source "$HOME/.extra"
 fi
 
