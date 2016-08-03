@@ -3,9 +3,13 @@ set scrolloff=5
 
 set surround
 
+" Inser line above.
 nnoremap [<space> O<esc>0C<esc>j
+" Inser line below.
 nnoremap ]<space> o<esc>0C<esc>k
+" Previous method.
 nnoremap [m :action MethodUp<cr>
+" Next method.
 nnoremap ]m :action MethodDown<cr>
 
 let mapleader = " "
