@@ -35,15 +35,9 @@ source $BASH_IT/bash_it.sh
 
 export EDITOR=vim
 
-if [ -f "$HOME/.aliases" ];
-then
-  source "$HOME/.aliases"
-fi
+[ -f "$HOME/.aliases" ] && source "$HOME/.aliases"
 
-if [ -f "$HOME/.extra" ];
-then
-  source "$HOME/.extra"
-fi
+[ -f "$HOME/.extra" ] && source "$HOME/.extra"
 
 eval "$(fasd --init auto)"
 alias v="f -e $EDITOR"

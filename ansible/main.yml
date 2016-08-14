@@ -7,22 +7,22 @@
       - role: kbrebanov.tmux
         become: true
       - role: theNewFlesh.tree
-      - role: opdavies.oh-my-zsh
-        ohmyzsh_copy_zshrc: false
-        ohmyzsh_users:
-            - "{{ user }}"
       - role: ngpestelos.fasd
 
   tasks:
+      - name: Install antigen
+        git:
+            repo: https://github.com/zsh-users/antigen
+            dest: "{{ ansible_env.HOME }}/antigen"
       - name: Install bash-it
         git:
             repo: https://github.com/Bash-it/bash-it
-            dest: /home/{{ user}}/.bash_it
+            dest: "{{ ansible_env.HOME }}/.bash_it"
 
       - name: Symlink dotfiles
         file:
             src: "{{ playbook_dir }}/../{{ item.path }}"
-            dest: /home/{{ user }}/{{ item.name }}
+            dest: "{{ ansible_env.HOME }}/{{ item.name }}"
             state: link
             force: yes
         with_items:

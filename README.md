@@ -15,7 +15,7 @@ Install ansible:
 
 Install:
 - git clone https://github.com/melihovv/cfgs.git ~/cfgs
-- sudo ~/cfgs/ansible/init.sh "user=your_user_name"
+- sudo ~/cfgs/ansible/init.sh your_user_name
 
 Running `ansible/init.sh` will
 - install:

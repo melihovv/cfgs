@@ -1,39 +1,29 @@
-# Path to your oh-my-zsh installation.
-export ZSH=$HOME/.oh-my-zsh
-
-# Set name of the theme to load.
-# Look in ~/.oh-my-zsh/themes/
-# Optionally, if you set this to "random", it'll load a random theme each
-# time that oh-my-zsh is loaded.
-ZSH_THEME="robbyrussell"
+source $HOME/antigen/antigen.zsh
 
 export EDITOR=vim
-
-# Which plugins would you like to load? (plugins can be found in
-# ~/.oh-my-zsh/plugins/*)
-# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
-# Add wisely, as too many plugins slow down shell startup.
-plugins=(git docker docker-compose extract fasd)
-
 setopt HIST_IGNORE_ALL_DUPS
 
-# For arrows using when tab pressed for completion.
+antigen use oh-my-zsh
+antigen bundle git
+antigen bundle docker
+antigen bundle docker-compose
+antigen bundle extract
+antigen bundle fasd
+antigen bundle zsh-users/zsh-syntax-highlighting
+antigen bundle zsh-users/zsh-history-substring-search
+antigen bundle zsh-users/zsh-autosuggestions
+antigen theme robbyrussell
+
+bindkey '^ ' autosuggest-accept
+bindkey -M emacs '^P' history-substring-search-up
+bindkey -M emacs '^N' history-substring-search-down
+
 setopt menucomplete
 zstyle ':completion:*' menu select=1 _complete _ignored _approximate
 
-export PATH="$HOME/bin:/usr/local/bin:$PATH"
-export LANG=en_US.UTF-8
+[ -f "$HOME/.aliases" ] && source "$HOME/.aliases"
 
-source $ZSH/oh-my-zsh.sh
+[ -f "$HOME/.extra" ] && source "$HOME/.extra"
 
-if [ -f "$HOME/.aliases" ];
-then
-  source "$HOME/.aliases"
-fi
-
-if [ -f "$HOME/.extra" ];
-then
-  source "$HOME/.extra"
-fi
+antigen apply
 
