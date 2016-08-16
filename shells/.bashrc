@@ -34,6 +34,7 @@ export SCM_CHECK=true
 source $BASH_IT/bash_it.sh
 
 export EDITOR=vim
+export PATH=~/bin:$PATH
 
 [ -f "$HOME/.aliases" ] && source "$HOME/.aliases"
 

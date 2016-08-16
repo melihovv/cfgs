@@ -1,6 +1,7 @@
 source $HOME/antigen/antigen.zsh
 
 export EDITOR=vim
+export PATH=~/bin:$PATH
 setopt HIST_IGNORE_ALL_DUPS
 
 antigen use oh-my-zsh
