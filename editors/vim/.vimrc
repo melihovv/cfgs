@@ -228,15 +228,6 @@ let NERDTreeShowHidden=1
 "                                                         Toggle NerdTree bar.
 nnoremap <Leader>d :let NERDTreeQuitOnOpen = 1<bar>NERDTreeToggle<CR>
 nnoremap <Leader>D :let NERDTreeQuitOnOpen = 0<bar>NERDTreeToggle<CR>
-augroup NerdTree
-    autocmd!
-"    Open a NERDTree automatically when vim starts if no files were specified.
-    autocmd StdinReadPre * let s:std_in=1
-    autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
-"                      Close vim if the only window left opened is a NerdTree.
-    autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType")
-        \&& b:NERDTreeType == "primary") | q | endif
-augroup END
 
 
 " vim-latex ------------------------------------------------------------------
