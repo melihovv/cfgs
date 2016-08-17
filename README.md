@@ -20,9 +20,10 @@ Install:
 Running `ansible/init.sh` will
 - install:
     - zsh
-    - oh-my-zsh
+    - antigen with oh-my-zsh and awesome zsh plugins
     - bash-it
     - git
+    - git-number
     - tmux
     - tree
     - fasd
