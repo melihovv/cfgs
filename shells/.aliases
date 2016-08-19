@@ -17,7 +17,6 @@ alias ls="ls --color=auto --group-directories-first"
 alias ll="ls -AlF --group-directories-first"
 
 alias xclip="xclip -sel clip"
-alias open="gnome-open"
 
 alias ..="cd .."
 alias ...="cd ../.."
