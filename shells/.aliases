@@ -2,9 +2,9 @@ alias c="clear"
 alias q="exit"
 
 alias g="git"
-alias gnv="git --no-verify"
-alias gadd="git --amend --no-edit"
-alias gaddnv="git --amend --no-edit --no-verify"
+alias gnv="git commit --no-verify"
+alias gadd="git commit --amend --no-edit"
+alias gaddnv="git commit --amend --no-edit --no-verify"
 
 alias gn="git number --column"
 alias ga="git number add"
