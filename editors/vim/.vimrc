@@ -298,7 +298,7 @@ let g:airline_section_z='%p%% %l %c %V'
 " CtrlP ----------------------------------------------------------------------
 "                                                  Setup some default ignores.
 let g:ctrlp_custom_ignore = {
-  \'dir':  '\v[\/](\.(git|hg|svn)|\_site)$',
+  \'dir':  '\v[\/](\.(git|hg|svn)|vendor|node_modules|clockwork)$',
   \'file': '\v\.(exe|so|dll|class|png|jpg|jpeg)$',
 \}
 
