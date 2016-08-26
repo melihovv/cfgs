@@ -310,6 +310,7 @@ let g:ctrlp_working_path_mode = 'r'
 nnoremap <leader>bb :CtrlPBuffer<cr>
 nnoremap <leader>bm :CtrlPMixed<cr>
 nnoremap <leader>bs :CtrlPMRU<cr>
+nnoremap <leader>bt :CtrlPBufTag<cr>
 
 
 " EasyMotion -----------------------------------------------------------------
