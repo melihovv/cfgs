@@ -91,3 +91,6 @@
 [submodule "editors/vim/.vim/bundle/tabular"]
 	path = editors/vim/.vim/bundle/tabular
 	url = https://github.com/godlygeek/tabular
+[submodule "editors/vim/.vim/bundle/vim-vinegar"]
+	path = editors/vim/.vim/bundle/vim-vinegar
+	url = https://github.com/tpope/vim-vinegar

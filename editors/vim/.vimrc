@@ -225,6 +225,8 @@ cnoremap cd!! cd %:p:h
 let NERDTreeQuitOnOpen = 0
 "                                                           Show hidden files.
 let NERDTreeShowHidden=1
+"                                                          Don't hijack netrw.
+let g:NERDTreeHijackNetrw=0
 "                                                         Toggle NerdTree bar.
 nnoremap <Leader>d :let NERDTreeQuitOnOpen = 1<bar>NERDTreeToggle<CR>
 nnoremap <Leader>D :let NERDTreeQuitOnOpen = 0<bar>NERDTreeToggle<CR>
