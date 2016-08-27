@@ -311,6 +311,10 @@ nnoremap <leader>bb :CtrlPBuffer<cr>
 nnoremap <leader>bm :CtrlPMixed<cr>
 nnoremap <leader>bs :CtrlPMRU<cr>
 nnoremap <leader>bt :CtrlPBufTag<cr>
+nnoremap <leader>. :CtrlPTag<cr>
+
+" Tagbar
+nnoremap <F8> :TagbarToggle<cr>
 
 
 " EasyMotion -----------------------------------------------------------------

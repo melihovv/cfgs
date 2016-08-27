@@ -46,6 +46,7 @@
             - {path: "git/.gitignore_global", name: ".gitignore_global"}
             - {path: "other/.tmux.conf", name: ".tmux.conf"}
             - {path: "other/.fasdrc", name: ".fasdrc"}
+            - {path: "other/.ctags", name: ".ctags"}
             - {path: "editors/vim/.vimrc", name: ".vimrc"}
             - {path: "editors/vim/.vim", name: ".vim"}
 

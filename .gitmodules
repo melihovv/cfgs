@@ -94,3 +94,6 @@
 [submodule "editors/vim/.vim/bundle/vim-vinegar"]
 	path = editors/vim/.vim/bundle/vim-vinegar
 	url = https://github.com/tpope/vim-vinegar
+[submodule "editors/vim/.vim/bundle/tagbar"]
+	path = editors/vim/.vim/bundle/tagbar
+	url = https://github.com/majutsushi/tagbar
