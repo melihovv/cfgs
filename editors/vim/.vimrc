@@ -316,6 +316,14 @@ nnoremap <leader>. :CtrlPTag<cr>
 " Tagbar
 nnoremap <F8> :TagbarToggle<cr>
 
+" Utilsnips
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<tab>"
+let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
+" let g:UltiSnipsSnippetDirectories=["~/.vim/UltiSnips"]
+"                             If you want :UltiSnipsEdit to split your window.
+let g:UltiSnipsEditSplit="vertical"
+
 
 " EasyMotion -----------------------------------------------------------------
 "                                                         Smart case matching.

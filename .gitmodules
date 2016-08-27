@@ -85,3 +85,6 @@
 [submodule "editors/vim/.vim/bundle/tagbar"]
 	path = editors/vim/.vim/bundle/tagbar
 	url = https://github.com/majutsushi/tagbar
+[submodule "editors/vim/.vim/bundle/ultisnips"]
+	path = editors/vim/.vim/bundle/ultisnips
+	url = https://github.com/SirVer/ultisnips
