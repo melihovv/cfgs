@@ -44,5 +44,5 @@ alias ar:mi="php artisan migrate"
 alias ar:mis="php artisan migrate --seed"
 alias ar:mir="php artisan migrate:refresh"
 alias ar:mirs="php artisan migrate:refresh --seed"
-alias ar:ih:m="php artisan ide-helper:models -W"
+alias ar:ih:m="php artisan ide-helper:models -N"
 
