@@ -320,7 +320,7 @@ nnoremap <F8> :TagbarToggle<cr>
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<tab>"
 let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
-" let g:UltiSnipsSnippetDirectories=["~/.vim/UltiSnips"]
+let g:UltiSnipsSnippetDirectories=["~/.vim/UltiSnips", "Ultisnips"]
 "                             If you want :UltiSnipsEdit to split your window.
 let g:UltiSnipsEditSplit="vertical"
 
