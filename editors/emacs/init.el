@@ -64,10 +64,12 @@
 ; Ask once when dired delete not empty folder.
 (setq dired-recursive-deletes (quote top))
 ; For one buffer in dired mode.
+(require 'dired)
 (define-key dired-mode-map (kbd "f") 'dired-find-alternate-file)
 (define-key dired-mode-map (kbd "^") (lambda()
                                        (interactive)
                                        (find-alternate-file "..")))
+
 
 ; Org-mode
 ; Don't indent in org mode.
