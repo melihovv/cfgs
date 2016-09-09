@@ -1,44 +1,5 @@
 ;; ==================================================
-;;                 Org mode
-;; ==================================================
-
-; Add latest version of org mode.
-(add-to-list 'load-path "~/src/org-mode/lisp")
-
-; Don't indent in org mode.
-(add-hook 'org-mode-hook (lambda()
-                           (set (make-local-variable 'electric-indent-functions)
-                                (list (lambda(arg) 'no-indent)))))
-
-; Highlight languages natively in org mod.
-(setq org-src-fontify-natively t)
-
-
-;; ==================================================
-;;                    Cask
-;; ==================================================
-
-(require 'cask "~/.cask/cask.el")
-(cask-initialize)
-
-
-;; ==================================================
-;;                    Dired
-;; ==================================================
-
-; Ask once when dired delete not empty folder.
-(setq dired-recursive-deletes (quote top))
-
-; For one buffer in dired mode.
-(require 'dired)
-(define-key dired-mode-map (kbd "f") 'dired-find-alternate-file)
-(define-key dired-mode-map (kbd "^") (lambda()
-                                       (interactive)
-                                       (find-alternate-file "..")))
-
-
-;; ==================================================
-;;            Definition of my minor mode
+;; Definition of my minor mode
 ;; ==================================================
 
 (defvar my-keys-minor-mode-map (make-keymap) "my keys")
@@ -49,35 +10,27 @@
 
 
 ;; ==================================================
-;;                 Basic settings
+;; Basic settings
 ;; ==================================================
-
-; Remember position before exit.
-(require 'saveplace)
-(setq save-place-file (concat user-emacs-directory "saveplace.el"))
-(setq-default save-place t)
 
 ; Autoindent.
 (electric-indent-mode t)
 
-; Autocompletion.
-(require 'auto-complete-config)
-(ac-config-default)
-
 ; ido mode.
 (ido-mode 1)
 (ido-everywhere 1)
-(flx-ido-mode 1)
-(setq ido-use-faces nil)
 
-; Delete selection in selection mode.
+; Replace selection when type.
+(delete-selection-mode t)
+
+; Don't break line in the middle of the word.
 (global-visual-line-mode t)
-
-; Blink cursor
-(blink-cursor-mode t)
 
 ; Highlight pair parens.
 (show-paren-mode t)
+
+; Blink cursor
+(blink-cursor-mode t)
 
 ; Don't make backup.
 (setq make-backup-file nil)
@@ -97,66 +50,40 @@
 ; y/n instead of yes/no.
 (defalias 'yes-or-no-p 'y-or-n-p)
 
-; Wrap by words not by letters.
-(global-visual-line-mode t)
+; Save position before exit.
+(require 'saveplace)
+(setq save-place-file (concat user-emacs-directory "saveplace.el"))
+(setq-default save-place t)
 
 ; Hide menu, toolbar and scrollbar in gui.
 (when (window-system)
   (tool-bar-mode -1)
   (scroll-bar-mode -1))
 
-;; ==================================================
-;;              Plugins
-;; ==================================================
+; Dired
+; Ask once when dired delete not empty folder.
+(setq dired-recursive-deletes (quote top))
+; For one buffer in dired mode.
+(define-key dired-mode-map (kbd "f") 'dired-find-alternate-file)
+(define-key dired-mode-map (kbd "^") (lambda()
+                                       (interactive)
+                                       (find-alternate-file "..")))
 
-; Yasnippet.
-; Enable yasnippet.
-(yas-global-mode t)
-
-; Create snippet.
-(defun create-snippet (filename)
-     (interactive "s")
-     (let ((mode (symbol-name major-mode))
-          (find-file (format "~/.emacs.d/snippets/%s/%s" mode filename))
-          (snippet-mode))))
-
-(global-set-key (kbd "M-'") 'create-snippet)
-
-; Projectile.
-; Enable projectile.
-(projectile-global-mode)
-
-(define-key projectile-mode-map (kbd "M-/") 'projectile-find-file)
-
-; Expand selection.
-(define-key my-keys-minor-mode-map (kbd "C-o") 'er/expand-region)
-
-; Ace jump.
-(define-key my-keys-minor-mode-map (kbd "C-c SPC") 'ace-jump-mode)
-
-; Neotree.
-(require 'neotree)
-(global-set-key (kbd "C-\\") 'neotree-toggle)
-(setq-default neo-show-hidden-files t)
-; Change root automatically when project is switched.
-(setq projectile-switch-project-action 'neotree-projectile-action)
+; Org-mode
+; Don't indent in org mode.
+(add-hook 'org-mode-hook (lambda()
+                           (set (make-local-variable 'electric-indent-functions)
+                                (list (lambda(arg) 'no-indent)))))
+; Highlight languages natively in org mod.
+(setq org-src-fontify-natively t)
 
 
 ;; ==================================================
-;;              Bindings for custom functions
-;; ==================================================
-
-(define-key my-keys-minor-mode-map (kbd "C-S-y") 'duplicate-current-line-or-region)
-(global-set-key [remap kill-ring-save] 'copy-line-or-region)
-(define-key my-keys-minor-mode-map (kbd "M-l") 'select-current-line)
-(define-key my-keys-minor-mode-map (kbd "M-RET") 'line-above)
-(global-set-key [remap kill-region] 'cut-line-or-region)
-
-;; ==================================================
-;;              Custom functions
+;; Custom functions
 ;; ==================================================
 
 ; Duplicate current line or region.
+(define-key my-keys-minor-mode-map (kbd "C-S-y") 'duplicate-current-line-or-region)
 (defun duplicate-current-line-or-region (arg)
   "Duplicates the current line or region ARG times.
 If there's no region, the current line will be duplicated. However, if
@@ -179,6 +106,7 @@ there's a region, all lines that region covers will be duplicated."
       (goto-char (+ origin (* (length region) arg) arg)))))
 
 ; Select current line.
+(define-key my-keys-minor-mode-map (kbd "M-l") 'select-current-line)
 (defun select-current-line()
   "Selects the current line"
   (interactive)
@@ -186,6 +114,7 @@ there's a region, all lines that region covers will be duplicated."
   (push-mark (line-beginning-position) nil t))
 
 ; Paste line above.
+(define-key my-keys-minor-mode-map (kbd "M-RET") 'line-above)
 (defun line-above()
   "Pastes line abobe"
   (interactive)
@@ -195,6 +124,7 @@ there's a region, all lines that region covers will be duplicated."
   (indent-according-to-mode))
 
 ; Cut line or region.
+(define-key my-keys-minor-mode-map [remap kill-region] 'cut-line-or-region)
 (defun cut-line-or-region()
   "Cuts line or region"
   (interactive)
@@ -203,12 +133,69 @@ there's a region, all lines that region covers will be duplicated."
     (kill-region (line-beginning-position) (line-beginning-position 2))))
 
 ; Copy line or region.
+(define-key my-keys-minor-mode-map [remap kill-ring-save] 'copy-line-or-region)
 (defun copy-line-or-region()
   "Copys line or region"
   (interactive)
   (if (region-active-p)
       (kill-ring-save (region-beginning) (region-end))
     (kill-ring-save (line-beginning-position) (line-beginning-position 2))))
+
+
+;; ==================================================
+;; Plugins
+;; ==================================================
+
+(require 'cask "~/.cask/cask.el")
+(cask-initialize)
+
+; Autocompletion.
+(require 'auto-complete-config)
+(ac-config-default)
+
+
+; Yasnippet.
+(yas-global-mode t)
+; Create snippet.
+(defun create-snippet (filename)
+     (interactive "s")
+     (let ((mode (symbol-name major-mode)))
+          (find-file (format "~/.emacs.d/snippets/%s/%s" mode filename))
+          (snippet-mode)))
+(define-key my-keys-minor-mode-map (kbd "M-'") 'create-snippet)
+
+
+; Projectile.
+(projectile-global-mode)
+(define-key projectile-mode-map (kbd "M-/") 'projectile-find-file)
+
+
+; Helm
+(helm-mode 1)
+
+; Helm-projectile
+(define-key projectile-mode-map (kbd "M-/") 'projectile-find-file)
+
+
+; Expand selection.
+(define-key my-keys-minor-mode-map (kbd "C-=") 'er/expand-region)
+
+
+; Ace jump.
+(define-key my-keys-minor-mode-map (kbd "C-c SPC") 'ace-jump-mode)
+
+
+; Neotree.
+(require 'neotree)
+(define-key my-keys-minor-mode-map (kbd "C-\\") 'neotree-toggle)
+(setq-default neo-show-hidden-files t)
+; Change root automatically when project is switched.
+(setq projectile-switch-project-action 'neotree-projectile-action)
+
+
+; flx-ido
+(flx-ido-mode 1)
+(setq ido-use-faces nil)
 
 
 (custom-set-variables
