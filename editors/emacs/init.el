@@ -57,8 +57,12 @@
 
 ; Hide menu, toolbar and scrollbar in gui.
 (when (window-system)
+  (menu-bar-mode -1)
   (tool-bar-mode -1)
   (scroll-bar-mode -1))
+
+; Toggle menu bar.
+(global-set-key [f12] 'toggle-menu-bar-mode-from-frame)
 
 ; Dired
 ; Ask once when dired delete not empty folder.
