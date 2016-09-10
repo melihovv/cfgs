@@ -13,6 +13,9 @@
 ;; Basic settings
 ;; ==================================================
 
+; Line numbers.
+(global-linum-mode t)
+
 ; Autoindent.
 (electric-indent-mode t)
 
