@@ -1,5 +1,6 @@
 (source gnu)
 (source melpa)
+(source org)
 
 (depends-on "cask")
 (depends-on "color-theme-sanityinc-tomorrow")
@@ -11,3 +12,4 @@
 (depends-on "projectile")
 (depends-on "helm-projectile")
 (depends-on "neotree")
+(depends-on "org-plus-contrib")
