@@ -93,7 +93,6 @@
 (recentf-mode 1)
 (setq recentf-max-menu-items 100)
 (setq recentf-auto-cleanup 'never)
-(global-set-key "\C-x\ \C-r" 'recentf-open-files)
 
 
 ;; ==================================================
@@ -236,7 +235,9 @@ there's a region, all lines that region covers will be duplicated."
 (use-package helm
   :ensure t
   :config
-  (setq helm-mode 1))
+  (setq helm-mode 1)
+  :bind (:map my-keys-minor-mode-map
+              ("\C-x\ \C-r" . helm-recentf)))
 
 
 ; Helm-projectile.
