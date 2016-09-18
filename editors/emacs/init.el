@@ -192,8 +192,8 @@ there's a region, all lines that region covers will be duplicated."
 
 
 ; Org-mode.
-(use-package org-plus-contrib
-  :ensure t)
+(use-package org
+  :ensure org-plus-contrib)
 
 
 ; Autocompletion.
