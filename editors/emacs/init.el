@@ -151,6 +151,17 @@ there's a region, all lines that region covers will be duplicated."
       (kill-ring-save (region-beginning) (region-end))
     (kill-ring-save (line-beginning-position) (line-beginning-position 2))))
 
+; Run editor.
+(defun runeditor (editor args)
+  (let (filename (file-truename buffer-file-name))
+    (setq cmd (format "%s %s %s" editor (file-truename buffer-file-name) args))
+    (save-window-excursion (async-shell-command cmd))))
+
+; Run gvim.
+(defun rungvim ()
+  (interactive)
+  (runeditor "gvim" (format "-c \"call cursor(%s,%s)\"" (line-number-at-pos) (+ (current-column) 1))))
+
 
 ;; ==================================================
 ;; Plugins
