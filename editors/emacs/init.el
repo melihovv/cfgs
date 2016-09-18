@@ -68,6 +68,7 @@
 (global-set-key [f12] 'toggle-menu-bar-mode-from-frame)
 
 ; Dired
+                                        ;
 ; Ask once when dired delete not empty folder.
 (setq dired-recursive-deletes (quote top))
 ; For one buffer in dired mode.
@@ -206,6 +207,9 @@ there's a region, all lines that region covers will be duplicated."
 (flx-ido-mode 1)
 (setq ido-use-faces nil)
 
+; powerline
+(require 'powerline)
+(powerline-default-theme)
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.

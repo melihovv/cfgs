@@ -13,3 +13,4 @@
 (depends-on "helm-projectile")
 (depends-on "neotree")
 (depends-on "org-plus-contrib")
+(depends-on "powerline")
