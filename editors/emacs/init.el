@@ -88,6 +88,14 @@
 (setq org-src-fontify-natively t)
 
 
+; Recently opened files.
+(require 'recentf)
+(recentf-mode 1)
+(setq recentf-max-menu-items 100)
+(setq recentf-auto-cleanup 'never)
+(global-set-key "\C-x\ \C-r" 'recentf-open-files)
+
+
 ;; ==================================================
 ;; Custom functions
 ;; ==================================================
@@ -279,6 +287,7 @@ there's a region, all lines that region covers will be duplicated."
   :ensure t
   :config
   (powerline-default-theme))
+
 
 ; Magit.
 (use-package magit
