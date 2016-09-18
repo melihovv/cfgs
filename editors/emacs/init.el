@@ -224,14 +224,14 @@ there's a region, all lines that region covers will be duplicated."
               ("M-/" . projectile-find-file)))
 
 
-; Helm
+; Helm.
 (use-package helm
   :ensure t
   :config
   (setq helm-mode 1))
 
 
-; Helm-projectile
+; Helm-projectile.
 (use-package helm-projectile
   :ensure t
   :bind (:map my-keys-minor-mode-map
@@ -264,7 +264,7 @@ there's a region, all lines that region covers will be duplicated."
               ("C-\\" . neotree-toggle)))
 
 
-; flx-ido
+; Flx-ido.
 (use-package flx-ido
   :ensure t
   :config
@@ -274,11 +274,18 @@ there's a region, all lines that region covers will be duplicated."
   (setq ido-use-faces nil))
 
 
-; powerline
+; Powerline.
 (use-package powerline
   :ensure t
   :config
   (powerline-default-theme))
+
+; Magit.
+(use-package magit
+  :ensure t
+  :config
+  (global-set-key (kbd "C-x g") 'magit-status))
+
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
