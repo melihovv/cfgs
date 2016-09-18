@@ -167,60 +167,118 @@ there's a region, all lines that region covers will be duplicated."
 ;; Plugins
 ;; ==================================================
 
-(require 'cask "~/.cask/cask.el")
-(cask-initialize)
+(require 'package)
+(setq package-enable-at-startup nil)
+(add-to-list 'package-archives '("org" . "http://orgmode.org/elpa/"))
+(add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/"))
+(add-to-list 'package-archives '("melpa-stable" . "http://stable.melpa.org/packages/"))
+(add-to-list 'package-archives '("gnu" . "http://elpa.gnu.org/packages/"))
+(package-initialize)
+
+
+; Use-package.
+(unless (package-installed-p 'use-package)
+  (package-refresh-contents)
+  (package-install 'use-package))
+
+
+; Theme.
+(use-package color-theme-sanityinc-tomorrow
+  :ensure t)
+
+
+; Org-mode.
+(use-package org-plus-contrib
+  :ensure t)
+
 
 ; Autocompletion.
-(require 'auto-complete-config)
-(ac-config-default)
+(use-package auto-complete
+  :ensure t
+  :config
+  (ac-config-default))
 
 
 ; Yasnippet.
-(yas-global-mode t)
-; Create snippet.
-(defun create-snippet (filename)
+(use-package yasnippet
+  :ensure t
+  :init
+  (yas-global-mode t)
+  :config
+  ; Create snippet.
+  (defun create-snippet (filename)
      (interactive "s")
      (let ((mode (symbol-name major-mode)))
           (find-file (format "~/.emacs.d/snippets/%s/%s" mode filename))
           (snippet-mode)))
-(define-key my-keys-minor-mode-map (kbd "M-'") 'create-snippet)
+  :bind (:map my-keys-minor-mode-map
+              ("M-'" . create-snippet)))
 
 
 ; Projectile.
-(projectile-global-mode)
-(define-key projectile-mode-map (kbd "M-/") 'projectile-find-file)
+(use-package projectile
+  :ensure t
+  :init
+  (projectile-global-mode)
+  :bind (:map my-keys-minor-mode-map
+              ("M-/" . projectile-find-file)))
 
 
 ; Helm
-(helm-mode 1)
+(use-package helm
+  :ensure t
+  :config
+  (setq helm-mode 1))
+
 
 ; Helm-projectile
-(define-key projectile-mode-map (kbd "M-/") 'projectile-find-file)
+(use-package helm-projectile
+  :ensure t
+  :bind (:map my-keys-minor-mode-map
+              ("M-/" . projectile-find-file)))
 
 
 ; Expand selection.
-(define-key my-keys-minor-mode-map (kbd "C-=") 'er/expand-region)
+(use-package expand-region
+  :ensure t
+  :bind (:map my-keys-minor-mode-map
+              ("C-=" . er/expand-region)))
 
 
 ; Ace jump.
-(define-key my-keys-minor-mode-map (kbd "C-c SPC") 'ace-jump-mode)
+(use-package ace-jump-mode
+  :ensure t
+  :bind (:map my-keys-minor-mode-map
+              ("C-c SPC" . ace-jump-mode)))
 
 
 ; Neotree.
-(require 'neotree)
-(define-key my-keys-minor-mode-map (kbd "C-\\") 'neotree-toggle)
-(setq-default neo-show-hidden-files t)
-; Change root automatically when project is switched.
-(setq projectile-switch-project-action 'neotree-projectile-action)
+(use-package neotree
+  :ensure t
+  :config
+  ; Show hidden files.
+  (setq-default neo-show-hidden-files t)
+  ; Change root automatically when project is switched.
+  (setq projectile-switch-project-action 'neotree-projectile-action)
+  :bind (:map my-keys-minor-mode-map
+              ("C-\\" . neotree-toggle)))
 
 
 ; flx-ido
-(flx-ido-mode 1)
-(setq ido-use-faces nil)
+(use-package flx-ido
+  :ensure t
+  :config
+  (flx-ido-mode 1)
+  ; Disable ido faces to see flx highlights.
+  (setq ido-enable-flex-matching t)
+  (setq ido-use-faces nil))
+
 
 ; powerline
-(require 'powerline)
-(powerline-default-theme)
+(use-package powerline
+  :ensure t
+  :config
+  (powerline-default-theme))
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
@@ -240,3 +298,4 @@ there's a region, all lines that region covers will be duplicated."
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  )
+
