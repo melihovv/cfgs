@@ -284,7 +284,8 @@ there's a region, all lines that region covers will be duplicated."
 (use-package magit
   :ensure t
   :config
-  (global-set-key (kbd "C-x g") 'magit-status))
+  (global-set-key (kbd "C-x g") 'magit-status)
+  (magit-file-mode t))
 
 
 (custom-set-variables
