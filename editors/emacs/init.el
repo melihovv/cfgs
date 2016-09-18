@@ -65,10 +65,9 @@
   (scroll-bar-mode -1))
 
 ; Toggle menu bar.
-(global-set-key [f12] 'toggle-menu-bar-mode-from-frame)
+(define-key my-keys-minor-mode-map [f12] 'toggle-menu-bar-mode-from-frame)
 
-; Dired
-                                        ;
+; Dired                                        ;
 ; Ask once when dired delete not empty folder.
 (setq dired-recursive-deletes (quote top))
 ; For one buffer in dired mode.
@@ -78,7 +77,6 @@
                                        (interactive)
                                        (find-alternate-file "..")))
 
-
 ; Org-mode
 ; Don't indent in org mode.
 (add-hook 'org-mode-hook (lambda()
@@ -86,7 +84,6 @@
                                 (list (lambda(arg) 'no-indent)))))
 ; Highlight languages natively in org mod.
 (setq org-src-fontify-natively t)
-
 
 ; Recently opened files.
 (require 'recentf)
@@ -294,8 +291,8 @@ there's a region, all lines that region covers will be duplicated."
 (use-package magit
   :ensure t
   :config
-  (global-set-key (kbd "C-x g") 'magit-status)
-  (magit-file-mode t))
+  (global-magit-file-mode t)
+  (define-key my-keys-minor-mode-map (kbd "C-x g") 'magit-status))
 
 
 (custom-set-variables
