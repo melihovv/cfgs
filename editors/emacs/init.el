@@ -206,7 +206,8 @@ there's a region, all lines that region covers will be duplicated."
 ; Yasnippet.
 (use-package yasnippet
   :ensure t
-  :diminish yas-global-mode t
+  :init
+  (yas-global-mode t)
   :config
   ; Create snippet.
   (defun create-snippet (filename)
@@ -230,7 +231,8 @@ there's a region, all lines that region covers will be duplicated."
 ; Helm.
 (use-package helm
   :ensure t
-  :diminish helm-mode
+  :config
+  (setq helm-mode 1)
   :bind (:map my-keys-minor-mode-map
               ("\C-x\ \C-r" . helm-recentf)))
 
@@ -271,8 +273,8 @@ there's a region, all lines that region covers will be duplicated."
 ; Flx-ido.
 (use-package flx-ido
   :ensure t
-  :diminish flx-ido-mode
   :config
+  (flx-ido-mode 1)
   ; Disable ido faces to see flx highlights.
   (setq ido-enable-flex-matching t)
   (setq ido-use-faces nil))
