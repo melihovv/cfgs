@@ -199,22 +199,21 @@ there's a region, all lines that region covers will be duplicated."
 ; Autocompletion.
 (use-package auto-complete
   :ensure t
-  :config
-  (ac-config-default))
+  :config (ac-config-default))
 
 
 ; Yasnippet.
 (use-package yasnippet
   :ensure t
-  :init
-  (yas-global-mode t)
+  :init (yas-global-mode t)
   :config
-  ; Create snippet.
-  (defun create-snippet (filename)
-     (interactive "s")
-     (let ((mode (symbol-name major-mode)))
-          (find-file (format "~/.emacs.d/snippets/%s/%s" mode filename))
-          (snippet-mode)))
+  (progn
+      ; Create snippet.
+      (defun create-snippet (filename)
+         (interactive "s")
+         (let ((mode (symbol-name major-mode)))
+              (find-file (format "~/.emacs.d/snippets/%s/%s" mode filename))
+              (snippet-mode))))
   :bind (:map my-keys-minor-mode-map
               ("M-'" . create-snippet)))
 
@@ -222,8 +221,7 @@ there's a region, all lines that region covers will be duplicated."
 ; Projectile.
 (use-package projectile
   :ensure t
-  :init
-  (projectile-global-mode)
+  :init (projectile-global-mode)
   :bind (:map my-keys-minor-mode-map
               ("M-/" . projectile-find-file)))
 
@@ -231,21 +229,22 @@ there's a region, all lines that region covers will be duplicated."
 ; Helm.
 (use-package helm
   :ensure t
-  :init
-  (require 'helm-config)
+  :init (require 'helm-config)
   :config
-  (helm-mode 1)
-  (helm-autoresize-mode 1)
-  ; Move to end or beginning of source when reaching top or bottom of source.
-  (setq helm-move-to-line-cycle-in-source t
-        helm-M-x-fuzzy-match t
-        helm-buffers-fuzzy-matching t
-        helm-recentf-fuzzy-match t
-        helm-apropos-fuzzy-match t
-        helm-semantic-fuzzy-match t
-        helm-imenu-fuzzy-match t)
-  ; To enable man page at point.
-  (add-to-list 'helm-sources-using-default-as-input 'helm-source-man-pages)
+  (progn
+      (helm-mode 1)
+      (helm-autoresize-mode 1)
+      ; Move to end or beginning of source when reaching top or bottom of
+      ; source.
+      (setq helm-move-to-line-cycle-in-source t
+            helm-M-x-fuzzy-match t
+            helm-buffers-fuzzy-matching t
+            helm-recentf-fuzzy-match t
+            helm-apropos-fuzzy-match t
+            helm-semantic-fuzzy-match t
+            helm-imenu-fuzzy-match t)
+      ; To enable man page at point.
+      (add-to-list 'helm-sources-using-default-as-input 'helm-source-man-pages))
   :bind (:map my-keys-minor-mode-map
               ("C-x C-r" . helm-recentf)
               ("M-x" . helm-M-x)
@@ -258,8 +257,7 @@ there's a region, all lines that region covers will be duplicated."
 ; Helm-descbinds.
 (use-package helm-descbinds
   :ensure t
-  :config
-  (helm-descbinds-mode))
+  :config (helm-descbinds-mode))
 
 
 ; Helm-projectile.
@@ -287,10 +285,11 @@ there's a region, all lines that region covers will be duplicated."
 (use-package neotree
   :ensure t
   :config
-  ; Show hidden files.
-  (setq-default neo-show-hidden-files t)
-  ; Change root automatically when project is switched.
-  (setq projectile-switch-project-action 'neotree-projectile-action)
+  (progn
+      ; Show hidden files.
+      (setq-default neo-show-hidden-files t)
+      ; Change root automatically when project is switched.
+      (setq projectile-switch-project-action 'neotree-projectile-action))
   :bind (:map my-keys-minor-mode-map
               ("C-\\" . neotree-toggle)))
 
@@ -299,25 +298,26 @@ there's a region, all lines that region covers will be duplicated."
 (use-package flx-ido
   :ensure t
   :config
-  (flx-ido-mode 1)
-  ; Disable ido faces to see flx highlights.
-  (setq ido-enable-flex-matching t)
-  (setq ido-use-faces nil))
+  (progn
+      (flx-ido-mode 1)
+      ; Disable ido faces to see flx highlights.
+      (setq ido-enable-flex-matching t)
+      (setq ido-use-faces nil)))
 
 
 ; Powerline.
 (use-package powerline
   :ensure t
-  :config
-  (powerline-default-theme))
+  :config (powerline-default-theme))
 
 
 ; Magit.
 (use-package magit
   :ensure t
   :config
-  (global-magit-file-mode t)
-  (define-key my-keys-minor-mode-map (kbd "C-x g") 'magit-status))
+  (progn
+      (global-magit-file-mode t)
+      (define-key my-keys-minor-mode-map (kbd "C-x g") 'magit-status)))
 
 
 (custom-set-variables
