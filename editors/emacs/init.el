@@ -231,10 +231,35 @@ there's a region, all lines that region covers will be duplicated."
 ; Helm.
 (use-package helm
   :ensure t
+  :init
+  (require 'helm-config)
   :config
-  (setq helm-mode 1)
+  (helm-mode 1)
+  (helm-autoresize-mode 1)
+  ; Move to end or beginning of source when reaching top or bottom of source.
+  (setq helm-move-to-line-cycle-in-source t
+        helm-M-x-fuzzy-match t
+        helm-buffers-fuzzy-matching t
+        helm-recentf-fuzzy-match t
+        helm-apropos-fuzzy-match t
+        helm-semantic-fuzzy-match t
+        helm-imenu-fuzzy-match t)
+  ; To enable man page at point.
+  (add-to-list 'helm-sources-using-default-as-input 'helm-source-man-pages)
   :bind (:map my-keys-minor-mode-map
-              ("\C-x\ \C-r" . helm-recentf)))
+              ("C-x C-r" . helm-recentf)
+              ("M-x" . helm-M-x)
+              ("C-x C-f" . helm-find-files)
+              ("M-y" . helm-show-kill-ring)
+              ("C-x b" . helm-mini)
+              ("C-<tab>" . helm-dabbrev)))
+
+
+; Helm-descbinds.
+(use-package helm-descbinds
+  :ensure t
+  :config
+  (helm-descbinds-mode))
 
 
 ; Helm-projectile.
