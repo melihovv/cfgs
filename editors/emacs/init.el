@@ -93,24 +93,6 @@
 ;; Custom functions
 ;; ==================================================
 
-; Cut line or region.
-(define-key my-keys-minor-mode-map [remap kill-region] 'cut-line-or-region)
-(defun cut-line-or-region()
-  "Cuts line or region"
-  (interactive)
-  (if (region-active-p)
-      (kill-region (region-beginning) (region-end))
-    (kill-region (line-beginning-position) (line-beginning-position 2))))
-
-; Copy line or region.
-(define-key my-keys-minor-mode-map [remap kill-ring-save] 'copy-line-or-region)
-(defun copy-line-or-region()
-  "Copys line or region"
-  (interactive)
-  (if (region-active-p)
-      (kill-ring-save (region-beginning) (region-end))
-    (kill-ring-save (line-beginning-position) (line-beginning-position 2))))
-
 ; Run editor.
 (defun runeditor (editor args)
   (let (filename (file-truename buffer-file-name))
