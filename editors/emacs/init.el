@@ -149,18 +149,21 @@
 
 ; Org-mode.
 (use-package org
-  :ensure org-plus-contrib)
+  :ensure org-plus-contrib
+  :defer t)
 
 
 ; Autocompletion.
 (use-package auto-complete
   :ensure t
+  :defer t
   :config (ac-config-default))
 
 
 ; Yasnippet.
 (use-package yasnippet
   :ensure t
+  :defer t
   :init (yas-global-mode t)
   :config
   (progn
@@ -177,6 +180,7 @@
 ; Projectile.
 (use-package projectile
   :ensure t
+  :defer t
   :init (projectile-global-mode)
   :bind (:map my-keys-minor-mode-map
               ("M-/" . projectile-find-file)))
@@ -185,6 +189,7 @@
 ; Helm.
 (use-package helm
   :ensure t
+  :defer t
   :init (require 'helm-config)
   :config
   (progn
@@ -213,12 +218,14 @@
 ; Helm-descbinds.
 (use-package helm-descbinds
   :ensure t
+  :defer t
   :config (helm-descbinds-mode))
 
 
 ; Helm-projectile.
 (use-package helm-projectile
   :ensure t
+  :defer t
   :bind (:map my-keys-minor-mode-map
               ("M-/" . projectile-find-file)))
 
@@ -226,6 +233,7 @@
 ; Expand selection.
 (use-package expand-region
   :ensure t
+  :defer t
   :bind (:map my-keys-minor-mode-map
               ("C-=" . er/expand-region)))
 
@@ -233,6 +241,7 @@
 ; Ace jump.
 (use-package ace-jump-mode
   :ensure t
+  :defer t
   :bind (:map my-keys-minor-mode-map
               ("C-c SPC" . ace-jump-mode)))
 
@@ -240,6 +249,7 @@
 ; Neotree.
 (use-package neotree
   :ensure t
+  :defer t
   :config
   (progn
       ; Show hidden files.
@@ -253,6 +263,7 @@
 ; Flx-ido.
 (use-package flx-ido
   :ensure t
+  :defer t
   :config
   (progn
       (flx-ido-mode 1)
@@ -270,6 +281,7 @@
 ; Magit.
 (use-package magit
   :ensure t
+  :defer t
   :config
   (progn
       (global-magit-file-mode t)
@@ -285,6 +297,7 @@
 ; Key-chord
 (use-package key-chord
   :ensure t
+  :defer t
   :config
   (progn
     (key-chord-define evil-insert-state-map "jk" 'evil-normal-state)
@@ -294,18 +307,21 @@
 ; Surround.
 (use-package evil-surround
   :ensure t
+  :defer t
   :config (global-evil-surround-mode))
 
 
 ; Evil-leader.
 (use-package evil-leader
     :ensure t
+    :defer t
     :config (global-evil-leader-mode))
 
 
 ; Evil-nerd-commenter.
 (use-package evil-nerd-commenter
   :ensure t
+  :defer t
   :config
   (progn
     (evil-leader/set-key
@@ -332,12 +348,14 @@
 ; Matchit.
 (use-package evil-matchit
   :ensure t
+  :defer t
   :config (global-evil-matchit-mode 1))
 
 
 ; Evil-visualstar.
 (use-package evil-visualstar
   :ensure t
+  :defer t
   :config (global-evil-visualstar-mode))
 
 
