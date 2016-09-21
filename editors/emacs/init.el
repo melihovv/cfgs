@@ -13,9 +13,6 @@
 ;; Basic settings
 ;; ==================================================
 
-; Line numbers.
-(global-linum-mode t)
-
 ; Autoindent.
 (electric-indent-mode t)
 
@@ -95,47 +92,6 @@
 ;; ==================================================
 ;; Custom functions
 ;; ==================================================
-
-; Duplicate current line or region.
-(define-key my-keys-minor-mode-map (kbd "C-S-y") 'duplicate-current-line-or-region)
-(defun duplicate-current-line-or-region (arg)
-  "Duplicates the current line or region ARG times.
-If there's no region, the current line will be duplicated. However, if
-there's a region, all lines that region covers will be duplicated."
-  (interactive "p")
-  (let (beg end (origin (point)))
-    (if (and mark-active (> (point) (mark)))
-        (exchange-point-and-mark))
-    (setq beg (line-beginning-position))
-    (if mark-active
-        (exchange-point-and-mark))
-    (setq end (line-end-position))
-    (let ((region (buffer-substring-no-properties beg end)))
-      (dotimes (i arg)
-        (goto-char end)
-        (newline)
-        (beginning-of-visual-line)
-        (insert region)
-        (setq end (point)))
-      (goto-char (+ origin (* (length region) arg) arg)))))
-
-; Select current line.
-(define-key my-keys-minor-mode-map (kbd "M-l") 'select-current-line)
-(defun select-current-line()
-  "Selects the current line"
-  (interactive)
-  (end-of-line)
-  (push-mark (line-beginning-position) nil t))
-
-; Paste line above.
-(define-key my-keys-minor-mode-map (kbd "M-RET") 'line-above)
-(defun line-above()
-  "Pastes line abobe"
-  (interactive)
-  (move-beginning-of-line nil)
-  (newline-and-indent)
-  (forward-line -1)
-  (indent-according-to-mode))
 
 ; Cut line or region.
 (define-key my-keys-minor-mode-map [remap kill-region] 'cut-line-or-region)
@@ -318,6 +274,71 @@ there's a region, all lines that region covers will be duplicated."
   (progn
       (global-magit-file-mode t)
       (define-key my-keys-minor-mode-map (kbd "C-x g") 'magit-status)))
+
+
+; Evil.
+(use-package evil
+  :ensure t
+  :config (evil-mode 1))
+
+
+; Key-chord
+(use-package key-chord
+  :ensure t
+  :config
+  (progn
+    (key-chord-define evil-insert-state-map "jk" 'evil-normal-state)
+    (key-chord-mode 1)))
+
+
+; Surround.
+(use-package evil-surround
+  :ensure t
+  :config (global-evil-surround-mode))
+
+
+; Evil-leader.
+(use-package evil-leader
+    :ensure t
+    :config (global-evil-leader-mode))
+
+
+; Evil-nerd-commenter.
+(use-package evil-nerd-commenter
+  :ensure t
+  :config
+  (progn
+    (evil-leader/set-key
+      "ci" 'evilnc-comment-or-uncomment-lines
+      "cl" 'evilnc-quick-comment-or-uncomment-to-the-line
+      "ll" 'evilnc-quick-comment-or-uncomment-to-the-line
+      "cc" 'evilnc-copy-and-comment-lines
+      "cp" 'evilnc-comment-or-uncomment-paragraphs
+      "cr" 'comment-or-uncomment-region
+      "cv" 'evilnc-toggle-invert-comment-line-by-line
+      "\\" 'evilnc-comment-operator ; if you prefer backslash key
+    )))
+
+
+; Relative line numbers.
+(use-package nlinum-relative
+  :ensure t
+  :config
+  (progn
+    (nlinum-relative-setup-evil)
+    (add-hook 'prog-mode-hook 'nlinum-relative-mode)))
+
+
+; Matchit.
+(use-package evil-matchit
+  :ensure t
+  :config (global-evil-matchit-mode 1))
+
+
+; Evil-visualstar.
+(use-package evil-visualstar
+  :ensure t
+  :config (global-evil-visualstar-mode))
 
 
 (custom-set-variables
