@@ -3,5 +3,5 @@
 cd "$(dirname "$0")"
 
 ansible-galaxy install -r requirements.yml
-ansible-playbook -i inventory main.yml --extra-vars "user=$1"
+ansible-playbook -i inventory main.yml
 
