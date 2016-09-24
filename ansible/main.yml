@@ -6,6 +6,7 @@
       ANTIGEN_PATH: "{{ ansible_env.HOME }}/antigen"
       BASH_IT_PATH: "{{ ansible_env.HOME }}/.bash_it"
       GIT_NUMBER_PATH: "{{ ansible_env.HOME }}/git-number"
+      SPACEMACS_PATH: "{{ ansible_env.HOME }}/.emacs.d"
 
   roles:
       - role: geerlingguy.git
@@ -15,6 +16,7 @@
         become: true
       - role: theNewFlesh.tree
       - role: ngpestelos.fasd
+        become: true
 
   tasks:
       - name: Create user bin directory
@@ -31,6 +33,11 @@
         git:
             repo: https://github.com/Bash-it/bash-it
             dest: "{{ BASH_IT_PATH }}"
+
+      - name: Clone spacemacs
+        git:
+            repo: https://github.com/syl20bnr/spacemacs
+            dest: "{{ SPACEMACS_PATH }}"
 
       - name: Symlink dotfiles
         file:
@@ -49,8 +56,10 @@
             - {path: "other/.ctags", name: ".ctags"}
             - {path: "editors/vim/.vimrc", name: ".vimrc"}
             - {path: "editors/vim/.vim", name: ".vim"}
+            - {path: "editors/emacs/.spacemacs", name: ".emacs.d/.spacemacs"}
+            - {path: "editors/emacs/snippets", name: ".emacs.d/snippets"}
 
-      - name: Check vim plugins
+      - name: Check if vim plugins are installed
         stat:
             path: "{{ playbook_dir }}/../editors/vim/.vim/bundle/vim-pathogen/.git"
         register: vim_plugins
@@ -76,4 +85,8 @@
            - {name: "git-number"}
            - {name: "git-list"}
            - {name: "git-id"}
+
+      - name: Install emacs
+        package: name=emacs state=present
+        become: true
 
