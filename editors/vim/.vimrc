@@ -323,6 +323,7 @@ let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 let g:UltiSnipsSnippetDirectories=["~/.vim/UltiSnips", "Ultisnips"]
 "                             If you want :UltiSnipsEdit to split your window.
 let g:UltiSnipsEditSplit="vertical"
+let g:UltiSnipsNoPythonWarning=1
 
 
 " EasyMotion -----------------------------------------------------------------
