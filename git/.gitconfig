@@ -13,6 +13,9 @@
 	unstage = reset HEAD --
 	dc = diff --cached
 	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %Cblue<%an>%Creset' --abbrev-commit --date=relative --all
+	please = push --force-with-lease
+	commend = commit --amend --no-edit
+	it = !git init && git commit -m 'initial commit' --allow-empty
 [core]
     ; Pull files as is, but commit with Unix-like line endings.
 	autocrlf = input
@@ -33,4 +36,3 @@
 	keepbackups = false
 	prompt = false
 	trustexitcode = false
-
