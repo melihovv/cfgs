@@ -147,7 +147,8 @@ filetype indent plugin on
 "                                                            Highlight syntax.
 syntax enable
 "                                                                       Theme.
-colorscheme monokai
+set background=dark
+colorscheme solarized
 augroup misc
     autocmd!
 "                                                    Start gvim in fullscreen.
