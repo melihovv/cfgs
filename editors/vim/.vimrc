@@ -148,6 +148,9 @@ filetype indent plugin on
 syntax enable
 "                                                                       Theme.
 set background=dark
+"                                       For correct colors in Ubuntu terminal.
+let g:solarized_termcolors=256
+"                                                                       Theme.
 colorscheme solarized
 augroup misc
     autocmd!
