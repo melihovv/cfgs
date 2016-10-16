@@ -206,6 +206,10 @@ nnoremap <M-j> a<CR><ESC>k$
 nnoremap <Space>s :w<CR>
 "         Turn off highlight of found patterns and clear all printed messages.
 nnoremap <silent> <Space><Space> :nohlsearch<Bar>:echo<CR>
+"                                          Insert space before in normal mode.
+nnoremap <Space>[ i<Space><Esc>l
+"                                           Insert space after in normal mode.
+nnoremap <Space>] a<Space><Esc>h
 "                                                     Magic search by default.
 nnoremap / /\v
 "                                                                  Fullscreen.
