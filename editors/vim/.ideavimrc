@@ -7,6 +7,10 @@ set surround
 nnoremap [<space> O<esc>0C<esc>j
 " Insert line below.
 nnoremap ]<space> o<esc>0C<esc>k
+" Insert space before in normal mode.
+nnoremap <space>[ i<space><esc>l
+" Insert space after in normal mode.
+nnoremap <space>] a<space><esc>h
 " Previous method.
 nnoremap [m :action MethodUp<cr>
 " Next method.
@@ -35,5 +39,5 @@ map <leader>v :action VimVisualToggleBlockMode<CR>
 map <leader>w :action EditorSelectWord<CR>
 map <leader>x :action $Cut<CR>
 map <leader>y :action EditorDeleteLine<CR>
-map <leader>[ :action EditorCodeBlockStart<CR>
-map <leader>] :action EditorCodeBlockEnd<CR>
+"map <leader>[ :action EditorCodeBlockStart<CR>
+"map <leader>] :action EditorCodeBlockEnd<CR>
