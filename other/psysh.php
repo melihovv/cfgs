@@ -57,6 +57,7 @@ class _Tinker
             self::alias($class);
         }
     }
+
     static function alias($class, $alias = null)
     {
         if (!class_exists($alias = $alias ?: class_basename($class))
@@ -85,7 +86,7 @@ class _LocalRequest extends \TestCase
         return $this->response;
     }
 
-    function __call($method, $params)
+    function __call($method, array $params)
     {
         return call_user_func_array([$this, $method], $params);
     }
