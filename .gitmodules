@@ -88,3 +88,6 @@
 [submodule "editors/vim/.vim/bundle/vim-colors-solarized"]
 	path = editors/vim/.vim/bundle/vim-colors-solarized
 	url = https://github.com/altercation/vim-colors-solarized
+[submodule "editors/vim/.vim/bundle/committia.vim"]
+	path = editors/vim/.vim/bundle/committia.vim
+	url = https://github.com/rhysd/committia.vim
