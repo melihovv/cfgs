@@ -47,3 +47,7 @@ alias ar:mirs="php artisan migrate:refresh --seed"
 alias ar:mire="php artisan migrate:reset && php artisan migrate --seed"
 alias ar:ih:m="php artisan ide-helper:models -N"
 
+mkcd() {
+    mkdir -p "$1" && cd "$1"
+}
+
