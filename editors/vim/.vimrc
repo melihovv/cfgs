@@ -227,6 +227,10 @@ nnoremap <leader>ev :vsplit $MYVIMRC<cr>
 cnoremap w!! w !sudo tee % > /dev/null
 "                                             Cd to directory of current file.
 cnoremap cd!! cd %:p:h
+"                                                Move selection one line down.
+vnoremap J :m '>+1<CR>gv=gv
+"                                                  Move selection one line up.
+vnoremap K :m '<-2<CR>gv=gv
 
 
 " plugins --------------------------------------------------------------------
