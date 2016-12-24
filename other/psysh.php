@@ -86,7 +86,7 @@ class _LocalRequest extends \TestCase
         return $this->response;
     }
 
-    function __call($method, array $params)
+    function __call($method, $params)
     {
         return call_user_func_array([$this, $method], $params);
     }
