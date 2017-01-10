@@ -2,6 +2,7 @@ imap jk <Esc>
 set scrolloff=5
 
 set surround
+set incsearch
 
 " Insert line above.
 nnoremap [<space> O<esc>0C<esc>j
