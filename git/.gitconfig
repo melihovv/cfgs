@@ -16,6 +16,9 @@
 	please = push --force-with-lease
 	commend = commit --amend --no-edit
 	it = !git init && git commit -m 'initial commit' --allow-empty
+    re = rebase
+    rc = rebase --continue
+    rr = rebase --reset
 [core]
     ; Pull files as is, but commit with Unix-like line endings.
 	autocrlf = input
