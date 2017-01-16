@@ -74,7 +74,13 @@ class _Tinker
 */
 // Why extending TestCase here? Just because it's sooo easy and consistent
 // across all L versions ;)
-class _LocalRequest extends \TestCase
+if (class_exists('\TestCase')) {
+    class _BaseLocalRequest extends \TestCase {}
+} else {
+    class _BaseLocalRequest extends \Tests\TestCase {}
+}
+
+class _LocalRequest extends _BaseLocalRequest
 {
     function __construct()
     {
