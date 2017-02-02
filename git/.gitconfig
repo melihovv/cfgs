@@ -41,3 +41,5 @@
 	keepbackups = false
 	prompt = false
 	trustexitcode = false
+[commit]
+    gpgsign = true
