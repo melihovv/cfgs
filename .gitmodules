@@ -88,3 +88,6 @@
 [submodule "editors/vim/.vim/bundle/committia.vim"]
 	path = editors/vim/.vim/bundle/committia.vim
 	url = https://github.com/rhysd/committia.vim
+[submodule "editors/vim/.vim/bundle/matchit"]
+	path = editors/vim/.vim/bundle/matchit
+	url = https://github.com/vim-scripts/matchit.zip
