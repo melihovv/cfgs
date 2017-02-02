@@ -15,10 +15,6 @@ antigen bundle zsh-users/zsh-history-substring-search
 antigen bundle zsh-users/zsh-autosuggestions
 antigen theme robbyrussell
 
-bindkey '^ ' autosuggest-accept
-bindkey -M emacs '^P' history-substring-search-up
-bindkey -M emacs '^N' history-substring-search-down
-
 setopt menucomplete
 zstyle ':completion:*' menu select=1 _complete _ignored _approximate
 
@@ -27,4 +23,8 @@ zstyle ':completion:*' menu select=1 _complete _ignored _approximate
 [ -f "$HOME/.extra" ] && source "$HOME/.extra"
 
 antigen apply
+
+bindkey '^ ' autosuggest-accept
+bindkey -M emacs '^P' history-substring-search-up
+bindkey -M emacs '^N' history-substring-search-down
 
