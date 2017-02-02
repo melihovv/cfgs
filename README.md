@@ -1,5 +1,4 @@
 # cfgs
-======
 
 My personal configs.
 
