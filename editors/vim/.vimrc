@@ -238,6 +238,7 @@ endfunction
 command -nargs=+ MapToggle call MapToggle(<f-args>)
 "                                                                 Toggle wrap.
 MapToggle <F2> wrap
+MapToggle <F3> list
 
 
 " plugins --------------------------------------------------------------------
