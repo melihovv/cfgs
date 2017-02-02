@@ -12,7 +12,6 @@ Install ansible:
 - sudo apt-add-repository ppa:ansible/ansible
 - sudo apt-get update
 - sudo apt-get install ansible -y
-- sudo ansible-galaxy install -r ~/cfgs/ansible/requirements.yml
 
 Install:
 - git clone https://github.com/melihovv/cfgs.git ~/cfgs
