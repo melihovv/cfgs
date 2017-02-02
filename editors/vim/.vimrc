@@ -148,10 +148,8 @@ filetype indent plugin on
 syntax enable
 "                                                                       Theme.
 set background=dark
-"                                                  For correct colors in gvim.
-if has("gui_running")
-   let g:solarized_termcolors=256
-endif
+"                                                   For correct colors in vim.
+let g:solarized_termcolors=256
 "                                                                       Theme.
 colorscheme solarized
 augroup misc
