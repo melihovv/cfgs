@@ -1,19 +1,10 @@
 " vim:syntax=vim
-" Sample configuration file for vifm (last updated: 24 Oct, 2014)
-" You can edit this file by hand.
-" The " character at the beginning of a line comments out the line.
-" Blank lines are ignored.
-" The basic format for each item is shown with an example.
-
-" ------------------------------------------------------------------------------
 
 " This is the actual command used to start vi.  The default is vim.
 " If you would like to use another vi clone such Elvis or Vile
 " you will need to change this setting.
 
 set vicmd=vim
-" set vicmd=elvis\ -G\ termcap
-" set vicmd=vile
 
 " Trash Directory
 " The default is to move files that are deleted with dd or :d to
@@ -302,61 +293,12 @@ filextype */
         \ Thunar %f &,
 fileviewer .*/,*/ tree %f
 
-" Syntax highlighting in preview
-"
-" Explicitly set highlight type for some extensions
-"
-" 256-color terminal
-" fileviewer *.[ch],*.[ch]pp highlight -O xterm256 -s dante --syntax c %c
-" fileviewer Makefile,Makefile.* highlight -O xterm256 -s dante --syntax make %c
-"
-" 16-color terminal
-" fileviewer *.c,*.h highlight -O ansi -s dante %c
-"
-" Or leave it for automatic detection
-"
-" fileviewer * pygmentize -O style=monokai -f console256 -g
-
-" Displaying pictures in terminal
-"
-" fileviewer *.jpg,*.png shellpic %c
-
-" Open all other files with default system programs (you can also remove all
-" :file[x]type commands above to ensure they don't interfere with system-wide
-" settings).  By default all unknown files are opened with 'vi[x]cmd'
-" uncommenting one of lines below will result in ignoring 'vi[x]cmd' option
-" for unknown file types.
-" For *nix:
-" filetype * xdg-open
-" For OS X:
-" filetype * open
-" For Windows:
-" filetype * start, explorer
-
-" ------------------------------------------------------------------------------
-
 " What should be saved automatically between vifm runs
 " Like in previous versions of vifm
 " set vifminfo=options,filetypes,commands,bookmarks,dhistory,state,cs
 " Like in vi
 set vifminfo=dhistory,savedirs,chistory,state,tui,shistory,
     \phistory,fhistory,dirstack,registers,bookmarks
-
-" ------------------------------------------------------------------------------
-
-" Examples of configuring both panels
-
-" Customize view columns a bit (enable ellipsis for truncated file names)
-"
-" windo set viewcolumns=-{name}..,6{}.
-
-" Filter-out build and temporary files
-"
-" windo filter! /^.*\.(lo|o|d|class|py[co])$|.*~$/
-
-" ------------------------------------------------------------------------------
-
-" Sample mappings
 
 " Start shell in current directory
 nnoremap s :shell<cr>
@@ -382,6 +324,12 @@ nnoremap yd :!echo %d | xclip %i<cr>
 " Yank current file path into the clipboard
 nnoremap yf :!echo %c:p | xclip %i<cr>
 
+" Yank current filename without path into the clipboard.
+nnoremap yn :!echo -n %c | xclip %i<cr>
+
+" Yank root of current file's name into the clipboard.
+nnoremap yr :!echo -n %c:r | xclip %i<cr>
+
 " Mappings for faster renaming
 nnoremap I cw<c-a>
 nnoremap cc cw<c-u>
@@ -405,32 +353,4 @@ nnoremap <f5> :copy<cr>
 nnoremap <f6> :move<cr>
 nnoremap <f7> :mkdir<space>
 nnoremap <f8> :delete<cr>
-
-" ------------------------------------------------------------------------------
-
-" Various customization examples
-
-" Use ag (the silver searcher) instead of grep
-"
-" set grepprg=ag\ --line-numbers\ %i\ %a\ %s
-
-" Add additional place to look for executables
-"
-" let $PATH=$HOME.'/bin/fuse:'.$PATH
-
-" Block particular shortcut
-"
-" nnoremap <left> <nop>
-
-" Yank current directory path into the clipboard.
-nnoremap yd :!echo -n %d | xclip %i<cr>
-
-" Yank current file path into the clipboard.
-nnoremap yf :!echo -n %c:p | xclip %i<cr>
-
-" Yank current filename without path into the clipboard.
-nnoremap yn :!echo -n %c | xclip %i<cr>
-
-" Yank root of current file's name into the clipboard.
-nnoremap yr :!echo -n %c:r | xclip %i<cr>
 
