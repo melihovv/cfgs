@@ -79,9 +79,6 @@
 [submodule "editors/vim/.vim/bundle/ultisnips"]
 	path = editors/vim/.vim/bundle/ultisnips
 	url = https://github.com/SirVer/ultisnips
-[submodule "editors/vim/.vim/bundle/vim-matchit"]
-	path = editors/vim/.vim/bundle/vim-matchit
-	url = https://github.com/edsono/vim-matchit
 [submodule "editors/vim/.vim/bundle/lexima.vim"]
 	path = editors/vim/.vim/bundle/lexima.vim
 	url = https://github.com/cohama/lexima.vim
