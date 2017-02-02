@@ -1,4 +1,4 @@
-" vim: filetype=vifm :
+" vim:syntax=vim
 " Sample configuration file for vifm (last updated: 24 Oct, 2014)
 " You can edit this file by hand.
 " The " character at the beginning of a line comments out the line.
@@ -421,3 +421,16 @@ nnoremap <f8> :delete<cr>
 " Block particular shortcut
 "
 " nnoremap <left> <nop>
+
+" Yank current directory path into the clipboard.
+nnoremap yd :!echo -n %d | xclip %i<cr>
+
+" Yank current file path into the clipboard.
+nnoremap yf :!echo -n %c:p | xclip %i<cr>
+
+" Yank current filename without path into the clipboard.
+nnoremap yn :!echo -n %c | xclip %i<cr>
+
+" Yank root of current file's name into the clipboard.
+nnoremap yr :!echo -n %c:r | xclip %i<cr>
+
