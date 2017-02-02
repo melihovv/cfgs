@@ -1,6 +1,6 @@
 ---
 - src: geerlingguy.git
-- src: kbrebanov.tmux
+- src: howtodojo.tmux
 - src: theNewFlesh.tree
 - src: ngpestelos.fasd
 

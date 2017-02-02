@@ -12,7 +12,7 @@
       - role: geerlingguy.git
         git_packagese:
             - git
-      - role: kbrebanov.tmux
+      - role: howtodojo.tmux
         become: true
       - role: theNewFlesh.tree
       - role: ngpestelos.fasd
