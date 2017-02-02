@@ -2,7 +2,7 @@
 - hosts: all
   vars:
       HOME_PATH: "{{ ansible_env.HOME }}"
-      BIN_PATH: "{{ ansible_env.HOME }}/bin"
+      BIN_PATH: "{{ ansible_env.HOME }}/local/.bin"
       ANTIGEN_PATH: "{{ ansible_env.HOME }}/antigen"
       BASH_IT_PATH: "{{ ansible_env.HOME }}/.bash_it"
       GIT_NUMBER_PATH: "{{ ansible_env.HOME }}/git-number"
