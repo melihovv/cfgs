@@ -1,6 +1,7 @@
 [user]
 	email = amelihovv@ya.ru
 	name = Alexander Melihov
+	signingkey = BE9E0110B613D88A
 [alias]
 	co = checkout
 	ci = commit
