@@ -29,11 +29,8 @@ alias xclip="xclip -sel clip"
 alias ..="cd .."
 alias ...="cd ../.."
 
-alias co="composer.phar"
-alias cdu="composer.phar dump-autoload"
-alias cri="composer.phar require --ignore-platform-reqs"
-alias cui="composer.phar update --ignore-platform-reqs"
-alias crei="composer.phar remove --ignore-platform-reqs"
+alias co="composer"
+alias cdu="composer dump-autoload"
 
 alias phpd="php -dxdebug.remote_autostart"
 
