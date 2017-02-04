@@ -97,3 +97,7 @@
             repo: https://github.com/tmux-plugins/tpm
             dest: "{{ TPM_PATH }}"
 
+      - name: Install httpie
+        package: name=httpie state=present
+        become: true
+
