@@ -60,6 +60,7 @@
             - {path: "editors/emacs/.spacemacs", name: ".emacs.d/.spacemacs"}
             - {path: "editors/emacs/snippets", name: ".emacs.d/snippets"}
             - {path: "file_managers/vifm/vifmrc", name: ".vifm/vifmrc"}
+            - {path: "other/gpg.conf", name: ".gnupg/gpg.conf"}
 
       - name: Check if vim plugins are installed
         stat:
