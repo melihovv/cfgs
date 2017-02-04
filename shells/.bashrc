@@ -40,10 +40,12 @@ source $BASH_IT/bash_it.sh
 export EDITOR=vim
 export PATH=~/.local/bin:$PATH
 
+eval "$(fasd --init auto)"
+alias v="f -e $EDITOR"
+
+eval $(thefuck --alias)
+
 [ -f "$HOME/.aliases" ] && source "$HOME/.aliases"
 
 [ -f "$HOME/.extra" ] && source "$HOME/.extra"
-
-eval "$(fasd --init auto)"
-alias v="f -e $EDITOR"
 

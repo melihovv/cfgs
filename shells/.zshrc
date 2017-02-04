@@ -33,6 +33,8 @@ bindkey '^ ' autosuggest-accept
 bindkey -M emacs '^P' history-substring-search-up
 bindkey -M emacs '^N' history-substring-search-down
 
+eval $(thefuck --alias)
+
 [ -f "$HOME/.aliases" ] && source "$HOME/.aliases"
 
 [ -f "$HOME/.extra" ] && source "$HOME/.extra"
