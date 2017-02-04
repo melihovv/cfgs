@@ -1,46 +1,46 @@
 [user]
-	email = amelihovv@ya.ru
-	name = Alexander Melihov
-	signingkey = BE9E0110B613D88A
+    email = amelihovv@ya.ru
+    name = Alexander Melihov
+    signingkey = BE9E0110B613D88A
 [alias]
-	co = checkout
-	ci = commit
-	st = status
-	br = branch
-	hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
-	last = log -1 --stat
-	cp = cherry-pick
-	cl = clone
-	unstage = reset HEAD --
-	dc = diff --cached
-	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %Cblue<%an>%Creset' --abbrev-commit --date=relative --all
-	please = push --force-with-lease
-	commend = commit --amend --no-edit
-	it = !git init && git commit -m 'initial commit' --allow-empty
+    co = checkout
+    ci = commit
+    st = status
+    br = branch
+    hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
+    last = log -1 --stat
+    cp = cherry-pick
+    cl = clone
+    unstage = reset HEAD --
+    dc = diff --cached
+    lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %Cblue<%an>%Creset' --abbrev-commit --date=relative --all
+    please = push --force-with-lease
+    commend = commit --amend --no-edit
+    it = !git init && git commit -m 'initial commit' --allow-empty
     re = rebase
     rc = rebase --continue
     rr = rebase --reset
 [core]
     ; Pull files as is, but commit with Unix-like line endings.
-	autocrlf = input
-	trustctime = false
-	editor = vim
-	filemode = false
-	excludesfile = ~/.gitignore_global
+    autocrlf = input
+    trustctime = false
+    editor = vim
+    filemode = false
+    excludesfile = ~/.gitignore_global
 [push]
-	default = current
+    default = current
 [color]
-	ui = true
+    ui = true
 [credential]
-	helper = cache --timeout=3600
+    helper = cache --timeout=3600
 [diff]
     tool = vimdiff
 [merge]
-	tool = vimdiff
+    tool = vimdiff
 [mergetool]
-	keeptemporaries = false
-	keepbackups = false
-	prompt = false
-	trustexitcode = false
+    keeptemporaries = false
+    keepbackups = false
+    prompt = false
+    trustexitcode = false
 [commit]
     gpgsign = true
