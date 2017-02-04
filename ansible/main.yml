@@ -13,9 +13,11 @@
       - role: geerlingguy.git
         git_packagese:
             - git
+        become: true
       - role: howtodojo.tmux
         become: true
       - role: theNewFlesh.tree
+        become: true
       - role: ngpestelos.fasd
         become: true
 
