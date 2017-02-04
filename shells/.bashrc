@@ -2,7 +2,11 @@
 
 if command -v tmux>/dev/null;
 then
-  [[ ! $TERM =~ screen ]] && [ -z $TMUX ] && exec tmux
+  [[ ! "$TERM" =~ screen ]] \
+      && [ -z "$TMUX" ] \
+      && [ -z "$INSIDE_EMACS" ] && [ -z "$EMACS"] \
+      && [ -z "$VIM" ] \
+      && exec tmux
 fi
 
 # Path to the bash it configuration
