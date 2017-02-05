@@ -1,0 +1,26 @@
+# vim:syntax=zsh
+
+if command -v tmux>/dev/null;
+then
+  inside_app=false
+  apps=(
+      "TMUX", "INSIDE_EMACS", "EMACS", "VIM",
+      "PHPSTORM", "WEBSTORM", "PYCHARM", "INTELLIJ_IDEA",
+      "RUBY_MINE", "CLION", "APP_CODE"
+  )
+
+  for app in $apps;
+  do
+      if [[ -n "${(P)app}" ]];
+      then
+        inside_app=true
+        break
+      fi
+  done
+
+  if [[ ! "$TERM" =~ screen ]] && ! $inside_app;
+  then
+    exec tmux
+  fi
+fi
+

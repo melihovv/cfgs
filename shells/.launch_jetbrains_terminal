@@ -1,0 +1,13 @@
+#!/usr/bin/zsh
+
+export PHPSTORM=true
+export WEBSTORM=true
+export PYCHARM=true
+export INTELLIJ_IDEA=true
+export RUBY_MINE=true
+export RIDER=true
+export CLION=true
+export APP_CODE=true
+
+/usr/bin/zsh
+

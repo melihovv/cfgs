@@ -59,10 +59,15 @@
             - {path: "other/.ctags", name: ".ctags"}
             - {path: "editors/vim/.vimrc", name: ".vimrc"}
             - {path: "editors/vim/.vim", name: ".vim"}
-            - {path: "editors/emacs/.spacemacs", name: "~/.spacemacs"}
+            - {path: "editors/emacs/.spacemacs", name: ".spacemacs"}
             - {path: "editors/emacs/snippets", name: ".emacs.d/snippets"}
             - {path: "file_managers/vifm/vifmrc", name: ".vifm/vifmrc"}
             - {path: "other/gpg.conf", name: ".gnupg/gpg.conf"}
+            - {path: "shells/.autolaunch_tmux", name: ".autolaunch_tmux"}
+            - {
+                path: "shells/.launch_jetbrains_terminal",
+                name: ".launch_jetbrains_terminal",
+              }
 
       - name: Check if vim plugins are installed
         stat:

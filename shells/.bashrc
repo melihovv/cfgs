@@ -1,13 +1,6 @@
 #!/usr/bin/env bash
 
-if command -v tmux>/dev/null;
-then
-  [[ ! "$TERM" =~ screen ]] \
-      && [ -z "$TMUX" ] \
-      && [ -z "$INSIDE_EMACS" ] && [ -z "$EMACS"] \
-      && [ -z "$VIM" ] \
-      && exec tmux
-fi
+source $HOME/.autolaunch_tmux
 
 # Path to the bash it configuration
 export BASH_IT="$HOME/.bash_it"
