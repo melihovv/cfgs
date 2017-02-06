@@ -12,6 +12,7 @@ antigen bundle docker
 antigen bundle docker-compose
 antigen bundle extract
 antigen bundle fasd
+antigen bundle globalias
 antigen bundle zsh-users/zsh-syntax-highlighting
 antigen bundle zsh-users/zsh-history-substring-search
 antigen bundle zsh-users/zsh-autosuggestions
