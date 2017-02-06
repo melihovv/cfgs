@@ -260,11 +260,11 @@ let g:tex_flavor='latex'
 augroup latex
     autocmd!
 "                                                          Compile latex file.
-    autocmd FileType tex call Tex_MakeMap("<Leader>ll",
-                \":w <CR> <Plug>Tex_Compile", 'n', '<buffer>')
+    autocmd FileType tex call Tex_MakeMap('<Leader>ll',
+                \':w <CR> <Plug>Tex_Compile', 'n', '<buffer>')
 "                                                                    View pdf.
-    autocmd FileType tex call Tex_MakeMap("<Leader>ll",
-                \"<ESC> :w <CR> <Plug>Tex_Compile", 'v', '<buffer>')
+    autocmd FileType tex call Tex_MakeMap('<Leader>ll',
+                \'<ESC> :w <CR> <Plug>Tex_Compile', 'v', '<buffer>')
 augroup END
 
 
@@ -339,12 +339,12 @@ nnoremap <leader>. :CtrlPTag<cr>
 nnoremap <F8> :TagbarToggle<cr>
 
 " Utilsnips
-let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger="<tab>"
-let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
-let g:UltiSnipsSnippetDirectories=["~/.vim/UltiSnips", "Ultisnips"]
+let g:UltiSnipsExpandTrigger='<tab>'
+let g:UltiSnipsJumpForwardTrigger='<tab>'
+let g:UltiSnipsJumpBackwardTrigger='<s-tab>'
+let g:UltiSnipsSnippetDirectories=['~/.vim/UltiSnips', 'Ultisnips']
 "                             If you want :UltiSnipsEdit to split your window.
-let g:UltiSnipsEditSplit="vertical"
+let g:UltiSnipsEditSplit='vertical'
 let g:UltiSnipsNoPythonWarning=1
 
 
