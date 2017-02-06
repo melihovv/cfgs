@@ -62,7 +62,7 @@ set titlestring=VIM:\ %-25.55F\ %a%r%m titlelen=70
 set ttyfast
 " using the mouse ------------------------------------------------------------
 " GUI ------------------------------------------------------------------------
-set guifont=Consolas:h9
+set guifont=Source\ Code\ Pro
 "                                                             Remove menu bar.
 set guioptions-=m
 "                                                              Remove toolbar.
