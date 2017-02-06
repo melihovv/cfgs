@@ -12,7 +12,6 @@ antigen bundle docker
 antigen bundle docker-compose
 antigen bundle extract
 antigen bundle fasd
-antigen bundle globalias
 antigen bundle zsh-users/zsh-syntax-highlighting
 antigen bundle zsh-users/zsh-history-substring-search
 antigen bundle zsh-users/zsh-autosuggestions
@@ -27,9 +26,22 @@ antigen apply
 setopt menucomplete
 zstyle ':completion:*' menu select=1 _complete _ignored _approximate
 
+# zsh-autosuggestions bindings.
 bindkey '^ ' autosuggest-accept
+
+# zsh-history-substring-search bindings.
 bindkey -M emacs '^P' history-substring-search-up
 bindkey -M emacs '^N' history-substring-search-down
+
+# globalias bindings.
+globalias() {
+   zle _expand_alias
+   zle expand-word
+}
+# C-j for expand alias.
+zle -N globalias
+bindkey -M emacs "^j" globalias
+bindkey -M viins "^j" globalias
 
 eval $(thefuck --alias)
 
