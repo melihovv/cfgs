@@ -154,10 +154,6 @@ let g:solarized_termcolors=256
 colorscheme solarized
 augroup misc
     autocmd!
-"                                                    Start gvim in fullscreen.
-    if has("gui_running")
-       autocmd GUIEnter * simalt ~x
-    endif
 "                                                   Save position before exit.
     autocmd BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")
         \| exe "normal! g`\"" | endif
@@ -212,11 +208,16 @@ nnoremap <Space>[ i<Space><Esc>l
 nnoremap <Space>] a<Space><Esc>h
 "                                                     Magic search by default.
 nnoremap / /\v
-"                                                                  Fullscreen.
-if has('win32')
-    if filereadable($ProgramFiles . '/Vim/vim74/gvimfullscreen.dll')
-        nnoremap <F11> <Esc>:call libcallnr("gvimfullscreen.dll",
-                    \"ToggleFullScreen", 0)<CR>
+"                              Start gvim in fullscreen and toggle fullscreen.
+if has('gui_running')
+    if has('win32')
+        autocmd GUIEnter * simalt ~x
+        if filereadable($ProgramFiles . '/Vim/vim74/gvimfullscreen.dll')
+            nnoremap <F11> <Esc>:call libcallnr('gvimfullscreen.dll',
+                \'ToggleFullScreen', 0)<CR>
+        endif
+    elseif has('unix')
+        autocmd GUIEnter * silent !wmctrl -r :ACTIVE: -b add,maximized_vert,maximized_horz
     endif
 endif
 "                                                                 Edit .vimrc.
