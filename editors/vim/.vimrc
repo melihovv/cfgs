@@ -230,12 +230,12 @@ vnoremap J :m '>+1<CR>gv=gv
 "                                                  Move selection one line up.
 vnoremap K :m '<-2<CR>gv=gv
 "                                                       Map key to toggle opt.
-function MapToggle(key, opt)
+function! MapToggle(key, opt)
   let cmd = ':set '.a:opt.'! \| set '.a:opt."?\<CR>"
   exec 'nnoremap '.a:key.' '.cmd
   exec 'inoremap '.a:key." \<C-O>".cmd
 endfunction
-command -nargs=+ MapToggle call MapToggle(<f-args>)
+command! -nargs=+ MapToggle call MapToggle(<f-args>)
 "                                                                 Toggle wrap.
 MapToggle <F2> wrap
 MapToggle <F3> list
