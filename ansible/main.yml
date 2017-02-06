@@ -63,6 +63,7 @@
             - {path: "editors/emacs/snippets", name: ".emacs.d/snippets"}
             - {path: "file_managers/vifm/vifmrc", name: ".vifm/vifmrc"}
             - {path: "other/gpg.conf", name: ".gnupg/gpg.conf"}
+            - {path: "other/psysh.php", name: ".config/psysh/config.php"}
             - {path: "shells/.autolaunch_tmux", name: ".autolaunch_tmux"}
             - {
                 path: "shells/.launch_jetbrains_terminal",
