@@ -23,9 +23,6 @@ antigen bundle lukechilds/zsh-nvm
 
 antigen apply
 
-setopt menucomplete
-zstyle ':completion:*' menu select=1 _complete _ignored _approximate
-
 # zsh-autosuggestions bindings.
 bindkey '^ ' autosuggest-accept
 
