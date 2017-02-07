@@ -43,6 +43,10 @@ zle -N globalias
 bindkey -M emacs "^j" globalias
 bindkey -M viins "^j" globalias
 
+autoload -Uz copy-earlier-word
+zle -N copy-earlier-word
+bindkey "^Xf" copy-earlier-word
+
 eval $(thefuck --alias)
 
 [ -f "$HOME/.aliases" ] && source "$HOME/.aliases"
