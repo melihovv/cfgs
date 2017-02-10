@@ -91,3 +91,6 @@
 [submodule "editors/vim/.vim/bundle/matchit"]
 	path = editors/vim/.vim/bundle/matchit
 	url = https://github.com/vim-scripts/matchit.zip
+[submodule "editors/vim/.vim/bundle/vim-blade"]
+	path = editors/vim/.vim/bundle/vim-blade
+	url = https://github.com/jwalton512/vim-blade
