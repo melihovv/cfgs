@@ -25,7 +25,8 @@ alias dc="docker-compose"
 alias ls="ls --color=auto --group-directories-first"
 alias ll="ls -AlF --color=auto --group-directories-first"
 
-alias xclip="xclip -sel clip"
+alias copy="xclip -sel clip"
+alias paste="xclip -sel clip -o"
 
 alias ..="cd .."
 alias ...="cd ../.."
