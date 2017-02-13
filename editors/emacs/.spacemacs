@@ -306,7 +306,8 @@ executes.
  This function is mostly useful for variables that need to be set
 before packages are loaded. If you are unsure, you should try in setting them in
 `dotspacemacs/user-config' first."
-  )
+  (setenv "PATH" (concat (getenv "PATH") ":~/.config/yarn/global/node_modules/.bin"))
+  (setq exec-path (append exec-path '("~/.config/yarn/global/node_modules/.bin"))))
 
 (defun dotspacemacs/user-config ()
   "Configuration function for user code.
