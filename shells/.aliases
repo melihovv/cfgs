@@ -28,6 +28,8 @@ alias ll="ls -AlF --color=auto --group-directories-first"
 alias copy="xclip -sel clip"
 alias paste="xclip -sel clip -o"
 
+alias open="xdg-open"
+
 alias ..="cd .."
 alias ...="cd ../.."
 
