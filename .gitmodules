@@ -94,3 +94,6 @@
 [submodule "editors/vim/.vim/bundle/vim-blade"]
 	path = editors/vim/.vim/bundle/vim-blade
 	url = https://github.com/jwalton512/vim-blade
+[submodule "editors/vim/.vim/bundle/targets.vim"]
+	path = editors/vim/.vim/bundle/targets.vim
+	url = https://github.com/wellle/targets.vim
