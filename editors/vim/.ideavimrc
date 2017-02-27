@@ -35,6 +35,7 @@ map <leader>q :action GuiDesigner.QuickJavadoc<CR>
 map <leader>r :action Replace<CR>
 map <leader>s :action SaveAll<CR>
 map <leader>t :action Vcs.UpdateProject<CR>
+map <leader>k :action Vcs.QuickListPopupAction<CR>
 map <leader>u :action GotoSuperMethod<CR>
 map <leader>v :action VimVisualToggleBlockMode<CR>
 map <leader>w :action EditorSelectWord<CR>
