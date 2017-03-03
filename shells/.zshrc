@@ -17,8 +17,6 @@ antigen bundle zsh-users/zsh-history-substring-search
 antigen bundle zsh-users/zsh-autosuggestions
 antigen bundle zsh-users/zsh-completions
 antigen theme robbyrussell
-
-export NVM_LAZY_LOAD=true
 antigen bundle lukechilds/zsh-nvm
 
 antigen apply
