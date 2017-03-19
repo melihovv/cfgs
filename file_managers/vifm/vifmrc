@@ -355,6 +355,7 @@ nnoremap <f7> :mkdir<space>
 nnoremap <f8> :delete<cr>
 
 nnoremap b :bmarks<cr>
+nnoremap <C-h> :history<cr>
 
 source ~/.vifm_extra
 
