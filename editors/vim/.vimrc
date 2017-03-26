@@ -19,7 +19,7 @@ set smartcase
 "                            Number of screen lines to show around the cursor.
 set scrolloff=5
 "                                                              Wrap long line.
-set wrap
+set nowrap
 "          Break long line at a character in 'breakat' rather than at the last
 "                                           character that fits on the screen.
 set linebreak
