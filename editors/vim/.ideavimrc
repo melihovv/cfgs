@@ -29,7 +29,7 @@ map <leader>h :action TypeHierarchy<CR>
 map <leader>i :action ImplementMethods<CR>
 map <leader>m :action EditorScrollToCenter<CR>
 map <leader>n :action FileChooser.NewFolder<CR>
-map <leader>o :action MethodHierarchy.OverrideMethodAction<CR>
+map <leader>o :action OverrideMethods<CR>
 map <leader>p :action ParameterInfo<CR>
 map <leader>q :action GuiDesigner.QuickJavadoc<CR>
 map <leader>r :action Replace<CR>
