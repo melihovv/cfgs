@@ -356,6 +356,7 @@ nnoremap <f8> :delete<cr>
 
 nnoremap b :bmarks<cr>
 nnoremap <C-h> :history<cr>
+nnoremap <C-s> :sync<cr>
 
 source ~/.vifm_extra
 
