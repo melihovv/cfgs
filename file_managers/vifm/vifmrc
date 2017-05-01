@@ -358,5 +358,8 @@ nnoremap b :bmarks<cr>
 nnoremap <C-h> :history<cr>
 nnoremap <C-s> :sync<cr>
 
+" Copy path of file under cursor.
+nnoremap <A-p> :!readlink -f %c | xclip -sel clip<cr>
+
 source ~/.vifm_extra
 
