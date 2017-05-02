@@ -298,7 +298,8 @@ fileviewer .*/,*/ tree %f
 " set vifminfo=options,filetypes,commands,bookmarks,dhistory,state,cs
 " Like in vi
 set vifminfo=dhistory,chistory,state,tui,shistory,
-    \phistory,fhistory,dirstack,registers,bookmarks
+    \phistory,fhistory,dirstack,registers,bookmarks,
+    \savedirs
 
 " Start shell in current directory
 nnoremap s :shell<cr>
