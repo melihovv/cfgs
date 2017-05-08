@@ -347,6 +347,11 @@ nnoremap ,C :!gvim --remote-tab-silent $MYVIFMRC &<cr>
 " Toggle wrap setting on ,w key
 nnoremap ,w :set wrap!<cr>
 
+" Open file in emacs.
+nnoremap ,e :!emacs %f &<cr>
+" Open file in existing emacs session.
+nnoremap ,E :!emacsclient %f &<cr>
+
 " Example of standard two-panel file managers mappings
 nnoremap <f3> :!less %f<cr>
 nnoremap <f4> :edit<cr>
