@@ -183,13 +183,6 @@ fileviewer *.mp3 mp3info
 fileviewer *.flac soxi
 
 " Video
-filextype *.avi,*.mp4,*.wmv,*.dat,*.3gp,*.ogv,*.mkv,*.mpg,*.vob,*.flv,*.m2v,*.mov,*.webm,*.ts,*.m4v
-        \ {View using ffplay}
-        \ ffplay -fs %c,
-        \ {View using Dragon}
-        \ dragon %f,
-        \ {View using mplayer}
-        \ mplayer %f,
 fileviewer *.avi,*.mp4,*.wmv,*.dat,*.3gp,*.ogv,*.mkv,*.mpg,*.vob,*.flv,*.m2v,*.mov,*.webm,*.ts,*.m4v
          \ ffprobe -pretty %c 2>&1
 
