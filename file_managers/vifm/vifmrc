@@ -363,6 +363,10 @@ nnoremap <f6> :move<cr>
 nnoremap <f7> :mkdir<space>
 nnoremap <f8> :delete<cr>
 
+vnoremap <f5> :copy<cr>
+vnoremap <f6> :move<cr>
+vnoremap <f8> :delete<cr>
+
 nnoremap b :bmarks<cr>
 nnoremap <C-h> :history<cr>
 nnoremap <C-s> :sync<cr>
