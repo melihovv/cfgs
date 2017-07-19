@@ -187,6 +187,8 @@ fileviewer *.flac soxi
 fileviewer *.avi,*.mp4,*.wmv,*.dat,*.3gp,*.ogv,*.mkv,*.mpg,*.vob,*.flv,*.m2v,*.mov,*.webm,*.ts,*.m4v
          \ ffprobe -pretty %c 2>&1
 
+filetype *.avi,*.mkv,*.mp4 /usr/bin/vlc --started-from-file %c %i &
+
 " Web
 filextype *.html,*.htm
         \ {Open with dwb}
