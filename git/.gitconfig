@@ -28,6 +28,7 @@
     editor = vim
     filemode = false
     excludesfile = ~/.gitignore_global
+    commentChar = ";"
 [push]
     default = current
 [color]
