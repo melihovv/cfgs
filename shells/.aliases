@@ -52,6 +52,11 @@ alias ar:mirs="php artisan migrate:refresh --seed"
 alias ar:mire="php artisan migrate:reset && php artisan migrate --seed"
 alias ar:ih:m="php artisan ide-helper:models -N"
 
+alias an="ansible"
+alias anp="ansible-playbook"
+alias anv="ansible-vault"
+alias ang="ansible-galaxy"
+
 mkcd() {
     mkdir -p "$1" && cd "$1"
 }
