@@ -39,6 +39,8 @@ alias cdu="composer dump-autoload"
 alias phpd="php -dxdebug.remote_autostart"
 
 alias ar="php artisan"
+alias ars="php artisan serve"
+alias art="php artisan tinker"
 alias ar:mc="php artisan make:controller"
 alias ar:mcr="php artisan make:controller --resource"
 alias ar:mr="php artisan make:request"
