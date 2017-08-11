@@ -1,25 +1,29 @@
 source $HOME/.autolaunch_tmux
 
-source $HOME/antigen/antigen.zsh
+source $HOME/.zplug/init.zsh
 
 export EDITOR=vim
 export PATH=~/.local/bin:$PATH
 setopt HIST_IGNORE_ALL_DUPS
 
-antigen use oh-my-zsh
-antigen bundle git
-antigen bundle docker
-antigen bundle docker-compose
-antigen bundle extract
-antigen bundle fasd
-antigen bundle zsh-users/zsh-syntax-highlighting
-antigen bundle zsh-users/zsh-history-substring-search
-antigen bundle zsh-users/zsh-autosuggestions
-antigen bundle zsh-users/zsh-completions
-antigen theme robbyrussell
-antigen bundle lukechilds/zsh-nvm
+zplug "plugins/git", from:oh-my-zsh
+zplug "plugins/docker", from:oh-my-zsh
+zplug "plugins/docker-compose", from:oh-my-zsh
+zplug "plugins/extract", from:oh-my-zsh
+zplug "plugins/fasd", from:oh-my-zsh
+zplug "zsh-users/zsh-syntax-highlighting", defer:2
+zplug "zsh-users/zsh-history-substring-search"
+zplug "zsh-users/zsh-autosuggestions"
+zplug "zsh-users/zsh-completions"
+zplug "themes/robbyrussell", as:theme, from:oh-my-zsh
+zplug "lukechilds/zsh-nvm"
 
-antigen apply
+if ! zplug check;
+then
+    zplug install
+fi
+
+zplug load
 
 # zsh-autosuggestions bindings.
 bindkey '^ ' autosuggest-accept
