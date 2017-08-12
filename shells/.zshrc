@@ -44,6 +44,8 @@ bindkey "^Xf" copy-earlier-word
 
 eval $(thefuck --alias)
 
+export FZF_DEFAULT_OPTS='--reverse'
+
 [ -f "$HOME/.fzf.zsh" ] && source "$HOME/.fzf.zsh"
 
 [ -f "$HOME/.aliases" ] && source "$HOME/.aliases"
