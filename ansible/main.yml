@@ -3,7 +3,7 @@
   vars:
       HOME_PATH: "{{ ansible_env.HOME }}"
       BIN_PATH: "{{ ansible_env.HOME }}/local/.bin"
-      ZPLUG_PATH: "{{ ansible_env.HOME }}/.zplug"
+      ANTIGEN_PATH: "{{ ansible_env.HOME }}/antigen"
       BASH_IT_PATH: "{{ ansible_env.HOME }}/.bash_it"
       GIT_NUMBER_PATH: "{{ ansible_env.HOME }}/git-number"
       SPACEMACS_PATH: "{{ ansible_env.HOME }}/.emacs.d"
@@ -32,10 +32,10 @@
             path: "{{ BIN_PATH }}"
             state: directory
 
-      - name: Install zplug
+      - name: Install antigen
         git:
-            repo: https://github.com/zplug/zplug
-            dest: "{{ ZPLUG_PATH }}"
+            repo: https://github.com/zsh-users/antigen
+            dest: "{{ ANTIGEN_PATH }}"
         tags: zsh
 
       - name: Install bash-it
