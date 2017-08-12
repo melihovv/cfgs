@@ -1,5 +1,7 @@
 source $HOME/.autolaunch_tmux
 
+[ -f $HOME/.fzf.zsh ] && source $HOME/.fzf.zsh
+
 source $HOME/.zplug/init.zsh
 
 export EDITOR=vim

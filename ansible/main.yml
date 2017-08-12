@@ -8,6 +8,7 @@
       GIT_NUMBER_PATH: "{{ ansible_env.HOME }}/git-number"
       SPACEMACS_PATH: "{{ ansible_env.HOME }}/.emacs.d"
       TPM_PATH: "{{ ansible_env.HOME }}/.tmux/plugins/tpm"
+      FZF_PATH: "{{ ansible_env.HOME }}/.fzf"
 
   roles:
       - role: geerlingguy.git
@@ -120,4 +121,18 @@
         package: name=httpie state=present
         become: true
         tags: httpie
+
+      - name: Clone fzf
+        git:
+            repo: https://github.com/junegunn/fzf
+            dest: "{{ FZF_PATH }}"
+            depth: 1
+        tags: fzf
+
+      - name: Install fzf
+        shell: "bash {{ FZF_PATH }}/install --all"
+        args:
+            chdir: "{{ HOME_PATH }}"
+            creates: "{{ HOME_PATH }}/.fzf.zsh"
+        tags: fzf
 

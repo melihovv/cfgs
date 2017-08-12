@@ -2,6 +2,8 @@
 
 source $HOME/.autolaunch_tmux
 
+[ -f $HOME/.fzf.bash ] && source $HOME/.fzf.bash
+
 # Path to the bash it configuration
 export BASH_IT="$HOME/.bash_it"
 
