@@ -13,12 +13,16 @@
       - role: geerlingguy.git
         git_packagese:
             - git
+        tags: git
         become: true
       - role: howtodojo.tmux
+        tags: tmux
         become: true
       - role: theNewFlesh.tree
+        tags: tree
         become: true
       - role: ngpestelos.fasd
+        tags: fasd
         become: true
 
   tasks:
@@ -31,16 +35,21 @@
         git:
             repo: https://github.com/zplug/zplug
             dest: "{{ ZPLUG_PATH }}"
+        tags: zsh
 
       - name: Install bash-it
         git:
             repo: https://github.com/Bash-it/bash-it
             dest: "{{ BASH_IT_PATH }}"
+        tags: bash
 
       - name: Clone spacemacs
         git:
             repo: https://github.com/syl20bnr/spacemacs
             dest: "{{ SPACEMACS_PATH }}"
+        tags:
+            - emacs
+            - spacemacs
 
       - name: Symlink dotfiles
         file:
@@ -65,10 +74,7 @@
             - {path: "other/gpg.conf", name: ".gnupg/gpg.conf"}
             - {path: "other/psysh.php", name: ".config/psysh/config.php"}
             - {path: "shells/.autolaunch_tmux", name: ".autolaunch_tmux"}
-            - {
-                path: "shells/.launch_jetbrains_terminal",
-                name: ".launch_jetbrains_terminal",
-              }
+            - {path: "shells/.launch_jetbrains_terminal", name: ".launch_jetbrains_terminal"}
 
       - name: Check if vim plugins are installed
         stat:
@@ -80,6 +86,7 @@
         args:
             chdir: "{{ playbook_dir }}/.."
         when: vim_plugins.stat.isdir is defined and vim_plugins.stat.isdir
+        tags: vim
 
       - name: Clone git-number
         git:
@@ -96,17 +103,21 @@
            - {name: "git-number"}
            - {name: "git-list"}
            - {name: "git-id"}
+        tags: git-number
 
       - name: Install emacs
         package: name=emacs state=present
         become: true
+        tags: emacs
 
       - name: Clone tmux-plugin-manager
         git:
             repo: https://github.com/tmux-plugins/tpm
             dest: "{{ TPM_PATH }}"
+        tags: tmux
 
       - name: Install httpie
         package: name=httpie state=present
         become: true
+        tags: httpie
 
