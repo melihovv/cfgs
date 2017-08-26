@@ -26,6 +26,7 @@ Running `ansible/init.sh` will
     - tmux
     - tree
     - fasd
+    - fzf
 - make zsh default shell for specified user
 - simlink `$HOME/{file}` to `path/to/.dotfiles/{file}`. WARNING: it will
 override any existing files!
