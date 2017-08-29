@@ -240,7 +240,12 @@ command! -nargs=+ MapToggle call MapToggle(<f-args>)
 "                                                                 Toggle wrap.
 MapToggle <F2> wrap
 MapToggle <F3> list
-
+"                                                        Sort lines by length.
+function! SortLines() range
+    execute a:firstline . "," . a:lastline . 's/^\(.*\)$/\=strdisplaywidth( submatch(0) ) . " " . submatch(0)/'
+    execute a:firstline . "," . a:lastline . 'sort n'
+    execute a:firstline . "," . a:lastline . 's/^\d\+\s//'
+endfunction
 
 " plugins --------------------------------------------------------------------
 " NerdTree -------------------------------------------------------------------
