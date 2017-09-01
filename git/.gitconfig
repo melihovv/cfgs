@@ -43,7 +43,7 @@
     conflictstyle = diff3
 [mergetool]
     keeptemporaries = false
-    keepbackups = false
+    keepBackup = false
     prompt = false
     trustexitcode = false
 [commit]
