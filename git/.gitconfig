@@ -39,7 +39,7 @@
 [diff]
     tool = vimdiff
 [merge]
-    tool = vimdiff
+    tool = p4merge
     conflictstyle = diff3
 [mergetool]
     keeptemporaries = false
