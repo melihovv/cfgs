@@ -34,6 +34,11 @@ alias ..="cd .."
 alias ...="cd ../.."
 
 alias co="composer"
+alias coi="composer install"
+alias coii="composer install --ignore-platform-reqs"
+alias cor="composer require"
+alias cord="composer require --dev"
+alias cori="composer require --ignore-platform-reqs"
 alias cdu="composer dump-autoload"
 
 alias phpd="php -dxdebug.remote_autostart"
