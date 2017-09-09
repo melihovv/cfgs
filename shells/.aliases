@@ -39,6 +39,8 @@ alias coii="composer install --ignore-platform-reqs"
 alias cor="composer require"
 alias cord="composer require --dev"
 alias cori="composer require --ignore-platform-reqs"
+alias cou="composer update"
+alias coui="composer update --ignore-platform-reqs"
 alias cdu="composer dump-autoload"
 
 alias phpd="php -dxdebug.remote_autostart"
