@@ -1,0 +1,3 @@
+---
+
+fzf_path: "{{ ansible_env.HOME }}/.fzf"

@@ -3,42 +3,37 @@
 My personal configs.
 
 Requirements:
-- git
+- git (to clone this repo)
 - ansible
 
 Install ansible:
-- sudo apt-get install software-properties-common
+- sudo apt install software-properties-common
 - sudo apt-add-repository ppa:ansible/ansible
-- sudo apt-get update
-- sudo apt-get install ansible -y
+- sudo apt update
+- sudo apt install ansible -y
 
-Install:
+Install git:
+- sudo apt install git
+
+Install configs:
 - git clone https://github.com/melihovv/cfgs.git ~/cfgs
-- ~/cfgs/ansible/init.sh
+- cd ~/cfgs
+- ansible-galaxy install -r requirements.yml
+- ansible-playbook main.yml
 
-Running `ansible/init.sh` will
-- install:
-    - zsh
-    - antigen with oh-my-zsh and awesome zsh plugins
-    - bash-it
-    - git
-    - git-number
-    - tmux
-    - tree
-    - fasd
-    - fzf
-- make zsh default shell for specified user
-- simlink `$HOME/{file}` to `path/to/.dotfiles/{file}`. WARNING: it will
-override any existing files!
-- pull in all the vim plugin submodules.
-
-Configs for:
-- bash
-- zsh
-- tmux
+Running `ansible-playbook main.yml` will install
+- zsh, antigen, oh-my-zsh and other awesome zsh plugins
+- bash-it
 - git
-- vim
-- emacs
+- tmux and some cool tmux plugins
+- tree
 - fasd
-- and more...
+- fzf
+- vim
+- emacs with spacemacs
 
+To install only specific roles:
+- ansible-playbook main.yml --tags=zsh,vim
+
+To exclude specific roles from install:
+- ansible-playbook main.yml --skip-tags=bash,emacs

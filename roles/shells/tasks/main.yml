@@ -1,0 +1,46 @@
+---
+
+- name: Install antigen
+  git:
+      repo: https://github.com/zsh-users/antigen
+      dest: "{{ antigen_path }}"
+  tags: zsh
+
+- name: Symlink zsh configs
+  file:
+      src: "{{ role_path }}/{{ item.path }}"
+      dest: "{{ ansible_env.HOME }}/{{ item.name }}"
+      state: link
+      force: yes
+  with_items:
+      - {path: "files/.zshrc", name: ".zshrc"}
+  tags: zsh
+
+- name: Install bash-it
+  git:
+      repo: https://github.com/Bash-it/bash-it
+      dest: "{{ bash_it_path }}"
+  tags: bash
+
+- name: Symlink bash configs
+  file:
+      src: "{{ role_path }}/{{ item.path }}"
+      dest: "{{ ansible_env.HOME }}/{{ item.name }}"
+      state: link
+      force: yes
+  with_items:
+      - {path: "files/.bashrc", name: ".bashrc"}
+  tags: bash
+
+- name: Symlink common scripts
+  file:
+      src: "{{ role_path }}/{{ item.path }}"
+      dest: "{{ ansible_env.HOME }}/{{ item.name }}"
+      state: link
+      force: yes
+  with_items:
+      - {path: "files/.aliases", name: ".aliases"}
+      - {path: "files/.launch_jetbrains_terminal", name: ".launch_jetbrains_terminal"}
+  tags:
+      - bash
+      - zsh

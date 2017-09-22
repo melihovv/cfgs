@@ -1,0 +1,3 @@
+---
+
+tpm_path: "{{ ansible_env.HOME }}/.tmux/plugins/tpm"

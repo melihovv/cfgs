@@ -1,0 +1,24 @@
+---
+
+- name: Symlink vim configs
+  file:
+      src: "{{ role_path }}/{{ item.path }}"
+      dest: "{{ ansible_env.HOME }}/{{ item.name }}"
+      state: link
+      force: yes
+  with_items:
+      - {path: "files/.vimrc", name: ".vimrc"}
+      - {path: "files/.ideavimrc", name: ".ideavimrc"}
+      - {path: "files/.vim", name: ".vim"}
+
+
+- name: Check if vim plugins are installed
+  stat:
+      path: "{{ role_path }}/files/.vim/bundle/vim-pathogen/.git"
+  register: vim_plugins
+
+- name: Install vim plugins if they are not installed
+  command: git submodule update --init
+  args:
+      chdir: "{{ playbook_dir }}/.."
+  when: vim_plugins.stat.exists == false

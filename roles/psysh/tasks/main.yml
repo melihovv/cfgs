@@ -1,0 +1,10 @@
+---
+
+- name: Symlink psysh configs
+  file:
+      src: "{{ role_path }}/{{ item.path }}"
+      dest: "{{ ansible_env.HOME }}/{{ item.name }}"
+      state: link
+      force: yes
+  with_items:
+      - {path: "files/psysh.php", name: ".config/psysh/config.php"}

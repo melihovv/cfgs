@@ -1,0 +1,30 @@
+---
+
+- hosts: all
+  vars:
+      HOME_PATH: "{{ ansible_env.HOME }}"
+
+  roles:
+      - role: git
+        tags: git
+      - role: shells
+        tags: shells
+      - role: fasd
+        tags: fasd
+      - role: fzf
+        tags: fzf
+      - role: theNewFlesh.tree
+        tags: tree
+        become: true
+      - role: psysh
+        tags: psysh
+      - role: gpg
+        tags: gpg
+      - role: tmux
+        tags: tmux
+      - role: vim
+        tags: vim
+      - role: emacs
+        tags: emacs
+      - role: vifm
+        tags: vifm

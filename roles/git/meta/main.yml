@@ -1,0 +1,7 @@
+---
+
+dependencies:
+    - role: geerlingguy.git
+      git_packagese:
+          - git
+      become: true

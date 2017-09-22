@@ -1,0 +1,4 @@
+---
+
+antigen_path: "{{ ansible_env.HOME }}/antigen"
+bash_it_path: "{{ ansible_env.HOME }}/.bash_it"

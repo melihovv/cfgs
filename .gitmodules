@@ -1,99 +1,99 @@
-[submodule "editors/vim/.vim/bundle/vim-pathogen"]
-	path = editors/vim/.vim/bundle/vim-pathogen
+[submodule "roles/vim/files/.vim/bundle/vim-pathogen"]
+	path = roles/vim/files/.vim/bundle/vim-pathogen
 	url = https://github.com/tpope/vim-pathogen.git
-[submodule "editors/vim/.vim/bundle/vim-plugin-ruscmd"]
-	path = editors/vim/.vim/bundle/vim-plugin-ruscmd
+[submodule "roles/vim/files/.vim/bundle/vim-plugin-ruscmd"]
+	path = roles/vim/files/.vim/bundle/vim-plugin-ruscmd
 	url = https://github.com/powerman/vim-plugin-ruscmd.git
-[submodule "editors/vim/.vim/bundle/nerdtree"]
-	path = editors/vim/.vim/bundle/nerdtree
+[submodule "roles/vim/files/.vim/bundle/nerdtree"]
+	path = roles/vim/files/.vim/bundle/nerdtree
 	url = https://github.com/scrooloose/nerdtree.git
-[submodule "editors/vim/.vim/bundle/vim-airline"]
-	path = editors/vim/.vim/bundle/vim-airline
+[submodule "roles/vim/files/.vim/bundle/vim-airline"]
+	path = roles/vim/files/.vim/bundle/vim-airline
 	url = https://github.com/bling/vim-airline.git
-[submodule "editors/vim/.vim/bundle/vim-latex"]
-	path = editors/vim/.vim/bundle/vim-latex
+[submodule "roles/vim/files/.vim/bundle/vim-latex"]
+	path = roles/vim/files/.vim/bundle/vim-latex
 	url = https://github.com/vim-latex/vim-latex.git
-[submodule "editors/vim/.vim/bundle/vim-monokai"]
-	path = editors/vim/.vim/bundle/vim-monokai
+[submodule "roles/vim/files/.vim/bundle/vim-monokai"]
+	path = roles/vim/files/.vim/bundle/vim-monokai
 	url = https://github.com/crusoexia/vim-monokai.git
-[submodule "editors/vim/.vim/bundle/nerdcommenter"]
-	path = editors/vim/.vim/bundle/nerdcommenter
+[submodule "roles/vim/files/.vim/bundle/nerdcommenter"]
+	path = roles/vim/files/.vim/bundle/nerdcommenter
 	url = https://github.com/scrooloose/nerdcommenter
-[submodule "editors/vim/.vim/bundle/ctrlp"]
-	path = editors/vim/.vim/bundle/ctrlp
+[submodule "roles/vim/files/.vim/bundle/ctrlp"]
+	path = roles/vim/files/.vim/bundle/ctrlp
 	url = https://github.com/kien/ctrlp.vim
-[submodule "editors/vim/.vim/bundle/vim-easygrep"]
-	path = editors/vim/.vim/bundle/vim-easygrep
+[submodule "roles/vim/files/.vim/bundle/vim-easygrep"]
+	path = roles/vim/files/.vim/bundle/vim-easygrep
 	url = https://github.com/dkprice/vim-easygrep.git
-[submodule "editors/vim/.vim/bundle/vim-surround"]
-	path = editors/vim/.vim/bundle/vim-surround
+[submodule "roles/vim/files/.vim/bundle/vim-surround"]
+	path = roles/vim/files/.vim/bundle/vim-surround
 	url = https://github.com/tpope/vim-surround.git
-[submodule "editors/vim/.vim/bundle/vim-repeat"]
-	path = editors/vim/.vim/bundle/vim-repeat
+[submodule "roles/vim/files/.vim/bundle/vim-repeat"]
+	path = roles/vim/files/.vim/bundle/vim-repeat
 	url = https://github.com/tpope/vim-repeat
-[submodule "editors/vim/.vim/bundle/vim-fugitive"]
-	path = editors/vim/.vim/bundle/vim-fugitive
+[submodule "roles/vim/files/.vim/bundle/vim-fugitive"]
+	path = roles/vim/files/.vim/bundle/vim-fugitive
 	url = https://github.com/tpope/vim-fugitive
-[submodule "editors/vim/.vim/bundle/vim-easymotion"]
-	path = editors/vim/.vim/bundle/vim-easymotion
+[submodule "roles/vim/files/.vim/bundle/vim-easymotion"]
+	path = roles/vim/files/.vim/bundle/vim-easymotion
 	url = https://github.com/easymotion/vim-easymotion
-[submodule "editors/vim/.vim/bundle/copy-cut-paste"]
-	path = editors/vim/.vim/bundle/copy-cut-paste
+[submodule "roles/vim/files/.vim/bundle/copy-cut-paste"]
+	path = roles/vim/files/.vim/bundle/copy-cut-paste
 	url = https://github.com/NLKNguyen/copy-cut-paste.vim
-[submodule "editors/vim/.vim/bundle/vim-unimpaired"]
-	path = editors/vim/.vim/bundle/vim-unimpaired
+[submodule "roles/vim/files/.vim/bundle/vim-unimpaired"]
+	path = roles/vim/files/.vim/bundle/vim-unimpaired
 	url = https://github.com/tpope/vim-unimpaired
-[submodule "editors/vim/.vim/bundle/bufonly.vim"]
-	path = editors/vim/.vim/bundle/bufonly.vim
+[submodule "roles/vim/files/.vim/bundle/bufonly.vim"]
+	path = roles/vim/files/.vim/bundle/bufonly.vim
 	url = https://github.com/vim-scripts/BufOnly.vim
-[submodule "editors/vim/.vim/bundle/vim-antlr"]
-	path = editors/vim/.vim/bundle/vim-antlr
+[submodule "roles/vim/files/.vim/bundle/vim-antlr"]
+	path = roles/vim/files/.vim/bundle/vim-antlr
 	url = https://github.com/jrozner/vim-antlr
-[submodule "editors/vim/.vim/bundle/Dockerfile.vim"]
-	path = editors/vim/.vim/bundle/Dockerfile.vim
+[submodule "roles/vim/files/.vim/bundle/Dockerfile.vim"]
+	path = roles/vim/files/.vim/bundle/Dockerfile.vim
 	url = https://github.com/ekalinin/Dockerfile.vim.git
-[submodule "editors/vim/.vim/bundle/emmet-vim"]
-	path = editors/vim/.vim/bundle/emmet-vim
+[submodule "roles/vim/files/.vim/bundle/emmet-vim"]
+	path = roles/vim/files/.vim/bundle/emmet-vim
 	url = https://github.com/mattn/emmet-vim
-[submodule "editors/vim/.vim/bundle/splitjoin.vim"]
-	path = editors/vim/.vim/bundle/splitjoin.vim
+[submodule "roles/vim/files/.vim/bundle/splitjoin.vim"]
+	path = roles/vim/files/.vim/bundle/splitjoin.vim
 	url = https://github.com/AndrewRadev/splitjoin.vim
-[submodule "editors/vim/.vim/bundle/vim-multiple-cursors"]
-	path = editors/vim/.vim/bundle/vim-multiple-cursors
+[submodule "roles/vim/files/.vim/bundle/vim-multiple-cursors"]
+	path = roles/vim/files/.vim/bundle/vim-multiple-cursors
 	url = https://github.com/terryma/vim-multiple-cursors
-[submodule "editors/vim/.vim/bundle/vim-better-whitespace"]
-	path = editors/vim/.vim/bundle/vim-better-whitespace
+[submodule "roles/vim/files/.vim/bundle/vim-better-whitespace"]
+	path = roles/vim/files/.vim/bundle/vim-better-whitespace
 	url = https://github.com/ntpeters/vim-better-whitespace
-[submodule "editors/vim/.vim/bundle/tabular"]
-	path = editors/vim/.vim/bundle/tabular
+[submodule "roles/vim/files/.vim/bundle/tabular"]
+	path = roles/vim/files/.vim/bundle/tabular
 	url = https://github.com/godlygeek/tabular
-[submodule "editors/vim/.vim/bundle/vim-vinegar"]
-	path = editors/vim/.vim/bundle/vim-vinegar
+[submodule "roles/vim/files/.vim/bundle/vim-vinegar"]
+	path = roles/vim/files/.vim/bundle/vim-vinegar
 	url = https://github.com/tpope/vim-vinegar
-[submodule "editors/vim/.vim/bundle/tagbar"]
-	path = editors/vim/.vim/bundle/tagbar
+[submodule "roles/vim/files/.vim/bundle/tagbar"]
+	path = roles/vim/files/.vim/bundle/tagbar
 	url = https://github.com/majutsushi/tagbar
-[submodule "editors/vim/.vim/bundle/vim-snippets"]
-	path = editors/vim/.vim/bundle/vim-snippets
+[submodule "roles/vim/files/.vim/bundle/vim-snippets"]
+	path = roles/vim/files/.vim/bundle/vim-snippets
 	url = https://github.com/honza/vim-snippets
-[submodule "editors/vim/.vim/bundle/ultisnips"]
-	path = editors/vim/.vim/bundle/ultisnips
+[submodule "roles/vim/files/.vim/bundle/ultisnips"]
+	path = roles/vim/files/.vim/bundle/ultisnips
 	url = https://github.com/SirVer/ultisnips
-[submodule "editors/vim/.vim/bundle/lexima.vim"]
-	path = editors/vim/.vim/bundle/lexima.vim
+[submodule "roles/vim/files/.vim/bundle/lexima.vim"]
+	path = roles/vim/files/.vim/bundle/lexima.vim
 	url = https://github.com/cohama/lexima.vim
-[submodule "editors/vim/.vim/bundle/vim-colors-solarized"]
-	path = editors/vim/.vim/bundle/vim-colors-solarized
+[submodule "roles/vim/files/.vim/bundle/vim-colors-solarized"]
+	path = roles/vim/files/.vim/bundle/vim-colors-solarized
 	url = https://github.com/altercation/vim-colors-solarized
-[submodule "editors/vim/.vim/bundle/committia.vim"]
-	path = editors/vim/.vim/bundle/committia.vim
+[submodule "roles/vim/files/.vim/bundle/committia.vim"]
+	path = roles/vim/files/.vim/bundle/committia.vim
 	url = https://github.com/rhysd/committia.vim
-[submodule "editors/vim/.vim/bundle/matchit"]
-	path = editors/vim/.vim/bundle/matchit
+[submodule "roles/vim/files/.vim/bundle/matchit"]
+	path = roles/vim/files/.vim/bundle/matchit
 	url = https://github.com/vim-scripts/matchit.zip
-[submodule "editors/vim/.vim/bundle/vim-blade"]
-	path = editors/vim/.vim/bundle/vim-blade
+[submodule "roles/vim/files/.vim/bundle/vim-blade"]
+	path = roles/vim/files/.vim/bundle/vim-blade
 	url = https://github.com/jwalton512/vim-blade
-[submodule "editors/vim/.vim/bundle/targets.vim"]
-	path = editors/vim/.vim/bundle/targets.vim
+[submodule "roles/vim/files/.vim/bundle/targets.vim"]
+	path = roles/vim/files/.vim/bundle/targets.vim
 	url = https://github.com/wellle/targets.vim

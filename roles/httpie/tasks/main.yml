@@ -1,0 +1,5 @@
+---
+
+- name: Install httpie
+  package: name=httpie state=present
+  become: true

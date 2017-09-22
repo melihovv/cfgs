@@ -1,0 +1,3 @@
+---
+
+spacemacs_path: "{{ ansible_env.HOME }}/.emacs.d"

@@ -1,0 +1,16 @@
+---
+
+- name: Symlink tmux configs
+  file:
+      src: "{{ role_path }}/{{ item.path }}"
+      dest: "{{ ansible_env.HOME }}/{{ item.name }}"
+      state: link
+      force: yes
+  with_items:
+      - {path: "files/.tmux.conf", name: ".tmux.conf"}
+      - {path: "files/.autolaunch_tmux", name: ".autolaunch_tmux"}
+
+- name: Clone tmux-plugin-manager
+  git:
+      repo: https://github.com/tmux-plugins/tpm
+      dest: "{{ tpm_path }}"

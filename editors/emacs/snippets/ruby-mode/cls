@@ -1,7 +1,0 @@
-# -*- mode: snippet -*-
-# name: init function
-# contributor: melihovv <amelihovv@ya.ru>
-# --
-def initialize${1:(${2:args})}
-    $0
-end

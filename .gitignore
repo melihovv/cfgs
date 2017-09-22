@@ -1,4 +1,3 @@
-/backup
-/ansible/main.retry
-/editors/vim/.vim/.netrwhist
-
+/main.retry
+/roles/vim/files/.vim/.netrwhist
+/.idea

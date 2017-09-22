@@ -1,0 +1,6 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =4
+let g:netrw_dirhist_1='/etc/sysctl.d'
+let g:netrw_dirhist_2='/home/melihovv/Projects/work/grisha/traffic-from-social-sources/ansible'
+let g:netrw_dirhist_3='/home/melihovv/Projects/work/b2beer/b2beer-server'
+let g:netrw_dirhist_4='/etc/systemd/system'
