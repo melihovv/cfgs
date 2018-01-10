@@ -189,16 +189,6 @@ fileviewer *.avi,*.mp4,*.wmv,*.dat,*.3gp,*.ogv,*.mkv,*.mpg,*.vob,*.flv,*.m2v,*.m
 
 filetype *.avi,*.mkv,*.mp4 /usr/bin/vlc --started-from-file %c %i &
 
-" Web
-filextype *.html,*.htm
-        \ {Open with dwb}
-        \ dwb %f %i &,
-        \ {Open with firefox}
-        \ firefox %f &,
-        \ {Open with uzbl}
-        \ uzbl-browser %f %i &,
-filetype *.html,*.htm links, lynx
-
 " Object
 filetype *.o nm %f | less
 
