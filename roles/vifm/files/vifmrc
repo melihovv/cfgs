@@ -364,6 +364,9 @@ nnoremap b :bmarks<cr>
 nnoremap <C-h> :history<cr>
 nnoremap <C-s> :sync<cr>
 
+nnoremap zj :sync %c<cr>
+nnoremap zo :sync %c<cr><tab>
+
 vnoremap p :!!vlc --playlist-enqueue --one-instance %f %i &<cr>
 
 source ~/.vifm_extra
