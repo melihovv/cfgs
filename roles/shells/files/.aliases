@@ -1,3 +1,4 @@
+alias sudo="sudo "
 alias c="clear"
 alias q="exit"
 alias l="less"
