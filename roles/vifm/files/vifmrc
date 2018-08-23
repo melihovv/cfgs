@@ -263,11 +263,6 @@ filetype *.7z
        \ FUSE_MOUNT|fuse-7z %SOURCE_FILE %DESTINATION_DIR,
 fileviewer *.7z 7z l %c
 
-" Office files
-filextype *.odt,*.doc,*.docx,*.xls,*.xlsx,*.odp,*.pptx libreoffice %f %i &
-fileviewer *.doc catdoc %c
-fileviewer *.docx, docx2txt.pl %f -
-
 " TuDu files
 filetype *.tudu tudu -f %c
 
