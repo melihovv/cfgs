@@ -11,6 +11,7 @@ alias gpu="git pull"
 alias gr="git rebase"
 alias grc="git rebase --continue"
 alias grr="git rebase --reset"
+alias nah='git reset --hard && git clean -f'
 
 alias gn="git number --column"
 alias ga="git number add"
