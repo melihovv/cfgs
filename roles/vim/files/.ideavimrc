@@ -4,6 +4,8 @@ set scrolloff=5
 set surround
 set incsearch
 
+set multiple-cursors
+
 " Insert line above.
 nnoremap [<space> O<esc>0C<esc>j
 " Insert line below.
