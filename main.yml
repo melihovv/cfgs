@@ -26,3 +26,5 @@
         tags: emacs
       - role: vifm
         tags: vifm
+      - role: lubuntu
+        tags: lubuntu

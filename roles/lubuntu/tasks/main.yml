@@ -1,0 +1,10 @@
+---
+
+- name: Symlink lubuntu configs
+  file:
+      src: "{{ role_path }}/{{ item.path }}"
+      dest: "{{ ansible_env.HOME }}/{{ item.name }}"
+      state: link
+      force: yes
+  with_items:
+      - {path: "files/lubuntu-rc.xml", name: ".config/openbox/lubuntu-rc.xml"}

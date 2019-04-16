@@ -31,6 +31,7 @@ Running `ansible-playbook main.yml` will install
 - fzf
 - vim
 - emacs with spacemacs
+- configs for lubuntu
 
 To install only specific roles:
 - ansible-playbook main.yml --tags=zsh,vim
