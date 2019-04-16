@@ -993,6 +993,18 @@
         <application class='Gvim'>
             <fullscreen>true</fullscreen>
         </application>
+        <application class='Slack'>
+            <maximized>true</maximized>
+        </application>
+        <application class='Toggl Desktop'>
+            <maximized>true</maximized>
+        </application>
+        <application class='TelegramDesktop'>
+            <maximized>true</maximized>
+        </application>
+        <application class='Skype'>
+            <maximized>true</maximized>
+        </application>
         <application class='*'>
             <focus>yes</focus>
             <!--<maximized>true</maximized>-->
