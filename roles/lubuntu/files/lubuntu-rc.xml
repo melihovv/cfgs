@@ -455,12 +455,12 @@
   -->
         <keybind key='Print'>
             <action name='Execute'>
-                <command>lxsession-default screenshot</command>
+                <command>gnome-screenshot --clipboard</command>
             </action>
         </keybind>
         <keybind key='A-Print'>
             <action name='Execute'>
-                <command>lxsession-default screenshot window</command>
+                <command>gnome-screenshot --clipboard --area</command>
             </action>
         </keybind>
         <!-- Launch logout when push on the shutdown button -->
