@@ -418,11 +418,6 @@
                 <command>lxsession-default terminal</command>
             </action>
         </keybind>
-        <keybind key='XF86Terminal'>
-            <action name='Execute'>
-                <command>lxsession-default terminal</command>
-            </action>
-        </keybind>
         <!-- Keybinding for calculator button -->
         <keybind key='XF86Calculator'>
             <action name='Execute'>
@@ -455,12 +450,12 @@
   -->
         <keybind key='Print'>
             <action name='Execute'>
-                <command>gnome-screenshot --clipboard</command>
+                <command>gnome-screenshot -i</command>
             </action>
         </keybind>
         <keybind key='A-Print'>
             <action name='Execute'>
-                <command>gnome-screenshot --clipboard --area</command>
+                <command>gnome-screenshot --area -i</command>
             </action>
         </keybind>
         <!-- Launch logout when push on the shutdown button -->
