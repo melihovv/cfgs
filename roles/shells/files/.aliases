@@ -2,7 +2,7 @@ alias sudo="sudo "
 alias c="clear"
 alias q="exit"
 alias l="less"
-alias rmr="rm -r"
+alias rmr="rm -rf"
 
 alias g="git"
 alias gst="git status"
