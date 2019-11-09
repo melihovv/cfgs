@@ -341,10 +341,10 @@ nnoremap <leader>bs :CtrlPMRU<cr>
 nnoremap <leader>bt :CtrlPBufTag<cr>
 nnoremap <leader>. :CtrlPTag<cr>
 
-" Tagbar
+" Tagbar ---------------------------------------------------------------------
 nnoremap <F8> :TagbarToggle<cr>
 
-" Utilsnips
+" Utilsnips ------------------------------------------------------------------
 let g:UltiSnipsExpandTrigger='<tab>'
 let g:UltiSnipsJumpForwardTrigger='<tab>'
 let g:UltiSnipsJumpBackwardTrigger='<s-tab>'
