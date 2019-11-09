@@ -1,12 +1,10 @@
-source $HOME/.autolaunch_tmux
+#source $HOME/.autolaunch_tmux
 
 source $HOME/antigen/antigen.zsh
 
 export EDITOR=vim
 
-if [ "$(uname -s)" == "Linux" ]; then
-    export PATH=~/.local/bin:$PATH
-fi
+[ "$(uname -s)" = "Linux" ] && export PATH=~/.local/bin:$PATH
 
 setopt HIST_IGNORE_ALL_DUPS
 
@@ -46,9 +44,7 @@ autoload -Uz copy-earlier-word
 zle -N copy-earlier-word
 bindkey "^Xf" copy-earlier-word
 
-if [ "$(uname -s)" == "Linux" ]; then
-    eval $(thefuck --alias)
-fi
+[ "$(uname -s)" = "Linux" ] && eval $(thefuck --alias)
 
 export FZF_DEFAULT_OPTS='--reverse'
 

@@ -14,9 +14,6 @@ alias grc="git rebase --continue"
 alias grr="git rebase --reset"
 alias nah='git reset --hard && git clean -f'
 
-alias gn="git number --column"
-alias ga="git number add"
-
 if [ `echo $TERM` != "cygwin" ];
 then
     alias tmux="TERM=xterm-256color tmux"
@@ -25,25 +22,29 @@ fi
 alias doc="docker"
 alias dc="docker-compose"
 
-alias ls="ls --color=auto --group-directories-first"
-alias ll="ls -AlFh --color=auto --group-directories-first"
+if [ "$(uname -s)" = "Linux" ]; then
+    alias ls="ls --color=auto --group-directories-first"
+    alias ll="ls -AlFh --color=auto --group-directories-first"
 
-alias copy="xclip -sel clip"
-alias paste="xclip -sel clip -o"
+    alias copy="xclip -sel clip"
+    alias paste="xclip -sel clip -o"
 
-alias open="xdg-open"
+    alias open="xdg-open"
+elif [ "$(uname -s)" = "Darwin" ]; then
+    alias ll="ls -alFh"
+
+    alias copy="pbcopy"
+    alias paste="pbpaste"
+fi
 
 alias ..="cd .."
 alias ...="cd ../.."
 
 alias co="composer"
 alias coi="composer install"
-alias coii="composer install --ignore-platform-reqs"
 alias cor="composer require"
 alias cord="composer require --dev"
-alias cori="composer require --ignore-platform-reqs"
 alias cou="composer update"
-alias coui="composer update --ignore-platform-reqs"
 alias cdu="composer dump-autoload"
 
 composer-link() {
