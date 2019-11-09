@@ -4,7 +4,7 @@ source $HOME/antigen/antigen.zsh
 
 export EDITOR=vim
 
-[ "$(uname -s)" = "Linux" ] && export PATH=~/.local/bin:$PATH
+export PATH=~/.local/bin:$PATH
 
 setopt HIST_IGNORE_ALL_DUPS
 
@@ -53,3 +53,7 @@ export FZF_DEFAULT_OPTS='--reverse'
 [ -f "$HOME/.aliases" ] && source "$HOME/.aliases"
 
 [ -f "$HOME/.extra" ] && source "$HOME/.extra"
+
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
+[ "$(uname -s)" = "Darwin" ] && [ -f "$HOME/.iterm2_shell_integration.zsh" ] && source ~/.iterm2_shell_integration.zsh
