@@ -48,3 +48,5 @@
     trustexitcode = false
 [commit]
     gpgsign = true
+[tag]
+	forceSignAnnotated = true
