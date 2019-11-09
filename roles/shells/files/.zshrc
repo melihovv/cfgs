@@ -1,4 +1,5 @@
 [ "$(uname -s)" = "Linux" ] && source $HOME/.autolaunch_tmux
+source $HOME/.autolaunch_tmux
 
 source $HOME/antigen/antigen.zsh
 
