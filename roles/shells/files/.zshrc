@@ -4,6 +4,8 @@ source $HOME/antigen/antigen.zsh
 
 export EDITOR=vim
 
+[ "$(uname -s)" = "Darwin" ] && export PATH=$PATH:/usr/local/sbin
+
 export PATH=~/.local/bin:$PATH
 
 setopt HIST_IGNORE_ALL_DUPS
