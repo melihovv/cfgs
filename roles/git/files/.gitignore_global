@@ -45,3 +45,6 @@ tags
 
 # Psysh
 .tinker
+
+# IDEA
+.idea/
