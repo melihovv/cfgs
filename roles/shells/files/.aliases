@@ -1,6 +1,8 @@
+# in order to use aliases with sudo
 alias sudo="sudo "
 alias c="clear"
 alias q="exit"
+alias й="exit"
 alias l="less"
 alias rmr="rm -rf"
 
