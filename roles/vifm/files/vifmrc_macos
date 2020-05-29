@@ -262,6 +262,9 @@ nnoremap ,c :write | execute ':!vim $MYVIFMRC' | restart<cr>
 " Open file in new instance of macvim
 nnoremap O :!open /Applications/MacVim.app %f<cr>
 
+" Open file in default program"
+nnoremap <C-o> :!open %f<cr>
+
 " Yank current directory path into the clipboard
 nnoremap yd :!echo %d | pbcopy %i<cr>
 
