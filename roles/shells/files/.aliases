@@ -6,14 +6,13 @@ alias й="exit"
 alias l="less"
 alias rmr="rm -rf"
 
+alias G=" | grep"
+alias L=" | less"
+
 alias g="git"
 alias gst="git status"
-alias gc="git commit"
 alias gp="git push"
 alias gpu="git pull"
-alias gr="git rebase"
-alias grc="git rebase --continue"
-alias grr="git rebase --reset"
 alias nah='git reset --hard && git clean -f'
 
 if [ `echo $TERM` != "cygwin" ];
@@ -43,11 +42,11 @@ alias ..="cd .."
 alias ...="cd ../.."
 
 alias co="composer"
+alias cdu="composer dump-autoload"
 alias coi="composer install"
 alias cor="composer require"
 alias cord="composer require --dev"
 alias cou="composer update"
-alias cdu="composer dump-autoload"
 
 composer-link() {
     composer config repositories path $1 --file composer.json
