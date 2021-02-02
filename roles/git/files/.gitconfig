@@ -1,7 +1,7 @@
 [user]
     email = amelihovv@ya.ru
     name = Alexander Melihov
-    signingkey = FF359F3DB358D98AD1363C94D39EFA21B67B1BAD
+    signingkey = 8A2B69993559CE726773AFD13CE2C132F78C8000
 [alias]
     co = checkout
     ci = commit

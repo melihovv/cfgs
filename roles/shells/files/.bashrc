@@ -47,3 +47,5 @@ eval $(thefuck --alias)
 [ -f "$HOME/.aliases" ] && source "$HOME/.aliases"
 
 [ -f "$HOME/.extra" ] && source "$HOME/.extra"
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash

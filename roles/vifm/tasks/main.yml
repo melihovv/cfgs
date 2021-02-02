@@ -1,5 +1,10 @@
 ---
 
+- name: Create ~/.vifm
+  file:
+    path: "{{ ansible_env.HOME }}/.vifm"
+    state: directory
+
 - name: Symlink vifm configs
   file:
       src: "{{ role_path }}/{{ item.path }}"

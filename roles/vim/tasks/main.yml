@@ -20,5 +20,5 @@
 - name: Install vim plugins if they are not installed
   command: git submodule update --init
   args:
-      chdir: "{{ playbook_dir }}/.."
+      chdir: "{{ playbook_dir }}"
   when: vim_plugins.stat.exists == false
