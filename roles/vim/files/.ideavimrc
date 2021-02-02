@@ -48,4 +48,4 @@ map <leader>w :action EditorSelectWord<CR>
 map <leader>x :action $Cut<CR>
 map <leader>y :action EditorDeleteLine<CR>
 
-set clipboard+=ideaput
+set clipboard-=ideaput
