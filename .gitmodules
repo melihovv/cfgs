@@ -76,9 +76,6 @@
 [submodule "roles/vim/files/.vim/bundle/vim-snippets"]
 	path = roles/vim/files/.vim/bundle/vim-snippets
 	url = https://github.com/honza/vim-snippets
-[submodule "roles/vim/files/.vim/bundle/ultisnips"]
-	path = roles/vim/files/.vim/bundle/ultisnips
-	url = https://github.com/SirVer/ultisnips
 [submodule "roles/vim/files/.vim/bundle/lexima.vim"]
 	path = roles/vim/files/.vim/bundle/lexima.vim
 	url = https://github.com/cohama/lexima.vim

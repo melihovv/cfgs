@@ -44,7 +44,10 @@ alias ...="cd ../.."
 alias co="composer"
 alias cdu="composer dump-autoload"
 alias coi="composer install"
+alias coui="composer update --ignore-platform-req=ext-elastic_apm"
+alias cori="composer remove --ignore-platform-req=ext-elastic_apm"
 alias cor="composer require"
+alias corei="composer require --ignore-platform-req=ext-elastic_apm"
 alias cord="composer require --dev"
 alias cou="composer update"
 
@@ -52,7 +55,9 @@ composer-link() {
     composer config repositories path $1 --file composer.json
 }
 
-alias phpd="php -dxdebug.remote_autostart"
+alias phpd="php -dzend_extension=/opt/homebrew/Cellar/php@8.2/8.2.29/pecl/20220829/xdebug.so -dxdebug.start_with_request=yes -dxdebug.mode=develop,debug,coverage"
+#alias phpd="php -dzend_extension=/opt/homebrew/Cellar/php@8.1/8.1.32_1/pecl/20210902/xdebug.so -dxdebug.start_with_request=yes -dxdebug.mode=develop,debug,coverage"
+#alias phpd="php -dzend_extension=/opt/homebrew/Cellar/php@8.3/8.3.16/pecl/20230831/xdebug.so -dxdebug.start_with_request=yes -dxdebug.mode=develop,debug,coverage"
 
 alias ar="php artisan"
 alias ars="php artisan serve"
@@ -68,6 +73,8 @@ alias an="ansible"
 alias anp="ansible-playbook"
 alias anv="ansible-vault"
 alias ang="ansible-galaxy"
+
+alias я="z"
 
 mkcd() {
     mkdir -p "$1" && cd "$1"

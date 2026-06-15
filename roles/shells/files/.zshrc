@@ -7,6 +7,7 @@ export EDITOR=vim
 [ "$(uname -s)" = "Darwin" ] && export PATH=$PATH:/usr/local/sbin
 
 export PATH=~/.local/bin:$PATH
+export PATH=~/.composer/vendor/bin:$PATH
 
 setopt HIST_IGNORE_ALL_DUPS
 
@@ -74,3 +75,9 @@ test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell
 [ "$(uname -s)" = "Darwin" ] && [ -f "$HOME/.iterm2_shell_integration.zsh" ] && source ~/.iterm2_shell_integration.zsh
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# The next line updates PATH for Yandex Cloud CLI.
+if [ -f '~/yandex-cloud/path.bash.inc' ]; then source '~/yandex-cloud/path.bash.inc'; fi
+
+# The next line enables shell command completion for yc.
+if [ -f '~/yandex-cloud/completion.zsh.inc' ]; then source '~/yandex-cloud/completion.zsh.inc'; fi
